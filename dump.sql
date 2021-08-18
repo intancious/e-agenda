@@ -64,7 +64,7 @@ CREATE TABLE `user_levels` (
 
 LOCK TABLES `user_levels` WRITE;
 /*!40000 ALTER TABLE `user_levels` DISABLE KEYS */;
-INSERT INTO `user_levels` VALUES (1,'Administrator',NULL,NULL),(2,'Admin TIF',NULL,NULL),(3,'Admin MIF',NULL,NULL),(4,'Admin MIF Inter',NULL,NULL),(5,'Admin TKK',NULL,NULL);
+INSERT INTO `user_levels` VALUES (1,'Adminsuper',NULL,NULL),(2,'Admin',NULL,NULL),(3,'user',NULL,NULL);
 /*!40000 ALTER TABLE `user_levels` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -108,4 +108,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2021-08-17 15:27:29
+-- Dump completed on 2021-08-18  8:11:26

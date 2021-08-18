@@ -79,19 +79,13 @@ class Auth
         $ci = &get_instance();
         $user_level = strtolower($ci->session->userdata('user_level'));
 
-        if (strtolower($user_level) == strtolower('admin')) {
+        if (strtolower($user_level) == strtolower('adminsuper')) {
             // die(var_export($user_level));
             // redirect($user_level . '/home');
-        } elseif ((strtolower($user_level) == strtolower('tif'))) {
+        } elseif ((strtolower($user_level) == strtolower('admin'))) {
             //pass
             redirect($user_level . '/home');
-        } elseif ((strtolower($user_level) == strtolower('mif'))) {
-            //pass
-            redirect($user_level . '/home');
-        } elseif ((strtolower($user_level) == strtolower('inter'))) {
-            //pass
-            redirect($user_level . '/home');
-        } elseif ((strtolower($user_level) == strtolower('tkk'))) {
+        } elseif ((strtolower($user_level) == strtolower('user'))) {
             //pass
             redirect($user_level . '/home');
         }
