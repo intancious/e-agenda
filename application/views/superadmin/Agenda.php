@@ -205,7 +205,7 @@
     </div>
     <div class="card shadow mb-4">
         <div class="card-header py-3">
-            <button class="btn btn-light shadow-sm" onclick="reload_table()"><i class="fas fa-sync"></i> Refreh</button>
+            <button class="btn btn-light shadow-sm" onclick="reload_table()"><i class="fas fa-sync"></i> Refresh</button>
         </div>
 
 
@@ -712,17 +712,21 @@
                     //if success reload ajax table
                     $('#modal_form').modal('hide');
                     reload_table();
-                    $.toast({
-                        heading: 'Sukses',
-                        text: "Data berhasil dihapus",
-                        showHideTransition: 'fade',
-                        icon: 'success',
-                        hideAfter: 3000,
-                        position: 'top-right',
-                        bgColor: '#1cc88a',
-                        loader: true, // Change it to false to disable loader
-                        loaderBg: '#3CB371'
+                    Toast.fire({
+                        type: 'success',
+                        title: 'Data berhasil dihapus'
                     });
+                    // $.toast({
+                    //     heading: 'Sukses',
+                    //     text: "Data berhasil dihapus",
+                    //     showHideTransition: 'fade',
+                    //     icon: 'success',
+                    //     hideAfter: 3000,
+                    //     position: 'top-right',
+                    //     bgColor: '#1cc88a',
+                    //     loader: true, // Change it to false to disable loader
+                    //     loaderBg: '#3CB371'
+                    // });
                 },
                 error: function(jqXHR, textStatus, errorThrown) {
                     alert('Error deleting data');
