@@ -7,9 +7,6 @@
     <div class="d-sm-flex align-items-center justify-content-between mb-4">
         <h1 class="h3 mb-0 text-gray-800">Detail Agenda</h1>
     </div>
-
-
-
     <!-- Content Row -->
 
     <div class="card shadow mb-4">
@@ -22,15 +19,13 @@
                     <div class="col-md-6">
                         <div class="form-group">
                             <label>Nama Kegiatan</label>
-                            <input class="form-control" type="text" name="nama_kegiatan" id="nama_kegiatan" tabindex="1">
-                            <span class="help-block" style="color: red;"></span>
+                            <input class="form-control" type="text" name="nama_kegiatan" id="nama_kegiatan" tabindex="1" readonly>
                         </div>
                     </div>
                     <div class="col-md-6">
                         <div class="form-group">
                             <label>Kategori</label>
-                            <input class="form-control" type="text" name="kategori" id="kategori" tabindex="2">
-                            <span class="help-block" style="color: red;"></span>
+                            <input class="form-control" type="text" name="kategori" id="kategori" tabindex="2" readonly>
                         </div>
                     </div>
                 </div>
@@ -39,19 +34,13 @@
                     <div class="col-md-6">
                         <div class="form-group">
                             <label>Agenda</label>
-                            <select name="agenda" id="agenda" class="form-control" tabindex="3">
-                                <option value="" disabled selected>--- Pilih ---</option>
-                                <option value="Bupati">Bupati</option>
-                                <option value="Wakil Bupati">Wakil Bupati</option>
-                            </select>
-                            <span class="help-block" style="color: red;"></span>
+                            <input class="form-control" type="text" name="agenda" id="agenda" tabindex="3" readonly>
                         </div>
                     </div>
                     <div class="col-md-6">
                         <div class="form-group">
-                            <label>Sub Agenda</label>
-                            <input class="form-control" type="text" name="sub_agenda" id="sub_agenda" tabindex="4">
-                            <span class="help-block" style="color: red;"></span>
+                            <label>Pembagian tugas OPD</label>
+                            <input class="form-control" type="text" name="sub_agenda" id="sub_agenda" tabindex="4" readonly>
                         </div>
                     </div>
                 </div>
@@ -60,28 +49,19 @@
                     <div class="col-md-4">
                         <div class="form-group">
                             <label>Tanggal</label>
-                            <input class="form-control" type="date" name="tanggal" id="tanggal" tabindex="5">
-                            <span class="help-block" style="color: red;"></span>
+                            <input class="form-control" type="date" name="tanggal" id="tanggal" tabindex="5" readonly>
                         </div>
                     </div>
                     <div class="col-md-4">
                         <div class="form-group">
                             <label>Pukul (WIB) </label>
-                            <input class="form-control" type="time" name="pukul" id="pukul" tabindex="6">
-                            <span class="help-block" style="color: red;"></span>
+                            <input class="form-control" type="time" name="pukul" id="pukul" tabindex="6" readonly>
                         </div>
                     </div>
                     <div class="col-md-4">
                         <div class="form-group">
                             <label>Tempat</label>
-                            <input class="form-control" type="text" name="tempat" id="tempat" tabindex="7">
-                            <!-- <select name="tempat" id="tempat" class="form-control" tabindex="7">
-                                <option value="" disabled selected>--- Pilih ---</option>
-                                <option value="Aula P.B. Sudirman">Aula P.B. Sudirman</option>
-                                <option value="Aula Bawah Timur">Aula Bawah Timur</option>
-                                <option value="Lainnya">Lainnya</option>
-                            </select> -->
-                            <span class="help-block" style="color: red;"></span>
+                            <input class="form-control" type="text" name="tempat" id="tempat" tabindex="7" readonly>
                         </div>
                     </div>
                 </div>
@@ -90,16 +70,14 @@
                     <div class="col-md-6">
                         <div class="form-group">
                             <label>Pakaian</label>
-                            <input class="form-control" type="text" name="pakaian" id="pakaian" tabindex="8">
-                            <span class="help-block" style="color: red;"></span>
+                            <input class="form-control" type="text" name="pakaian" id="pakaian" tabindex="8" readonly>
                         </div>
 
                     </div>
                     <div class="col-md-6">
                         <div class="form-group">
                             <label>Undangan</label>
-                            <input class="form-control" type="text" name="undangan" id="undangan" tabindex="9">
-                            <span class="help-block" style="color: red;"></span>
+                            <input class="form-control" type="text" name="undangan" id="undangan" tabindex="9" readonly>
                         </div>
                     </div>
                 </div>
@@ -108,16 +86,14 @@
                     <div class="col-md-6">
                         <div class="form-group">
                             <label>Peran Pimpinan</label>
-                            <input class="form-control" type="text" name="peran_pimpinan" id="peran_pimpinan" tabindex="10">
-                            <span class="help-block" style="color: red;"></span>
+                            <input class="form-control" type="text" name="peran_pimpinan" id="peran_pimpinan" tabindex="10" readonly>
                         </div>
 
                     </div>
                     <div class="col-md-6">
                         <div class="form-group">
                             <label>Urutan Acara</label>
-                            <input class="form-control" type="text" name="urutan_acara" id="urutan_acara" tabindex="11">
-                            <span class="help-block" style="color: red;"></span>
+                            <input class="form-control" type="text" name="urutan_acara" id="urutan_acara" tabindex="11" readonly>
                         </div>
                     </div>
                 </div>
@@ -125,17 +101,15 @@
                 <div class="row">
                     <div class="col-md-6">
                         <div class="form-group">
-                            <label id="label-filetr">Upload Tata Ruangan</label>
-                            <input class="form-control" type="file" name="tata_ruangan" id="tata_ruangan" tabindex="12">
-                            <span class="help-block" style="color: red;"></span>
+                            <label id="label-filetr">Tata Ruangan</label>
+                            <input class="form-control" type="text" name="tata_ruangan" id="tata_ruangan" tabindex="12" readonly>
                         </div>
 
                     </div>
                     <div class="col-md-6">
                         <div class="form-group">
                             <label>Pihak Terkait</label>
-                            <input class="form-control" type="text" name="pihak_terkait" id="pihak_terkait" tabindex="13">
-                            <span class="help-block" style="color: red;"></span>
+                            <input class="form-control" type="text" name="pihak_terkait" id="pihak_terkait" tabindex="13" readonly>
                         </div>
                     </div>
                 </div>
@@ -144,61 +118,53 @@
                     <div class="col-md-6">
                         <div class="form-group">
                             <label>Petugas Protokol</label>
-                            <input class="form-control" type="text" name="petugas_protokol" id="petugas_protokol" tabindex="14">
-                            <span class="help-block" style="color: red;"></span>
+                            <input class="form-control" type="text" name="petugas_protokol" id="petugas_protokol" tabindex="14" readonly>
                         </div>
 
                     </div>
                     <div class="col-md-6">
                         <div class="form-group">
                             <label>Catatan</label>
-                            <input class="form-control" type="text" name="catatan" id="catatan" tabindex="15">
-                            <span class="help-block" style="color: red;"></span>
-                        </div>
-                    </div>
-                </div>
-
-
-                <div class="row">
-                    <div class="col-md-6">
-                        <div class="form-group">
-                            <label id="label-filesa">Upload File Sambutan</label>
-                            <input class="form-control" type="file" name="sambutan" id="sambutan" tabindex="16">
-                        </div>
-                    </div>
-                    <div class="col-md-6">
-                        <div class="form-group">
-                            <label id="label-filesu">Upload File Surat</label>
-                            <input class="form-control" type="file" name="surat" id="surat" tabindex="17">
+                            <input class="form-control" type="text" name="catatan" id="catatan" tabindex="15" readonly>
                         </div>
                     </div>
                 </div>
 
                 <div class="row">
-                    <div class="col-md-4" id="file-previewtr">
+                    <div class="col-md-6">
                         <div class="form-group">
-                            <label>Lihat Tata Ruangan</label>
-                            <div id="lihattr"></div>
-                            <span class="help-block" style="color: red;"></span>
+                            <label>Verifikasi</label>
+                            <input class="form-control" type="text" name="status_verifikasi" id="status_verifikasi" tabindex="14" readonly>
+                        </div>
+
+                    </div>
+                    <div class="col-md-6">
+                        <div class="form-group">
+                            <label>Keterangan</label>
+                            <input class="form-control" type="text" name="status_agenda" id="status_agenda" tabindex="15" readonly>
                         </div>
                     </div>
+                </div>
+
+                <div class="row">
                     <div class="col-md-4" id="file-previewsa">
                         <div class="form-group">
-                            <label>Lihat Sambutan</label>
+                            <label>Lihat File Sambutan</label>
                             <div id="lihatsa"></div>
-                            <span class="help-block" style="color: red;"></span>
                         </div>
                     </div>
                     <div class="col-md-4" id="file-previewsu">
                         <div class="form-group">
-                            <label>Lihat Surat</label>
+                            <label>Lihat File Surat</label>
                             <div id="lihatsu"></div>
-                            <span class="help-block" style="color: red;"></span>
                         </div>
                     </div>
                 </div>
                 <!-- </div> -->
-                <button type="button" class="btn btn-secondary">Kembali</button>
+                <div class="modal-footer">
+                    <a class="btn btn-success shadow-sm" href="#" data-toggle="modal" data-target="#modal_form_verif">Verifikasi</a>
+                    <a href="<?php echo base_url(); ?>superadmin/beranda" class="btn btn-secondary">Kembali</a>
+                </div>
 
             </form>
         </div>
@@ -214,6 +180,41 @@
 </div>
 <!-- End of Main Content -->
 <?php include "Footer.php" ?>
+
+<div class="modal fade" id="modal_form_verif" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title">Verifikasi Agenda</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <form action="#" id="form_verif" class="form-horizontal">
+                <input type="hidden" value="" name="id_agenda" />
+                <div class="modal-body">
+                    <div class="row">
+                        <div class="col-md-12">
+                            <div class="form-group">
+                                <label>Keterangan</label>
+                                <select name="status_verifikasi" id="status_verifikasi" class="form-control">
+                                    <option value="3" disabled selected>Belum diverifikasi</option>
+                                    <option value="1">Disetujui</option>
+                                    <option value="2">Tidak disetujui</option>
+                                </select>
+                                <span class="help-block" style="color: red;"></span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-primary" id="btnVerif" onclick="verifikasi()">Simpan</button>
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Tutup</button>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
 
 </body>
 

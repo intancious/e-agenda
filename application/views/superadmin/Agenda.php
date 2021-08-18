@@ -46,7 +46,7 @@
                         </div>
                         <div class="col-md-6">
                             <div class="form-group">
-                                <label>Sub Agenda</label>
+                                <label>Pembagian tugas OPD</label>
                                 <input class="form-control" type="text" name="sub_agenda" id="sub_agenda" tabindex="4">
                                 <span class="help-block" style="color: red;"></span>
                             </div>
@@ -122,8 +122,8 @@
                     <div class="row">
                         <div class="col-md-6">
                             <div class="form-group">
-                                <label id="label-filetr">Upload Tata Ruangan</label>
-                                <input class="form-control" type="file" name="tata_ruangan" id="tata_ruangan" tabindex="12">
+                                <label id="label-filetr">Tata Ruangan</label>
+                                <input class="form-control" type="text" name="tata_ruangan" id="tata_ruangan" tabindex="12">
                                 <span class="help-block" style="color: red;"></span>
                             </div>
 
@@ -172,13 +172,13 @@
                     </div>
 
                     <div class="row">
-                        <div class="col-md-4" id="file-previewtr">
+                        <!-- <div class="col-md-4" id="file-previewtr">
                             <div class="form-group">
                                 <label>Lihat Tata Ruangan</label>
                                 <div id="lihattr"></div>
                                 <span class="help-block" style="color: red;"></span>
                             </div>
-                        </div>
+                        </div> -->
                         <div class="col-md-4" id="file-previewsa">
                             <div class="form-group">
                                 <label>Lihat Sambutan</label>
@@ -220,8 +220,6 @@
                             <th>Agenda</th>
                             <th>Tanggal</th>
                             <th>Tempat</th>
-                            <!-- <th>Undangan</th>
-                            <th>Naskah</th> -->
                             <th>Status</th>
                             <th>Verifikasi</th>
                             <th>Aksi</th>
@@ -234,8 +232,6 @@
                             <th>Agenda</th>
                             <th>Tanggal</th>
                             <th>Tempat</th>
-                            <!-- <th>Undangan</th>
-                            <th>Naskah</th> -->
                             <th>Status</th>
                             <th>Verifikasi</th>
                             <th>Aksi</th>
@@ -267,10 +263,6 @@
         timer: 3000
     });
     $(document).ready(function() {
-
-        // jQuery('#btnTambah').bind('click', function(e) {
-        //     jQuery('#form-data').slideToggle(500);
-        // });
 
         $("#btnBatal").click(function() {
             $('#form-data').slideUp(500);
@@ -350,7 +342,6 @@
         $('.help-block').empty(); // clear error string
         $('#file-previewsa').hide();
         $('#file-previewsu').hide();
-        $('#file-previewtr').hide();
     }
 
     function edit_agenda(id) {
@@ -362,7 +353,6 @@
         $('#form')[0].reset(); // reset form on modals
         $('.form-group').removeClass('has-error'); // clear error class
         $('.help-block').empty(); // clear error string
-        // $('#judulBtn').text('Edit Agenda');
         $('#judulBtn').html('<button class="btn btn-light shadow-sm"><i class="fas fa-edit"></i> Edit Agenda</button>');
 
         //Ajax Load data from ajax
@@ -384,13 +374,10 @@
                 $('[name="undangan"]').val(data.undangan);
                 $('[name="peran_pimpinan"]').val(data.peran_pimpinan);
                 $('[name="urutan_acara"]').val(data.urutan_acara);
-                // $('[name="tata_ruangan"]').val(data.tata_ruangan);
+                $('[name="tata_ruangan"]').val(data.tata_ruangan);
                 $('[name="pihak_terkait"]').val(data.pihak_terkait);
                 $('[name="petugas_protokol"]').val(data.petugas_protokol);
                 $('[name="catatan"]').val(data.catatan);
-
-                $('#modal_form').modal('show'); // show bootstrap modal when complete loaded
-                $('.modal-title').text('Edit Agenda'); // Set title to Bootstrap modal title
 
                 if (data.sambutan) {
                     $('#file-previewsa').show();
@@ -414,16 +401,16 @@
                     $('#lihatsu').text('(Tidak ada surat)');
                 }
 
-                if (data.tata_ruangan) {
-                    $('#file-previewtr').show();
-                    $('#label-filetr').text('Perbarui Tata Ruangan');
-                    $('#lihattr').html('<a href="<?= base_url(); ?>uploads/files/' + data.tata_ruangan + '" target="_blank"> ' + data.tata_ruangan + '</a>');
+                // if (data.tata_ruangan) {
+                //     $('#file-previewtr').show();
+                //     $('#label-filetr').text('Perbarui Tata Ruangan');
+                //     $('#lihattr').html('<a href="<?= base_url(); ?>uploads/files/' + data.tata_ruangan + '" target="_blank"> ' + data.tata_ruangan + '</a>');
 
-                } else {
+                // } else {
 
-                    $('#label-filetr').text('Upload Tata Ruangan');
-                    $('#lihattr').text('(Tidak ada)');
-                }
+                //     $('#label-filetr').text('Upload Tata Ruangan');
+                //     $('#lihattr').text('(Tidak ada)');
+                // }
 
             },
             error: function(jqXHR, textStatus, errorThrown) {
@@ -480,17 +467,6 @@
                         type: 'success',
                         title: 'Data berhasil disimpan'
                     });
-                    // $.toast({
-                    //     heading: 'Sukses',
-                    //     text: "Data berhasil disimpan",
-                    //     showHideTransition: 'fade',
-                    //     icon: 'success',
-                    //     hideAfter: 3000,
-                    //     position: 'top-right',
-                    //     bgColor: '#1cc88a',
-                    //     loader: true, // Change it to false to disable loader
-                    //     loaderBg: '#3CB371'
-                    // });
                 } else {
                     for (var i = 0; i < data.inputerror.length; i++) {
                         $('[name="' + data.inputerror[i] + '"]').parent().parent().addClass('has-error'); //select parent twice to select div form-group class and add has-error class
@@ -669,17 +645,6 @@
                         type: 'success',
                         title: 'Status verifikasi berhasil diubah'
                     });
-                    // $.toast({
-                    //     heading: 'Sukses',
-                    //     text: "Status verifikasi berhasil diubah",
-                    //     showHideTransition: 'fade',
-                    //     icon: 'success',
-                    //     hideAfter: 3000,
-                    //     position: 'top-right',
-                    //     bgColor: '#1cc88a',
-                    //     loader: true, // Change it to false to disable loader
-                    //     loaderBg: '#3CB371'
-                    // });
 
                 } else {
                     for (var i = 0; i < data.inputerror.length; i++) {
@@ -716,17 +681,6 @@
                         type: 'success',
                         title: 'Data berhasil dihapus'
                     });
-                    // $.toast({
-                    //     heading: 'Sukses',
-                    //     text: "Data berhasil dihapus",
-                    //     showHideTransition: 'fade',
-                    //     icon: 'success',
-                    //     hideAfter: 3000,
-                    //     position: 'top-right',
-                    //     bgColor: '#1cc88a',
-                    //     loader: true, // Change it to false to disable loader
-                    //     loaderBg: '#3CB371'
-                    // });
                 },
                 error: function(jqXHR, textStatus, errorThrown) {
                     alert('Error deleting data');

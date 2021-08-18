@@ -91,7 +91,7 @@ class Agenda extends CI_Controller
             'undangan' => $this->input->post('undangan'),
             'peran_pimpinan' => $this->input->post('peran_pimpinan'),
             'urutan_acara' => $this->input->post('urutan_acara'),
-            // 'tata_ruangan' => $this->input->post('tata_ruangan'),
+            'tata_ruangan' => $this->input->post('tata_ruangan'),
             'pihak_terkait' => $this->input->post('pihak_terkait'),
             'petugas_protokol' => $this->input->post('petugas_protokol'),
             'catatan' => $this->input->post('catatan'),
@@ -107,10 +107,10 @@ class Agenda extends CI_Controller
             $upload = $this->_do_uploadsu();
             $data['surat'] = $upload;
         }
-        if (!empty($_FILES['tata_ruangan']['name'])) {
-            $upload = $this->_do_uploadtr();
-            $data['tata_ruangan'] = $upload;
-        }
+        // if (!empty($_FILES['tata_ruangan']['name'])) {
+        //     $upload = $this->_do_uploadtr();
+        //     $data['tata_ruangan'] = $upload;
+        // }
 
         $insert = $this->m_agenda->save($data);
         echo json_encode(array("status" => TRUE));
@@ -131,7 +131,7 @@ class Agenda extends CI_Controller
             'undangan' => $this->input->post('undangan'),
             'peran_pimpinan' => $this->input->post('peran_pimpinan'),
             'urutan_acara' => $this->input->post('urutan_acara'),
-            // 'tata_ruangan' => $this->input->post('tata_ruangan'),
+            'tata_ruangan' => $this->input->post('tata_ruangan'),
             'pihak_terkait' => $this->input->post('pihak_terkait'),
             'petugas_protokol' => $this->input->post('petugas_protokol'),
             'catatan' => $this->input->post('catatan'),
@@ -159,16 +159,16 @@ class Agenda extends CI_Controller
             $data['surat'] = $upload;
         }
 
-        if (!empty($_FILES['tata_ruangan']['name'])) {
-            $upload = $this->_do_uploadtr();
+        // if (!empty($_FILES['tata_ruangan']['name'])) {
+        //     $upload = $this->_do_uploadtr();
 
-            //delete file
-            $agenda = $this->m_agenda->get_by_id($this->input->post('id_agenda'));
-            if (file_exists('uploads/files/' . $agenda->tata_ruangan) && $agenda->tata_ruangan)
-                unlink('uploads/files/' . $agenda->tata_ruangan);
+        //     //delete file
+        //     $agenda = $this->m_agenda->get_by_id($this->input->post('id_agenda'));
+        //     if (file_exists('uploads/files/' . $agenda->tata_ruangan) && $agenda->tata_ruangan)
+        //         unlink('uploads/files/' . $agenda->tata_ruangan);
 
-            $data['tata_ruangan'] = $upload;
-        }
+        //     $data['tata_ruangan'] = $upload;
+        // }
 
         $this->m_agenda->update(array('id_agenda' => $this->input->post('id_agenda')), $data);
         echo json_encode(array("status" => TRUE));
