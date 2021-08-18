@@ -10,4 +10,10 @@ class Beranda extends CI_Controller
         $data['title'] = "Beranda";
         $this->load->view('superadmin/Beranda', $data);
     }
+
+    public function detail()
+    {
+        $data['title'] = "Detail Agenda";
+        $this->load->view('superadmin/Detail', $data);
+    }
 }

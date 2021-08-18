@@ -74,6 +74,11 @@
                     utility classes. By using utility classes, the style of the card component can be
                     easily modified with no need for any custom CSS!
                 </div>
+
+
+                <a href="#" class="btn btn-light btn-sm" style="border-radius: 0;">Lihat Detail</a>
+
+
             </div>
 
         </div>
@@ -97,6 +102,7 @@
                     utility classes. By using utility classes, the style of the card component can be
                     easily modified with no need for any custom CSS!
                 </div>
+                <a href="#" class="btn btn-light btn-sm" style="border-radius: 0;">Lihat Detail</a>
             </div>
         </div>
     </div>
