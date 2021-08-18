@@ -1,0 +1,27 @@
+.label-danger {
+    color: white;
+    background-color: #e74a3b;
+    padding: 3px 5px;
+    border-radius: 4px;
+}
+
+.label-success {
+    color: white;
+    background-color: #2081a7;
+    padding: 3px 5px;
+    border-radius: 4px;
+}
+
+.label-warning {
+    color: white;
+    background-color: #e46e38;
+    padding: 3px 5px;
+    border-radius: 4px;
+}
+
+.label-secondary {
+    color: white;
+    background-color: #5a5c69;
+    padding: 3px 5px;
+    border-radius: 4px;
+}

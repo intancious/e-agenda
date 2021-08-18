@@ -5,7 +5,7 @@
         <div class="sidebar-brand-icon">
             <i class="fas fa-user"></i>
         </div>
-        <div class="sidebar-brand-text mx-3">Admin<br>E-Agenda</div>
+        <div class="sidebar-brand-text mx-3">E-Agenda</div>
     </a>
 
     <!-- Divider -->
