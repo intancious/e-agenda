@@ -197,7 +197,7 @@
                 </div>
                 <div class="modal-footer">
                     <button type="button" class="btn btn-primary" id="btnSave" onclick="save()">Simpan</button>
-                    <button type="button" name="btnBatal" id="btnBatal" class="btn btn-secondary" data-dismiss="modal">Tutup</button>
+                    <button type="button" name="btnBatal" id="btnBatal" class="btn btn-secondary">Tutup</button>
                 </div>
             </form>
         </div>
