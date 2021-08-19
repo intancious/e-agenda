@@ -27,7 +27,7 @@ class Login extends CI_Controller
         if (empty(trim($error_message['pesan']))) {
             // redirect('home');
             //die(var_export($error_message['data']['user_level']));
-            redirect(strtolower($error_message['data']['user_level']) . '/home');
+            redirect(strtolower($error_message['data']['user_level']) . '/beranda');
         } else {
             $this->session->set_flashdata('error_message', $error_message['pesan']);
             redirect('login');
