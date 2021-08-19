@@ -16,55 +16,60 @@
                 <input type="hidden" value="" name="id_agenda" />
                 <!-- <div class="modal-body"> -->
                 <div class="row">
-                    <div class="col-md-4">
+                    <div class="col-md-6">
                         <div class="form-group">
                             <label>Nama Kegiatan</label>
                             <input class="form-control" type="text" name="nama_kegiatan" id="nama_kegiatan" tabindex="1" readonly>
                         </div>
                     </div>
-                    <div class="col-md-4">
+                    <div class="col-md-6">
                         <div class="form-group">
                             <label>Kategori</label>
                             <input class="form-control" type="text" name="kategori" id="kategori" tabindex="2" readonly>
                         </div>
                     </div>
-                    <div class="col-md-4">
+                </div>
+
+                <div class="row">
+                    <div class="col-md-6">
                         <div class="form-group">
                             <label>Penyelenggara</label>
                             <input class="form-control" type="text" name="penyelenggara" id="penyelenggara" tabindex="3" readonly>
                         </div>
                     </div>
-                </div>
-
-                <div class="row">
                     <div class="col-md-6">
                         <div class="form-group">
                             <label>Agenda</label>
                             <input class="form-control" type="text" name="agenda" id="agenda" tabindex="4" readonly>
                         </div>
                     </div>
+
+                </div>
+
+                <div class="row">
                     <div class="col-md-6">
                         <div class="form-group">
                             <label>Pembagian Tugas OPD</label>
                             <input class="form-control" type="text" name="sub_agenda" id="sub_agenda" tabindex="5" readonly>
                         </div>
                     </div>
-                </div>
-
-                <div class="row">
-                    <div class="col-md-4">
+                    <div class="col-md-6">
                         <div class="form-group">
                             <label>Tanggal</label>
                             <input class="form-control" type="date" name="tanggal" id="tanggal" tabindex="6" readonly>
                         </div>
                     </div>
-                    <div class="col-md-4">
+
+                </div>
+
+                <div class="row">
+                    <div class="col-md-6">
                         <div class="form-group">
                             <label>Pukul (WIB) </label>
                             <input class="form-control" type="time" name="pukul" id="pukul" tabindex="7" readonly>
                         </div>
                     </div>
-                    <div class="col-md-4">
+                    <div class="col-md-6">
                         <div class="form-group">
                             <label>Tempat</label>
                             <input class="form-control" type="text" name="tempat" id="tempat" tabindex="8" readonly>
@@ -73,6 +78,7 @@
                 </div>
 
                 <div class="row">
+
                     <div class="col-md-6">
                         <div class="form-group">
                             <label>Pakaian</label>
@@ -121,23 +127,17 @@
                 </div>
 
                 <div class="row">
-                    <div class="col-md-4">
+                    <div class="col-md-6">
                         <div class="form-group">
                             <label>Petugas Protokol</label>
                             <input class="form-control" type="text" name="petugas_protokol" id="petugas_protokol" tabindex="15" readonly>
                         </div>
 
                     </div>
-                    <div class="col-md-4">
+                    <div class="col-md-6">
                         <div class="form-group">
                             <label>Catatan</label>
                             <input class="form-control" type="text" name="catatan" id="catatan" tabindex="16" readonly>
-                        </div>
-                    </div>
-                    <div class="col-md-4">
-                        <div class="form-group">
-                            <label>Pembuat</label>
-                            <input class="form-control" type="text" name="pembuat" id="pembuat" tabindex="17" readonly>
                         </div>
                     </div>
                 </div>
@@ -171,6 +171,12 @@
                         <div class="form-group">
                             <label>Lihat File Surat</label>
                             <div id="lihatsu"></div>
+                        </div>
+                    </div>
+                    <div class="col-md-4">
+                        <div class="form-group">
+                            <label>Pembuat Agenda</label>
+                            <div id="lihatpe"></div>
                         </div>
                     </div>
                 </div>
