@@ -52,7 +52,7 @@
                                         <?php if (strlen($this->session->flashdata('error_message')) > 0) { ?>
                                             <div class="callout callout-danger">
                                                 <h4>Maaf</h4>
-
+                                                <!-- maaf salah login -->
                                                 <p><?= $this->session->flashdata('error_message') ?></p>
                                             </div>
                                         <?php } ?>
