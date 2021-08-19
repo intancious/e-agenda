@@ -33,8 +33,10 @@
                     <div class="card-body p-0">
                         <!-- Nested Row within Card Body -->
                         <div class="row">
-                            <div class="col-lg-6 d-none d-lg-block bg-login-image"></div>
-                            <div class="col-lg-6">
+                            <div class="col-lg-4 d-none d-lg-block">
+                                <div class="col-lg-3 mx-5 mb-5 mt-5"><img src="logo_pemkab.png" style="width: 300px;"></div>
+                            </div>
+                            <div class="col-lg-6 mx-5 my-4">
                                 <div class="p-5">
                                     <div class="text-center">
                                         <h1 class="h4 text-gray-900 mb-4">Selamat Datang Di E-Agenda</h1>
