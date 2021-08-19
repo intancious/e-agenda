@@ -39,24 +39,16 @@
                                     <div class="text-center">
                                         <h1 class="h4 text-gray-900 mb-4">Welcome Back!</h1>
                                     </div>
-                                    <form class="user" <?= base_url() . 'login/submit/' ?> method="post">
+                                    <form action=<?= base_url() . 'login/submit/' ?> class="user" method="post">
                                         <div class="form-group">
                                             <input type="email" class="form-control form-control-user" id="exampleInputEmail" aria-describedby="emailHelp" placeholder="Masukkan Email Anda">
                                         </div>
                                         <div class="form-group">
                                             <input type="password" class="form-control form-control-user" id="exampleInputPassword" placeholder="Password">
                                         </div>
-                                        <!-- <div class="form-group">
-                                            <div class="custom-control custom-checkbox small">
-                                                <input type="checkbox" class="custom-control-input" id="customCheck">
-                                                <label class="custom-control-label" for="customCheck">Remember
-                                                    Me</label>
-                                            </div> -->
-                                        <!-- </div> -->
-
-                                        <div class="col-xs-4">
-                                            <button type="submit" class="btn btn-primary btn-block btn-flat">Sign In</button>
-                                        </div>
+                                        <a href=<?php echo base_url('superadmin/beranda') ?> class="btn btn-primary btn-user btn-block">
+                                            Login
+                                        </a>
                                         <?php if (strlen($this->session->flashdata('error_message')) > 0) { ?>
                                             <div class="callout callout-danger">
                                                 <h4>Maaf</h4>

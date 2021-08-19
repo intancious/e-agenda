@@ -25,11 +25,11 @@ class Auth extends CI_Controller
                 die(var_dump($sess->level));
                 $this->session->set_userdata($sess_data);
             }
-            if ($this->session->userdata('level') == 'adminsuper') {
-                $data['dir'] = 'adminsuper';
+            if ($this->session->userdata('level') == 'superadmin') {
+                $data['dir'] = 'superadmin';
                 $data['pesan'] = null;
             } elseif ($this->session->userdata('level') == 'member') {
-                $data['dir'] = 'adminsuper';
+                $data['dir'] = 'superadmin';
                 $data['pesan'] = null;
             }
         } else {

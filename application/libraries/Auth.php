@@ -79,15 +79,15 @@ class Auth
         $ci = &get_instance();
         $user_level = strtolower($ci->session->userdata('user_level'));
 
-        if (strtolower($user_level) == strtolower('adminsuper')) {
+        if (strtolower($user_level) == strtolower('superadmin')) {
             // die(var_export($user_level));
             // redirect($user_level . '/home');
         } elseif ((strtolower($user_level) == strtolower('admin'))) {
             //pass
-            redirect($user_level . '/home');
+            redirect($user_level . '/beranda');
         } elseif ((strtolower($user_level) == strtolower('user'))) {
             //pass
-            redirect($user_level . '/home');
+            redirect($user_level . '/beranda');
         }
     }
 }
