@@ -1,8 +1,8 @@
--- MariaDB dump 10.19  Distrib 10.4.20-MariaDB, for Win64 (AMD64)
+-- MariaDB dump 10.19  Distrib 10.4.19-MariaDB, for Win64 (AMD64)
 --
 -- Host: localhost    Database: agenda
 -- ------------------------------------------------------
--- Server version	10.4.20-MariaDB
+-- Server version	10.4.19-MariaDB
 
 /*!40101 SET @OLD_CHARACTER_SET_CLIENT=@@CHARACTER_SET_CLIENT */;
 /*!40101 SET @OLD_CHARACTER_SET_RESULTS=@@CHARACTER_SET_RESULTS */;
@@ -111,7 +111,7 @@ CREATE TABLE `user_levels` (
 
 LOCK TABLES `user_levels` WRITE;
 /*!40000 ALTER TABLE `user_levels` DISABLE KEYS */;
-INSERT INTO `user_levels` VALUES (1,'Adminsuper',NULL,NULL),(2,'Admin',NULL,NULL),(3,'user',NULL,NULL);
+INSERT INTO `user_levels` VALUES (1,'Superadmin',NULL,NULL),(2,'Admin',NULL,NULL),(3,'user',NULL,NULL);
 /*!40000 ALTER TABLE `user_levels` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -155,4 +155,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2021-08-19 14:16:08
+-- Dump completed on 2021-08-19 22:16:06
