@@ -29,7 +29,7 @@ class Agenda extends CI_Controller
             $row[] = $agenda->agenda;
             $row[] = $this->tgl_indo(date($agenda->tanggal));
             $row[] = $agenda->tempat;
-            // $row = $agenda->kepentingan;
+            $row[] = $agenda->user_id;
             if ($agenda->status_agenda == 1)
                 $row[] = '<small class="label label-secondary"> Selesai </small>';
             elseif ($agenda->status_agenda == 2)
@@ -82,6 +82,7 @@ class Agenda extends CI_Controller
         $data = array(
             'nama_kegiatan' => $this->input->post('nama_kegiatan'),
             'kategori' => $this->input->post('kategori'),
+            'penyelenggara' => $this->input->post('penyelenggara'),
             'agenda' => $this->input->post('agenda'),
             'sub_agenda' => $this->input->post('sub_agenda'),
             'tanggal' => $this->input->post('tanggal'),
@@ -122,6 +123,7 @@ class Agenda extends CI_Controller
         $data = array(
             'nama_kegiatan' => $this->input->post('nama_kegiatan'),
             'kategori' => $this->input->post('kategori'),
+            'penyelenggara' => $this->input->post('penyelenggara'),
             'agenda' => $this->input->post('agenda'),
             'sub_agenda' => $this->input->post('sub_agenda'),
             'tanggal' => $this->input->post('tanggal'),
@@ -288,6 +290,12 @@ class Agenda extends CI_Controller
         if ($this->input->post('kategori') == '') {
             $data['inputerror'][] = 'kategori';
             $data['error_string'][] = 'Kategori tidak boleh kosong';
+            $data['status'] = FALSE;
+        }
+
+        if ($this->input->post('penyelenggara') == '') {
+            $data['inputerror'][] = 'penyelenggara';
+            $data['error_string'][] = 'Penyelenggara tidak boleh kosong';
             $data['status'] = FALSE;
         }
 
