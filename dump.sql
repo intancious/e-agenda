@@ -53,6 +53,7 @@ CREATE TABLE `tb_agenda` (
   `id_agenda` int(10) unsigned NOT NULL AUTO_INCREMENT,
   `nama_kegiatan` varchar(255) COLLATE utf8_unicode_ci NOT NULL,
   `kategori` varchar(255) COLLATE utf8_unicode_ci NOT NULL,
+  `penyelenggara` varchar(255) COLLATE utf8_unicode_ci NOT NULL,
   `agenda` varchar(255) COLLATE utf8_unicode_ci NOT NULL,
   `sub_agenda` varchar(255) COLLATE utf8_unicode_ci DEFAULT NULL,
   `tanggal` date NOT NULL,
@@ -70,6 +71,7 @@ CREATE TABLE `tb_agenda` (
   `surat` varchar(255) COLLATE utf8_unicode_ci NOT NULL,
   `status_agenda` int(11) NOT NULL COMMENT '1: selesai, 2: ditunda; 3: belum berjalan; 4: sedang berlangsung',
   `status_verifikasi` int(11) NOT NULL COMMENT '1: Disetujui; 2: Tidak disetujui; 3: Belum diverifikasi',
+  `user_id` varchar(50) COLLATE utf8_unicode_ci NOT NULL,
   `created_at` datetime NOT NULL DEFAULT current_timestamp(),
   `updated_at` datetime NOT NULL DEFAULT current_timestamp() ON UPDATE current_timestamp(),
   `deleted_at` datetime DEFAULT NULL,
@@ -83,7 +85,7 @@ CREATE TABLE `tb_agenda` (
 
 LOCK TABLES `tb_agenda` WRITE;
 /*!40000 ALTER TABLE `tb_agenda` DISABLE KEYS */;
-INSERT INTO `tb_agenda` VALUES (1,'Lorem Ipsum is simply dummy text of the printing and typesetting industry','Sosialisasi','Bupati','Bapak Bupati','2021-08-16','17:35:08','Aula P.B. Sudirman','Batik','Lorem ipsum','Lorem Ipsum has been the industry\'s standard dummy text ever since the 1500s','1. Lorem Ipsum has been the industry\'s standard dummy text ever since the 1500s','1629126359963.jpg','Lorem Ipsum','Lorem Ipsum','Lorem Ipsum has been the industry\'s standard dummy text ever since the 1500s. Lorem Ipsum has been the industry\'s standard dummy text ever since the 1500s. Lorem Ipsum has been the industry\'s standard dummy text ever since the 1500s','1628986771001.pdf','1628986771001.pdf',3,1,'2021-08-16 11:39:31','2021-08-18 09:48:49',NULL),(2,'coba','coba','Bupati','coba','2021-08-26','20:25:00','coba','coba','coba','coba','1. coba; 2. coba; 3. coba','16291201449462.pdf','coba','coba','coba','1629120144946.pdf','16291201449461.pdf',2,3,'2021-08-16 20:22:24','2021-08-16 21:08:41',NULL),(5,'testing','testing','Wakil Bupati','testing','2021-09-04','22:06:00','testing','testing','testing','testing','testing','1629126151503.PNG','testing','testing','testing','1629126151503.pdf','16291261515031.pdf',4,2,'2021-08-16 22:02:31','2021-08-17 16:37:23',NULL),(6,'test','test','Wakil Bupati','test','2021-08-28','16:42:00','test','test','test','test','test','1629193310097.PNG','test','test','test','1629193310097.pdf','16291933100971.pdf',4,1,'2021-08-17 16:41:50','2021-08-17 16:42:52',NULL);
+INSERT INTO `tb_agenda` VALUES (1,'Lorem Ipsum is simply dummy text of the printing and typesetting industry','Sosialisasi','Lorem Ipsum','Bupati','Bapak Bupati','2021-08-16','17:35:08','Aula P.B. Sudirman','Batik','Lorem ipsum','Lorem Ipsum has been the industry\'s standard dummy text ever since the 1500s','1. Lorem Ipsum has been the industry\'s standard dummy text ever since the 1500s','1629126359965','Lorem Ipsum','Lorem Ipsum','Lorem Ipsum has been the industry\'s standard dummy text ever since the 1500s. Lorem Ipsum has been the industry\'s standard dummy text ever since the 1500s. Lorem Ipsum has been the industry\'s standard dummy text ever since the 1500s','1628986771001.pdf','1628986771001.pdf',4,2,'Om Harits','2021-08-16 11:39:31','2021-08-19 07:55:34',NULL),(2,'cobas','cobas','Lorem Ipsums','Bupati','cobas','2021-08-27','21:26:00','cobas','cobas','cobas','cobas','1. cobas; 2. cobas; 3. cobas','162912014494623','cobas','cobas','cobas','1629120144946.pdf','16291201449461.pdf',3,1,'Om Harits','2021-08-16 20:22:24','2021-08-19 09:21:18',NULL),(5,'testing','testing','Lorem Ipsum','Wakil Bupati','testing','2021-09-04','22:06:00','testing','testing','testing','testing','testing','1629126151503.PNG','testing','testing','testing','1629126151503.pdf','16291261515031.pdf',4,1,'Om Harits','2021-08-16 22:02:31','2021-08-19 07:55:34','2021-08-18 11:38:07'),(6,'test','test','Lorem Ipsum','Wakil Bupati','test','2021-08-28','16:42:00','test','test','test','test','test','1629193310097.PNG','test','test','test','1629193310097.pdf','16291933100971.pdf',4,1,'Om Harits','2021-08-17 16:41:50','2021-08-19 07:55:34','2021-08-18 10:58:26');
 /*!40000 ALTER TABLE `tb_agenda` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -153,4 +155,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2021-08-18  9:50:46
+-- Dump completed on 2021-08-19 14:16:08

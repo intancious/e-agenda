@@ -16,30 +16,30 @@
                 <input type="hidden" value="" name="id_agenda" />
                 <div class="modal-body">
                     <div class="row">
-                        <div class="col-md-4">
+                        <div class="col-md-6">
                             <div class="form-group">
                                 <label>Nama Kegiatan</label>
                                 <input class="form-control" type="text" name="nama_kegiatan" id="nama_kegiatan" tabindex="1">
                                 <span class="help-block" style="color: red;"></span>
                             </div>
                         </div>
-                        <div class="col-md-4">
+                        <div class="col-md-6">
                             <div class="form-group">
                                 <label>Kategori</label>
                                 <input class="form-control" type="text" name="kategori" id="kategori" tabindex="2">
                                 <span class="help-block" style="color: red;"></span>
                             </div>
                         </div>
-                        <div class="col-md-4">
+                    </div>
+
+                    <div class="row">
+                        <div class="col-md-6">
                             <div class="form-group">
                                 <label>Penyelenggara</label>
                                 <input class="form-control" type="text" name="penyelenggara" id="penyelenggara" tabindex="3">
                                 <span class="help-block" style="color: red;"></span>
                             </div>
                         </div>
-                    </div>
-
-                    <div class="row">
                         <div class="col-md-6">
                             <div class="form-group">
                                 <label>Agenda</label>
@@ -51,6 +51,10 @@
                                 <span class="help-block" style="color: red;"></span>
                             </div>
                         </div>
+
+                    </div>
+
+                    <div class="row">
                         <div class="col-md-6">
                             <div class="form-group">
                                 <label>Pembagian Tugas OPD</label>
@@ -58,24 +62,24 @@
                                 <span class="help-block" style="color: red;"></span>
                             </div>
                         </div>
-                    </div>
-
-                    <div class="row">
-                        <div class="col-md-4">
+                        <div class="col-md-6">
                             <div class="form-group">
                                 <label>Tanggal</label>
                                 <input class="form-control" type="date" name="tanggal" id="tanggal" tabindex="6">
                                 <span class="help-block" style="color: red;"></span>
                             </div>
                         </div>
-                        <div class="col-md-4">
+                    </div>
+
+                    <div class="row">
+                        <div class="col-md-6">
                             <div class="form-group">
                                 <label>Pukul (WIB) </label>
                                 <input class="form-control" type="time" name="pukul" id="pukul" tabindex="7">
                                 <span class="help-block" style="color: red;"></span>
                             </div>
                         </div>
-                        <div class="col-md-4">
+                        <div class="col-md-6">
                             <div class="form-group">
                                 <label>Tempat</label>
                                 <input class="form-control" type="text" name="tempat" id="tempat" tabindex="8">
@@ -190,14 +194,18 @@
                             <div class="form-group">
                                 <label>Lihat Sambutan</label>
                                 <div id="lihatsa"></div>
-                                <span class="help-block" style="color: red;"></span>
                             </div>
                         </div>
                         <div class="col-md-4" id="file-previewsu">
                             <div class="form-group">
                                 <label>Lihat Surat</label>
                                 <div id="lihatsu"></div>
-                                <span class="help-block" style="color: red;"></span>
+                            </div>
+                        </div>
+                        <div class="col-md-4" id="file-previewpe">
+                            <div class="form-group">
+                                <label>Pembuat Agenda</label>
+                                <div id="lihatpe"></div>
                             </div>
                         </div>
                     </div>
@@ -227,7 +235,7 @@
                             <th>Agenda</th>
                             <th>Tanggal</th>
                             <th>Tempat</th>
-                            <th>Pembuat</th>
+                            <th>Pembuat Agenda</th>
                             <th>Status</th>
                             <th>Verifikasi</th>
                             <th>Aksi</th>
@@ -240,7 +248,7 @@
                             <th>Agenda</th>
                             <th>Tanggal</th>
                             <th>Tempat</th>
-                            <th>Pembuat</th>
+                            <th>Pembuat Agenda</th>
                             <th>Status</th>
                             <th>Verifikasi</th>
                             <th>Aksi</th>
@@ -355,6 +363,7 @@
         $('.help-block').empty(); // clear error string
         $('#file-previewsa').hide();
         $('#file-previewsu').hide();
+        $('#file-previewpe').hide();
     }
 
     function edit_agenda(id) {
@@ -393,38 +402,51 @@
                 $('[name="petugas_protokol"]').val(data.petugas_protokol);
                 $('[name="catatan"]').val(data.catatan);
 
-                if (data.sambutan) {
-                    $('#file-previewsa').show();
-                    $('#label-filesa').text('Perbarui File Sambutan');
-                    $('#lihatsa').html('<a href="<?= base_url(); ?>uploads/files/' + data.sambutan + '" target="_blank"> ' + data.sambutan + '</a>');
+                if (data.status_verifikasi == 1) {
+
+                    if (data.sambutan) {
+                        $('#file-previewsa').show();
+                        $('#label-filesa').text('Perbarui File Sambutan');
+                        $('#lihatsa').html('<a href="<?= base_url(); ?>uploads/files/' + data.sambutan + '" target="_blank"> ' + data.sambutan + '</a>');
+
+                    } else {
+
+                        $('#label-filesa').text('Upload File Sambutan');
+                        $('#lihatsa').text('(Tidak ada sambutan)');
+                    }
+
+                    if (data.surat) {
+                        $('#file-previewsu').show();
+                        $('#label-filesu').text('Perbarui File Surat');
+                        $('#lihatsu').html('<a href="<?= base_url(); ?>uploads/files/' + data.surat + '" target="_blank"> ' + data.surat + '</a>');
+
+                    } else {
+
+                        $('#label-filesu').text('Upload File Surat');
+                        $('#lihatsu').text('(Tidak ada surat)');
+                    }
+
+                    if (data.user_id) {
+                        $('#file-previewpe').show();
+                        $('#lihatpe').html('<p> ' + data.user_id + '</p>');
+
+                    } else {
+                        $('#lihatpe').text('(Tidak ditemukan)');
+                    }
 
                 } else {
+                    $('#file-previewsa').hide();
+                    $('#file-previewsu').hide();
+                    if (data.user_id) {
+                        $('#file-previewpe').show();
+                        $('#lihatpe').html('<p> ' + data.user_id + '</p>');
 
-                    $('#label-filesa').text('Upload File Sambutan');
-                    $('#lihatsa').text('(Tidak ada sambutan)');
+                    } else {
+                        $('#lihatpe').text('(Tidak ditemukan)');
+                    }
                 }
 
-                if (data.surat) {
-                    $('#file-previewsu').show();
-                    $('#label-filesu').text('Perbarui File Surat');
-                    $('#lihatsu').html('<a href="<?= base_url(); ?>uploads/files/' + data.surat + '" target="_blank"> ' + data.surat + '</a>');
 
-                } else {
-
-                    $('#label-filesu').text('Upload File Surat');
-                    $('#lihatsu').text('(Tidak ada surat)');
-                }
-
-                // if (data.tata_ruangan) {
-                //     $('#file-previewtr').show();
-                //     $('#label-filetr').text('Perbarui Tata Ruangan');
-                //     $('#lihattr').html('<a href="<?= base_url(); ?>uploads/files/' + data.tata_ruangan + '" target="_blank"> ' + data.tata_ruangan + '</a>');
-
-                // } else {
-
-                //     $('#label-filetr').text('Upload Tata Ruangan');
-                //     $('#lihattr').text('(Tidak ada)');
-                // }
 
             },
             error: function(jqXHR, textStatus, errorThrown) {

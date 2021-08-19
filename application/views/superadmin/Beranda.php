@@ -70,9 +70,10 @@
 
 
                 <div class="card-body">
-                    The styling for this basic card example is created by using default Bootstrap
-                    utility classes. By using utility classes, the style of the card component can be
-                    easily modified with no need for any custom CSS!
+                    <p><strong>Nama Kegiatan</strong> : Lorem Ipsum is simply dummy text of the printing and typesetting industry</p>
+                    <p><strong>Penyelenggara</strong> : Lorem Ipsum</p>
+                    <p><strong>Tempat</strong> : Lorem Ipsum</p>
+                    <p><strong>Pakaian</strong> : Lorem Ipsum</p>
                 </div>
 
 
@@ -92,15 +93,16 @@
                             <h6 class="m-0 font-weight-bold text-primary">08.00 WIB</h6>
                         </div>
                         <div class="col-md-6 keterangan">
-                            <small class="label label-success"> Sedang Berlangsung </small>
+                            <small class="label label-warning"> Belum Berjalan </small>
                         </div>
 
                     </div>
                 </div>
                 <div class="card-body">
-                    The styling for this basic card example is created by using default Bootstrap
-                    utility classes. By using utility classes, the style of the card component can be
-                    easily modified with no need for any custom CSS!
+                    <p><strong>Nama Kegiatan</strong> : Lorem Ipsum is simply dummy text of the printing and typesetting industry</p>
+                    <p><strong>Penyelenggara</strong> : Lorem Ipsum</p>
+                    <p><strong>Tempat</strong> : Lorem Ipsum</p>
+                    <p><strong>Pakaian</strong> : Lorem Ipsum</p>
                 </div>
                 <a href="<?php echo base_url(); ?>" class="btn btn-light btn-sm" style="border-radius: 0;">Lihat Detail</a>
             </div>
