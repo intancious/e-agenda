@@ -16,17 +16,24 @@
                 <input type="hidden" value="" name="id_agenda" />
                 <div class="modal-body">
                     <div class="row">
-                        <div class="col-md-6">
+                        <div class="col-md-4">
                             <div class="form-group">
                                 <label>Nama Kegiatan</label>
                                 <input class="form-control" type="text" name="nama_kegiatan" id="nama_kegiatan" tabindex="1">
                                 <span class="help-block" style="color: red;"></span>
                             </div>
                         </div>
-                        <div class="col-md-6">
+                        <div class="col-md-4">
                             <div class="form-group">
                                 <label>Kategori</label>
                                 <input class="form-control" type="text" name="kategori" id="kategori" tabindex="2">
+                                <span class="help-block" style="color: red;"></span>
+                            </div>
+                        </div>
+                        <div class="col-md-4">
+                            <div class="form-group">
+                                <label>Penyelenggara</label>
+                                <input class="form-control" type="text" name="penyelenggara" id="penyelenggara" tabindex="3">
                                 <span class="help-block" style="color: red;"></span>
                             </div>
                         </div>
@@ -36,7 +43,7 @@
                         <div class="col-md-6">
                             <div class="form-group">
                                 <label>Agenda</label>
-                                <select name="agenda" id="agenda" class="form-control" tabindex="3">
+                                <select name="agenda" id="agenda" class="form-control" tabindex="4">
                                     <option value="" disabled selected>--- Pilih ---</option>
                                     <option value="Bupati">Bupati</option>
                                     <option value="Wakil Bupati">Wakil Bupati</option>
@@ -46,8 +53,8 @@
                         </div>
                         <div class="col-md-6">
                             <div class="form-group">
-                                <label>Pembagian tugas OPD</label>
-                                <input class="form-control" type="text" name="sub_agenda" id="sub_agenda" tabindex="4">
+                                <label>Pembagian Tugas OPD</label>
+                                <input class="form-control" type="text" name="sub_agenda" id="sub_agenda" tabindex="5">
                                 <span class="help-block" style="color: red;"></span>
                             </div>
                         </div>
@@ -57,21 +64,21 @@
                         <div class="col-md-4">
                             <div class="form-group">
                                 <label>Tanggal</label>
-                                <input class="form-control" type="date" name="tanggal" id="tanggal" tabindex="5">
+                                <input class="form-control" type="date" name="tanggal" id="tanggal" tabindex="6">
                                 <span class="help-block" style="color: red;"></span>
                             </div>
                         </div>
                         <div class="col-md-4">
                             <div class="form-group">
                                 <label>Pukul (WIB) </label>
-                                <input class="form-control" type="time" name="pukul" id="pukul" tabindex="6">
+                                <input class="form-control" type="time" name="pukul" id="pukul" tabindex="7">
                                 <span class="help-block" style="color: red;"></span>
                             </div>
                         </div>
                         <div class="col-md-4">
                             <div class="form-group">
                                 <label>Tempat</label>
-                                <input class="form-control" type="text" name="tempat" id="tempat" tabindex="7">
+                                <input class="form-control" type="text" name="tempat" id="tempat" tabindex="8">
                                 <!-- <select name="tempat" id="tempat" class="form-control" tabindex="7">
                                     <option value="" disabled selected>--- Pilih ---</option>
                                     <option value="Aula P.B. Sudirman">Aula P.B. Sudirman</option>
@@ -87,7 +94,7 @@
                         <div class="col-md-6">
                             <div class="form-group">
                                 <label>Pakaian</label>
-                                <input class="form-control" type="text" name="pakaian" id="pakaian" tabindex="8">
+                                <input class="form-control" type="text" name="pakaian" id="pakaian" tabindex="9">
                                 <span class="help-block" style="color: red;"></span>
                             </div>
 
@@ -95,7 +102,7 @@
                         <div class="col-md-6">
                             <div class="form-group">
                                 <label>Undangan</label>
-                                <input class="form-control" type="text" name="undangan" id="undangan" tabindex="9">
+                                <input class="form-control" type="text" name="undangan" id="undangan" tabindex="10">
                                 <span class="help-block" style="color: red;"></span>
                             </div>
                         </div>
@@ -105,7 +112,7 @@
                         <div class="col-md-6">
                             <div class="form-group">
                                 <label>Peran Pimpinan</label>
-                                <input class="form-control" type="text" name="peran_pimpinan" id="peran_pimpinan" tabindex="10">
+                                <input class="form-control" type="text" name="peran_pimpinan" id="peran_pimpinan" tabindex="11">
                                 <span class="help-block" style="color: red;"></span>
                             </div>
 
@@ -113,7 +120,7 @@
                         <div class="col-md-6">
                             <div class="form-group">
                                 <label>Urutan Acara</label>
-                                <input class="form-control" type="text" name="urutan_acara" id="urutan_acara" tabindex="11">
+                                <input class="form-control" type="text" name="urutan_acara" id="urutan_acara" tabindex="12">
                                 <span class="help-block" style="color: red;"></span>
                             </div>
                         </div>
@@ -123,7 +130,7 @@
                         <div class="col-md-6">
                             <div class="form-group">
                                 <label id="label-filetr">Tata Ruangan</label>
-                                <input class="form-control" type="text" name="tata_ruangan" id="tata_ruangan" tabindex="12">
+                                <input class="form-control" type="text" name="tata_ruangan" id="tata_ruangan" tabindex="13">
                                 <span class="help-block" style="color: red;"></span>
                             </div>
 
@@ -131,7 +138,7 @@
                         <div class="col-md-6">
                             <div class="form-group">
                                 <label>Pihak Terkait</label>
-                                <input class="form-control" type="text" name="pihak_terkait" id="pihak_terkait" tabindex="13">
+                                <input class="form-control" type="text" name="pihak_terkait" id="pihak_terkait" tabindex="14">
                                 <span class="help-block" style="color: red;"></span>
                             </div>
                         </div>
@@ -141,7 +148,7 @@
                         <div class="col-md-6">
                             <div class="form-group">
                                 <label>Petugas Protokol</label>
-                                <input class="form-control" type="text" name="petugas_protokol" id="petugas_protokol" tabindex="14">
+                                <input class="form-control" type="text" name="petugas_protokol" id="petugas_protokol" tabindex="15">
                                 <span class="help-block" style="color: red;"></span>
                             </div>
 
@@ -149,7 +156,7 @@
                         <div class="col-md-6">
                             <div class="form-group">
                                 <label>Catatan</label>
-                                <input class="form-control" type="text" name="catatan" id="catatan" tabindex="15">
+                                <input class="form-control" type="text" name="catatan" id="catatan" tabindex="16">
                                 <span class="help-block" style="color: red;"></span>
                             </div>
                         </div>
@@ -160,13 +167,13 @@
                         <div class="col-md-6">
                             <div class="form-group">
                                 <label id="label-filesa">Upload File Sambutan</label>
-                                <input class="form-control" type="file" name="sambutan" id="sambutan" tabindex="16">
+                                <input class="form-control" type="file" name="sambutan" id="sambutan" tabindex="17">
                             </div>
                         </div>
                         <div class="col-md-6">
                             <div class="form-group">
                                 <label id="label-filesu">Upload File Surat</label>
-                                <input class="form-control" type="file" name="surat" id="surat" tabindex="17">
+                                <input class="form-control" type="file" name="surat" id="surat" tabindex="18">
                             </div>
                         </div>
                     </div>
@@ -220,6 +227,7 @@
                             <th>Agenda</th>
                             <th>Tanggal</th>
                             <th>Tempat</th>
+                            <th>Pembuat</th>
                             <th>Status</th>
                             <th>Verifikasi</th>
                             <th>Aksi</th>
@@ -232,6 +240,7 @@
                             <th>Agenda</th>
                             <th>Tanggal</th>
                             <th>Tempat</th>
+                            <th>Pembuat</th>
                             <th>Status</th>
                             <th>Verifikasi</th>
                             <th>Aksi</th>
@@ -314,6 +323,10 @@
                 {
                     "targets": [-3], //thrd last column
                     "orderable": false, //set not orderable
+                },
+                {
+                    "targets": [-4], //thrd last column
+                    "orderable": false, //set not orderable
                 }
             ],
 
@@ -365,6 +378,7 @@
                 $('[name="id_agenda"]').val(data.id_agenda);
                 $('[name="nama_kegiatan"]').val(data.nama_kegiatan);
                 $('[name="kategori"]').val(data.kategori);
+                $('[name="penyelenggara"]').val(data.penyelenggara);
                 $('[name="agenda"]').val(data.agenda);
                 $('[name="sub_agenda"]').val(data.sub_agenda);
                 $('[name="tanggal"]').val(data.tanggal);
@@ -424,7 +438,7 @@
     }
 
     function save() {
-        $('#btnSave').text('Menyimpan...'); //change button text
+        $('#btnSave').text('Proses...'); //change button text
         $('#btnSave').attr('disabled', true); //set button disable 
         var url;
 
@@ -443,15 +457,15 @@
             contentType: false,
             processData: false,
             dataType: "JSON",
-            beforeSend: () => {
-                Swal.fire({
-                    html: 'Proses',
-                    onBeforeOpen: () => {
-                        Swal.showLoading()
-                    },
-                    allowOutsideClick: () => !Swal.isLoading()
-                });
-            },
+            // beforeSend: () => {
+            //     Swal.fire({
+            //         html: 'Proses',
+            //         onBeforeOpen: () => {
+            //             Swal.showLoading()
+            //         },
+            //         allowOutsideClick: () => !Swal.isLoading()
+            //     });
+            // },
             success: function(data) {
 
                 if (data.status) //if success close modal and reload ajax table
@@ -538,7 +552,7 @@
     }
 
     function up_status() {
-        $('#btnUp').text('Menyimpan...'); //change button text
+        $('#btnUp').text('Proses...'); //change button text
         $('#btnUp').attr('disabled', true); //set button disable 
         var url;
 
@@ -555,15 +569,15 @@
             contentType: false,
             processData: false,
             dataType: "JSON",
-            beforeSend: () => {
-                Swal.fire({
-                    html: 'Proses',
-                    onBeforeOpen: () => {
-                        Swal.showLoading()
-                    },
-                    allowOutsideClick: () => !Swal.isLoading()
-                });
-            },
+            // beforeSend: () => {
+            //     Swal.fire({
+            //         html: 'Proses',
+            //         onBeforeOpen: () => {
+            //             Swal.showLoading()
+            //         },
+            //         allowOutsideClick: () => !Swal.isLoading()
+            //     });
+            // },
             success: function(data) {
 
                 if (data.status) //if success close modal and reload ajax table
@@ -609,7 +623,7 @@
     }
 
     function verifikasi() {
-        $('#btnVerif').text('Menyimpan...'); //change button text
+        $('#btnVerif').text('Proses...'); //change button text
         $('#btnVerif').attr('disabled', true); //set button disable 
         var url;
 
@@ -626,15 +640,15 @@
             contentType: false,
             processData: false,
             dataType: "JSON",
-            beforeSend: () => {
-                Swal.fire({
-                    html: 'Proses',
-                    onBeforeOpen: () => {
-                        Swal.showLoading()
-                    },
-                    allowOutsideClick: () => !Swal.isLoading()
-                });
-            },
+            // beforeSend: () => {
+            //     Swal.fire({
+            //         html: 'Proses',
+            //         onBeforeOpen: () => {
+            //             Swal.showLoading()
+            //         },
+            //         allowOutsideClick: () => !Swal.isLoading()
+            //     });
+            // },
             success: function(data) {
 
                 if (data.status) //if success close modal and reload ajax table
