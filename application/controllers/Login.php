@@ -23,10 +23,10 @@ class Login extends CI_Controller
 
         $error_message = $auth->login($email, $password);
         //die(var_export($error_message));
-
+        //die(var_export($error_message['pesan']));
         if (empty(trim($error_message['pesan']))) {
             // redirect('home');
-            //die(var_export($error_message['data']['user_level']));
+
             redirect(strtolower($error_message['data']['user_level']) . '/beranda');
         } else {
             $this->session->set_flashdata('error_message', $error_message['pesan']);

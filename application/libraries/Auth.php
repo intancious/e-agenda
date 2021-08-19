@@ -16,7 +16,7 @@ class Auth
 
         //============VALIDASI EMAIL===========================
         $db = $ci->db->where('email', $email)->get('users');
-
+        //  die(var_export($db));
         if ($db->num_rows() < 1) {
             $error_message['pesan'] = "Email Salah";
             $error_message['data'] = null;
