@@ -55,31 +55,33 @@
                     </div>
 
                     <div class="row">
-                        <div class="col-md-6">
+                        <div class="col-md-12">
                             <div class="form-group">
                                 <label>Pembagian Tugas OPD</label>
-                                <input class="form-control" type="text" name="sub_agenda" id="sub_agenda" tabindex="5">
+                                <textarea name="sub_agenda" id="sub_agenda" class="form-control" rows="5"></textarea>
+                                <!-- <input class="form-control" type="text" name="sub_agenda" id="sub_agenda" tabindex="5"> -->
                                 <span class="help-block" style="color: red;"></span>
                             </div>
                         </div>
-                        <div class="col-md-6">
+
+                    </div>
+
+                    <div class="row">
+                        <div class="col-md-4">
                             <div class="form-group">
                                 <label>Tanggal</label>
                                 <input class="form-control" type="date" name="tanggal" id="tanggal" tabindex="6">
                                 <span class="help-block" style="color: red;"></span>
                             </div>
                         </div>
-                    </div>
-
-                    <div class="row">
-                        <div class="col-md-6">
+                        <div class="col-md-4">
                             <div class="form-group">
                                 <label>Pukul (WIB) </label>
                                 <input class="form-control" type="time" name="pukul" id="pukul" tabindex="7">
                                 <span class="help-block" style="color: red;"></span>
                             </div>
                         </div>
-                        <div class="col-md-6">
+                        <div class="col-md-4">
                             <div class="form-group">
                                 <label>Tempat</label>
                                 <input class="form-control" type="text" name="tempat" id="tempat" tabindex="8">
@@ -279,6 +281,7 @@
         showConfirmButton: false,
         timer: 3000
     });
+
     $(document).ready(function() {
 
         $("#btnBatal").click(function() {
@@ -364,6 +367,7 @@
         $('#file-previewsa').hide();
         $('#file-previewsu').hide();
         $('#file-previewpe').hide();
+        CKEDITOR.instances['sub_agenda'].setData("");
     }
 
     function edit_agenda(id) {
