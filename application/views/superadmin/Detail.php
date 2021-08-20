@@ -145,7 +145,7 @@
 
                     <div class="col-md-6">
                         <div class="form-group">
-                            <label>Verifikasi</label>
+                            <label>Status Verifikasi</label>
                             <input class="form-control" type="text" name="status_verifikasi" id="status_verifikasi" tabindex="18" readonly>
                         </div>
 
