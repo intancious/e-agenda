@@ -58,7 +58,7 @@
                         <div class="col-md-12">
                             <div class="form-group">
                                 <label>Pembagian Tugas OPD</label>
-                                <textarea name="sub_agenda" id="sub_agenda" class="form-control" rows="5"></textarea>
+                                <textarea name="sub_agenda" id="sub_agenda" class="form-control" rows="5" tabindex="5"></textarea>
                                 <!-- <input class="form-control" type="text" name="sub_agenda" id="sub_agenda" tabindex="5"> -->
                                 <span class="help-block" style="color: red;"></span>
                             </div>
@@ -406,7 +406,7 @@
                 $('[name="petugas_protokol"]').val(data.petugas_protokol);
                 $('[name="catatan"]').val(data.catatan);
 
-                if (data.status_verifikasi == 1) {
+                if (data.user_level == 'Superadmins' || data.user_level == 'Admins') {
 
                     if (data.sambutan) {
                         $('#file-previewsa').show();
@@ -430,9 +430,9 @@
                         $('#lihatsu').text('(Tidak ada surat)');
                     }
 
-                    if (data.user_id) {
+                    if (data.fullname) {
                         $('#file-previewpe').show();
-                        $('#lihatpe').html('<p> ' + data.user_id + '</p>');
+                        $('#lihatpe').html('<p> ' + data.fullname + '</p>');
 
                     } else {
                         $('#lihatpe').text('(Tidak ditemukan)');
@@ -441,9 +441,9 @@
                 } else {
                     $('#file-previewsa').hide();
                     $('#file-previewsu').hide();
-                    if (data.user_id) {
+                    if (data.fullname) {
                         $('#file-previewpe').show();
-                        $('#lihatpe').html('<p> ' + data.user_id + '</p>');
+                        $('#lihatpe').html('<p> ' + data.fullname + '</p>');
 
                     } else {
                         $('#lihatpe').text('(Tidak ditemukan)');

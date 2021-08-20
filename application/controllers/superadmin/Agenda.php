@@ -29,7 +29,7 @@ class Agenda extends CI_Controller
             $row[] = $agenda->agenda;
             $row[] = $this->tgl_indo(date($agenda->tanggal));
             $row[] = $agenda->tempat;
-            $row[] = $agenda->user_id;
+            $row[] = $agenda->fullname;
             if ($agenda->status_agenda == 1)
                 $row[] = '<small class="label label-secondary"> Selesai </small>';
             elseif ($agenda->status_agenda == 2)

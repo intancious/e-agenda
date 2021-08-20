@@ -18,8 +18,11 @@ class Agenda_model extends CI_Model
     private function _get_datatables_query()
     {
 
+        $this->db->select('*');
         $this->db->from($this->table);
-        $this->db->where('deleted_at', null);
+        $this->db->join('users', 'users.id = tb_agenda.user_id', 'left');
+        $this->db->join('user_levels', 'user_levels.id=users.user_level_id', 'left');
+        $this->db->where('tb_agenda.deleted_at', null);
 
         $i = 0;
 
@@ -75,8 +78,11 @@ class Agenda_model extends CI_Model
 
     public function get_by_id($id)
     {
+        $this->db->select('*');
         $this->db->from($this->table);
-        $this->db->where('id_agenda', $id);
+        $this->db->join('users', 'users.id = tb_agenda.user_id', 'left');
+        $this->db->join('user_levels', 'user_levels.id=users.user_level_id', 'left');
+        $this->db->where('tb_agenda.id_agenda', $id);
         $query = $this->db->get();
 
         return $query->row();
