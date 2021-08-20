@@ -47,29 +47,28 @@
                 </div>
 
                 <div class="row">
-                    <div class="col-md-6">
+                    <div class="col-md-12">
                         <div class="form-group">
                             <label>Pembagian Tugas OPD</label>
-                            <input class="form-control" type="text" name="sub_agenda" id="sub_agenda" tabindex="5" readonly>
+                            <textarea name="sub_agenda" id="sub_agenda" class="form-control" rows="5" tabindex="5" readonly></textarea>
                         </div>
                     </div>
-                    <div class="col-md-6">
+                </div>
+
+                <div class="row">
+                    <div class="col-md-4">
                         <div class="form-group">
                             <label>Tanggal</label>
                             <input class="form-control" type="date" name="tanggal" id="tanggal" tabindex="6" readonly>
                         </div>
                     </div>
-
-                </div>
-
-                <div class="row">
-                    <div class="col-md-6">
+                    <div class="col-md-4">
                         <div class="form-group">
                             <label>Pukul (WIB) </label>
                             <input class="form-control" type="time" name="pukul" id="pukul" tabindex="7" readonly>
                         </div>
                     </div>
-                    <div class="col-md-6">
+                    <div class="col-md-4">
                         <div class="form-group">
                             <label>Tempat</label>
                             <input class="form-control" type="text" name="tempat" id="tempat" tabindex="8" readonly>
@@ -146,7 +145,7 @@
 
                     <div class="col-md-6">
                         <div class="form-group">
-                            <label>Verifikasi</label>
+                            <label>Status Verifikasi</label>
                             <input class="form-control" type="text" name="status_verifikasi" id="status_verifikasi" tabindex="18" readonly>
                         </div>
 

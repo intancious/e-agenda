@@ -8,6 +8,10 @@ class Agenda extends CI_Controller
     {
         parent::__construct();
         $this->load->model('Agenda_model', 'm_agenda');
+        $this->load->library('Auth');
+
+        $auth = new Auth();
+        $auth->is_logged_in();
     }
 
     public function index()
