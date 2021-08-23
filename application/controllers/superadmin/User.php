@@ -53,7 +53,7 @@ class User extends CI_Controller
     public function update()
     {
         $this->form_validation->set_rules('fullname', 'Nama', 'required');
-        $this->form_validation->set_rules('email', 'Email', 'required|valid_email|is_unique[users.email]');
+        $this->form_validation->set_rules('email', 'Email', 'required|valid_email');
         $this->form_validation->set_rules('password', 'Password', 'required');
         $this->form_validation->set_rules('user_level', 'Hak Akses', 'required');
         if ($this->form_validation->run() == true) {

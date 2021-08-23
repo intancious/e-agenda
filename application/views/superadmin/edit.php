@@ -32,28 +32,12 @@
                 <div class="form-group">
                     <label for="user_level">Hak Akses</label>
                     <select name="user_level" id="user_level" class="form-control">
-                        <?php if ($users->user_level == '1') { ?>
-                            <option value="1" selected>Superadmin</option>
-                            <option value="2">Admin</option>
-                            <option value="3">User</option>
-                        <?php } elseif ($users->user_level == '2') { ?>
-                            <option value="1">Superadmin</option>
-                            <option value="2" selected>Admin</option>
-                            <option value="3">User</option>
-                        <?php } elseif ($users->user_level == '3') { ?>
-                            <option value="1">Superadmin</option>
-                            <option value="2">Admin</option>
-                            <option value="3" selected>User</option>
-                        <?php } else { ?>
-                            <option value="1">Superadmin</option>
-                            <option value="2">Admin</option>
-                            <option value="3">User</option>
-                        <?php } ?>
-
-
+                        <option <?= ($users->user_level_id === "1") ? "selected" : ""; ?> value="1" selected>Superadmin</option>
+                        <option <?= ($users->user_level_id === "2") ? "selected" : ""; ?> value="2">Admin</option>
+                        <option <?= ($users->user_level_id === "3") ? "selected" : ""; ?> value="3">User</option>
                     </select>
                 </div>
-
+                <input type="hidden" name="id" value="<?php echo $users->id; ?>">
                 <button type="submit" class="btn btn-primary">Update</button>
             </form>
         </div>

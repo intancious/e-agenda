@@ -133,7 +133,7 @@ CREATE TABLE `users` (
   PRIMARY KEY (`id`) USING BTREE,
   KEY `users_user_level_id_foreign` (`user_level_id`) USING BTREE,
   CONSTRAINT `users_user_level_id_foreign` FOREIGN KEY (`user_level_id`) REFERENCES `user_levels` (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=8 DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci ROW_FORMAT=DYNAMIC;
+) ENGINE=InnoDB AUTO_INCREMENT=12 DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci ROW_FORMAT=DYNAMIC;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -142,7 +142,7 @@ CREATE TABLE `users` (
 
 LOCK TABLES `users` WRITE;
 /*!40000 ALTER TABLE `users` DISABLE KEYS */;
-INSERT INTO `users` VALUES (1,1,'admin@admin.com','Intan Permatasari','21232f297a57a5a743894a0e4a801fc3','2021-08-23 13:19:21','2021-08-23 13:35:19'),(2,2,'bupati@gmail.com','Ir. H. Hendy Siswanto','c78de339ede23183fc9655b17fd6ba95','2021-08-23 13:22:09','2021-08-23 13:22:09'),(3,2,'wabup@gmail.com','KH. MB Firjaun Barlaman','2f8b68b996832a642955fc488d06f282','2021-08-23 13:22:09','2021-08-23 13:22:09'),(4,1,'sespri1@gmail.com','Sekretaris Bupati','7c18961df6176cbaa3c75702b9f473b7','2021-08-23 13:24:28','2021-08-23 13:24:28'),(5,1,'sespri2@gmail.com','Sekretaris Wakil Bupati','29b15eb2d4183a775d4c60d7eef97614','2021-08-23 13:24:28','2021-08-23 13:24:28'),(6,1,'protokol@gmail.com','Protokol','4873fcef7920451651653d12d3197710','2021-08-23 13:25:38','2021-08-23 13:25:38'),(7,3,'user@gmail.com','User Umum','ee11cbb19052e40b07aac0ca060c23ee','2021-08-23 13:26:09','2021-08-23 13:26:09');
+INSERT INTO `users` VALUES (1,1,'admin@admin.com','Intan Permatasarie','202cb962ac59075b964b07152d234b70','2021-08-23 13:19:21','2021-08-23 13:35:19'),(2,2,'bupati@gmail.com','Ir. H. Hendy Siswanto','c78de339ede23183fc9655b17fd6ba95','2021-08-23 13:22:09','2021-08-23 13:22:09'),(3,2,'wabup@gmail.com','KH. MB Firjaun Barlaman','2f8b68b996832a642955fc488d06f282','2021-08-23 13:22:09','2021-08-23 13:22:09'),(4,1,'sespri1@gmail.com','Sekretaris Bupati','7c18961df6176cbaa3c75702b9f473b7','2021-08-23 13:24:28','2021-08-23 13:24:28'),(5,1,'sespri2@gmail.com','Sekretaris Wakil Bupati','29b15eb2d4183a775d4c60d7eef97614','2021-08-23 13:24:28','2021-08-23 13:24:28'),(6,1,'protokol@gmail.com','Protokol','4873fcef7920451651653d12d3197710','2021-08-23 13:25:38','2021-08-23 13:25:38'),(7,3,'user@gmail.com','User Umum','ee11cbb19052e40b07aac0ca060c23ee','2021-08-23 13:26:09','2021-08-23 13:26:09'),(8,2,'rosid321@gmail.com','Fathor Rosid Damayanti','827ccb0eea8a706c4c34a16891f84e7b','2021-08-23 21:17:45','2021-08-23 21:17:45'),(9,3,'damayanti@gmail.com','Damayanti ','202cb962ac59075b964b07152d234b70','2021-08-23 21:45:06','2021-08-23 21:45:06'),(11,3,'intan@gmail.com','intannyettt','827ccb0eea8a706c4c34a16891f84e7b','2021-08-23 23:44:19','2021-08-23 23:44:19');
 /*!40000 ALTER TABLE `users` ENABLE KEYS */;
 UNLOCK TABLES;
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
@@ -155,4 +155,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2021-08-23 21:15:28
+-- Dump completed on 2021-08-23 23:48:58

@@ -5,9 +5,7 @@ class User_model extends CI_Model
 {
     public function data_users()
     {
-        $this->db->select('*');
-        $this->db->from('users');
-        $query = $this->db->get();
+        $query = $this->db->get_where('users', array('id<>' => (int)$this->session->userdata('id')));
         return $query;
     }
     public function data_levels()
@@ -22,6 +20,7 @@ class User_model extends CI_Model
     {
         $this->db->select('*');
         $this->db->from('user_levels');
+        $this->db->where(array('users.id<>' => (int)$this->session->userdata('id')));
         $this->db->join('users', 'users.user_level_id = user_levels.id');
         $query = $this->db->get();
         return $query;
@@ -41,7 +40,10 @@ class User_model extends CI_Model
     }
     public function update($table, $data, $id)
     {
-        return $this->db->update($table, $data, array('id' => $id));
+        // return $this->db->update($table, $data, array('id' => $id));
+        $this->db->update($table, $data, array('id' => $id));
+        // echo $this->db->last_query();
+        // exit;
     }
     public function delete($table, $id)
     {
