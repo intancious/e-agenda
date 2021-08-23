@@ -14,7 +14,7 @@ class User_model extends CI_Model
     {
         $this->db->select('*');
         $this->db->from('user_levels');
-        $this->db->join('users', 'users.id = user_levels.id');
+        $this->db->join('users', 'users.user_level_id = user_levels.id');
         $query = $this->db->get();
         return $query;
     }
@@ -22,17 +22,29 @@ class User_model extends CI_Model
     {
         $this->db->select('*');
         $this->db->from('user_levels');
-        $this->db->join('users', 'users.id = user_levels.id');
+        $this->db->join('users', 'users.user_level_id = user_levels.id');
         $query = $this->db->get();
         return $query;
     }
     public function save($table, $data)
     {
-        // return $this->db->insert('users', $data);
-        $this->db->insert($table, $data);
+        return $this->db->insert($table, $data);
     }
-    public function getById($id)
+    public function getById($table, $id)
     {
-        return $this->db->get_where($this->table, ["id" => $id])->row();
+        $this->db->where("users.user_level_id", $id);
+        $this->db->select('*');
+        $this->db->from('user_levels');
+        $this->db->join('users', 'users.user_level_id = user_levels.id');
+        $query = $this->db->get()->row();
+        return $query;
+    }
+    public function update($table, $data, $id)
+    {
+        return $this->db->update($table, $data, array('id' => $id));
+    }
+    public function delete($table, $id)
+    {
+        return $this->db->delete($table, array("id" => $id));
     }
 }

@@ -32,9 +32,9 @@
                 <div class="form-group">
                     <label for="user_level">Hak Akses</label>
                     <select name="user_level" id="user_level" class="form-control">
-                        <option value="superadmin">Superadmin</option>
-                        <option value="admin">Admin</option>
-                        <option value="user">User</option>
+                        <option value="1">Superadmin</option>
+                        <option value="2">Admin</option>
+                        <option value="3">User</option>
                     </select>
                 </div>
 
