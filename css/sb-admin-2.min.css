@@ -9924,9 +9924,10 @@ a:focus {
 	}
 }
 .bg-login-image {
-	background: url(logo_pemkab.png);
+	background: url(../logo_pemkab.png);
 	background-position: center;
-	background-size: cover;
+	background-size: auto;
+	background-repeat: no-repeat;
 }
 .bg-register-image {
 	background: url(https://source.unsplash.com/Mv9hjnEUHR4/600x800);

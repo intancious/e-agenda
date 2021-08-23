@@ -7,7 +7,6 @@ class Beranda extends CI_Controller
     {
         parent::__construct();
         $this->load->library('Auth');
-        $this->load->library('Auth');
         if ($this->session->userdata('email') == "") {
             redirect('auth');
         }

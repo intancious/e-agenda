@@ -16,7 +16,7 @@ class User extends CI_Controller
 
     public function index()
     {
-
+        $data['title'] = "User";
         $data['users'] = $this->User_model->data_users()->result();
         $data['user_levels'] = $this->User_model->data_levels()->result();
         $data['join'] = $this->User_model->join()->result();
