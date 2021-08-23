@@ -320,6 +320,10 @@
                     "orderable": false, //set not orderable
                 },
                 {
+                    "targets": [3], //second column
+                    "orderable": false, //set not orderable
+                },
+                {
                     "targets": [4], //fifth column
                     "orderable": false, //set not orderable
                 },

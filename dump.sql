@@ -76,7 +76,7 @@ CREATE TABLE `tb_agenda` (
   `updated_at` datetime NOT NULL DEFAULT current_timestamp() ON UPDATE current_timestamp(),
   `deleted_at` datetime DEFAULT NULL,
   PRIMARY KEY (`id_agenda`) USING BTREE
-) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci ROW_FORMAT=DYNAMIC;
+) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci ROW_FORMAT=DYNAMIC;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -85,7 +85,7 @@ CREATE TABLE `tb_agenda` (
 
 LOCK TABLES `tb_agenda` WRITE;
 /*!40000 ALTER TABLE `tb_agenda` DISABLE KEYS */;
-INSERT INTO `tb_agenda` VALUES (1,'Vaksinasi Gratis Untuk Warga Kecamatan Silo','Peninjauan Langsung','Pemkab Jember','Bupati','1. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged.\r\n2. Lorem Ipsum has been the industry\'s standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.\r\n3. Lorem Ipsum is simply dummy text of the printing and typesetting industry. ','2021-08-23','08:38:00','Kecamatan Silo','Busana Muslim','Lorem Ipsum','Lorem Ipsum','Lorem Ipsum','Lorem Ipsum','Lorem Ipsum','Lorem Ipsum','Lorem Ipsum','1629682785190.pdf','1629682785190.jpg',1,1,'1','2021-08-23 08:39:45','2021-08-23 08:40:29',NULL);
+INSERT INTO `tb_agenda` VALUES (1,'Vaksinasi Gratis Untuk Warga Kecamatan Silo','Peninjauan Langsung','Pemkab Jember','Bupati','1. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged.\r\n2. Lorem Ipsum has been the industry\'s standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.\r\n3. Lorem Ipsum is simply dummy text of the printing and typesetting industry. ','2021-08-23','08:38:00','Kecamatan Silo','Busana Muslim','Lorem Ipsum','Lorem Ipsum','Lorem Ipsum','Lorem Ipsum','Lorem Ipsum','Lorem Ipsum','Lorem Ipsum','1629682785190.pdf','1629682785190.jpg',1,1,'1','2021-08-23 08:39:45','2021-08-23 13:33:03',NULL),(2,'testing','testing','testing','Wakil Bupati','testing','2021-08-24','14:31:00','testing','testing','testing','testing','testing','testing','testing','testing','testing','1629703944176.pdf','1629703944176.jpg',3,1,'5','2021-08-23 14:32:24','2021-08-23 14:33:24',NULL);
 /*!40000 ALTER TABLE `tb_agenda` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -111,7 +111,7 @@ CREATE TABLE `user_levels` (
 
 LOCK TABLES `user_levels` WRITE;
 /*!40000 ALTER TABLE `user_levels` DISABLE KEYS */;
-INSERT INTO `user_levels` VALUES (1,'Superadmin',NULL,NULL),(2,'Admin',NULL,NULL),(3,'user',NULL,NULL);
+INSERT INTO `user_levels` VALUES (1,'Superadmin',NULL,NULL),(2,'Admin',NULL,NULL),(3,'User',NULL,NULL);
 /*!40000 ALTER TABLE `user_levels` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -128,12 +128,12 @@ CREATE TABLE `users` (
   `email` varchar(255) COLLATE utf8_unicode_ci NOT NULL,
   `fullname` varchar(255) COLLATE utf8_unicode_ci NOT NULL,
   `password` varchar(255) COLLATE utf8_unicode_ci DEFAULT NULL,
-  `created_at` varchar(255) COLLATE utf8_unicode_ci DEFAULT NULL,
-  `updated_at` varchar(255) COLLATE utf8_unicode_ci DEFAULT NULL,
+  `created_at` datetime NOT NULL DEFAULT current_timestamp(),
+  `updated_at` datetime NOT NULL DEFAULT current_timestamp() ON UPDATE current_timestamp(),
   PRIMARY KEY (`id`) USING BTREE,
   KEY `users_user_level_id_foreign` (`user_level_id`) USING BTREE,
   CONSTRAINT `users_user_level_id_foreign` FOREIGN KEY (`user_level_id`) REFERENCES `user_levels` (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci ROW_FORMAT=DYNAMIC;
+) ENGINE=InnoDB AUTO_INCREMENT=8 DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci ROW_FORMAT=DYNAMIC;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -142,7 +142,7 @@ CREATE TABLE `users` (
 
 LOCK TABLES `users` WRITE;
 /*!40000 ALTER TABLE `users` DISABLE KEYS */;
-INSERT INTO `users` VALUES (1,1,'admin@admin.com','Intan Permatasari','21232f297a57a5a743894a0e4a801fc3',NULL,NULL);
+INSERT INTO `users` VALUES (1,1,'admin@admin.com','Intan Permatasari','21232f297a57a5a743894a0e4a801fc3','2021-08-23 13:19:21','2021-08-23 13:35:19'),(2,2,'bupati@gmail.com','Ir. H. Hendy Siswanto','c78de339ede23183fc9655b17fd6ba95','2021-08-23 13:22:09','2021-08-23 13:22:09'),(3,2,'wabup@gmail.com','KH. MB Firjaun Barlaman','2f8b68b996832a642955fc488d06f282','2021-08-23 13:22:09','2021-08-23 13:22:09'),(4,1,'sespri1@gmail.com','Sekretaris Bupati','7c18961df6176cbaa3c75702b9f473b7','2021-08-23 13:24:28','2021-08-23 13:24:28'),(5,1,'sespri2@gmail.com','Sekretaris Wakil Bupati','29b15eb2d4183a775d4c60d7eef97614','2021-08-23 13:24:28','2021-08-23 13:24:28'),(6,1,'protokol@gmail.com','Protokol','4873fcef7920451651653d12d3197710','2021-08-23 13:25:38','2021-08-23 13:25:38'),(7,3,'user@gmail.com','User Umum','ee11cbb19052e40b07aac0ca060c23ee','2021-08-23 13:26:09','2021-08-23 13:26:09');
 /*!40000 ALTER TABLE `users` ENABLE KEYS */;
 UNLOCK TABLES;
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
@@ -155,4 +155,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2021-08-23  8:50:40
+-- Dump completed on 2021-08-23 14:35:53

@@ -5,7 +5,7 @@ class Agenda_model extends CI_Model
 {
 
     var $table = 'tb_agenda';
-    var $column_order = array('nama_kegiatan', 'tanggal', null); //set column field database for datatable orderable
+    var $column_order = array('nama_kegiatan', 'tanggal'); //set column field database for datatable orderable
     var $column_search = array('nama_kegiatan', 'tanggal'); //set column field database for datatable searchable just firstname , lastname , address are searchable
     var $order = array('id_agenda' => 'desc'); // default order 
 
@@ -17,12 +17,20 @@ class Agenda_model extends CI_Model
 
     private function _get_datatables_query()
     {
-
-        $this->db->select('*');
-        $this->db->from($this->table);
-        $this->db->join('users', 'users.id = tb_agenda.user_id', 'left');
-        $this->db->join('user_levels', 'user_levels.id=users.user_level_id', 'left');
-        $this->db->where('tb_agenda.deleted_at', null);
+        if ($this->session->userdata('user_level_id') == 2) {
+            $this->db->select('*');
+            $this->db->from($this->table);
+            $this->db->join('users', 'users.id = tb_agenda.user_id', 'left');
+            $this->db->join('user_levels', 'user_levels.id=users.user_level_id', 'left');
+            $this->db->where('tb_agenda.deleted_at', null);
+        } else {
+            $this->db->select('*');
+            $this->db->from($this->table);
+            $this->db->join('users', 'users.id = tb_agenda.user_id', 'left');
+            $this->db->join('user_levels', 'user_levels.id=users.user_level_id', 'left');
+            $this->db->where('tb_agenda.deleted_at', null);
+            $this->db->where('tb_agenda.user_id', $this->session->userdata('id'));
+        }
 
         $i = 0;
 
