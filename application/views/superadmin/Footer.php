@@ -25,7 +25,7 @@
          <div class="modal-content">
 
              <div class="modal-body">
-                 <h5>Anda yakin ingin keluar?</h5>
+                 <h6>Anda yakin ingin keluar?</h6>
              </div>
              <div class="modal-footer">
                  <button class="btn btn-secondary" type="button" data-dismiss="modal">Tidak</button>
