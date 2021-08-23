@@ -67,7 +67,7 @@ class User extends CI_Controller
         } else {
             $id = $this->input->post('id');
             $data['users'] = $this->User_model->getById('users', $id);
-            $this->load->view('superadmin/user/edit', $data);
+            $this->load->view('superadmin/edit', $data);
         }
     }
     function delete($id)

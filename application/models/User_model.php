@@ -32,7 +32,7 @@ class User_model extends CI_Model
     }
     public function getById($table, $id)
     {
-        $this->db->where("users.user_level_id", $id);
+        $this->db->where("users.id", $id);
         $this->db->select('*');
         $this->db->from('user_levels');
         $this->db->join('users', 'users.user_level_id = user_levels.id');
