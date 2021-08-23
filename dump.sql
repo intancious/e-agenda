@@ -1,8 +1,8 @@
--- MariaDB dump 10.19  Distrib 10.4.20-MariaDB, for Win64 (AMD64)
+-- MariaDB dump 10.19  Distrib 10.4.19-MariaDB, for Win64 (AMD64)
 --
 -- Host: localhost    Database: agenda
 -- ------------------------------------------------------
--- Server version	10.4.20-MariaDB
+-- Server version	10.4.19-MariaDB
 
 /*!40101 SET @OLD_CHARACTER_SET_CLIENT=@@CHARACTER_SET_CLIENT */;
 /*!40101 SET @OLD_CHARACTER_SET_RESULTS=@@CHARACTER_SET_RESULTS */;
@@ -133,7 +133,7 @@ CREATE TABLE `users` (
   PRIMARY KEY (`id`) USING BTREE,
   KEY `users_user_level_id_foreign` (`user_level_id`) USING BTREE,
   CONSTRAINT `users_user_level_id_foreign` FOREIGN KEY (`user_level_id`) REFERENCES `user_levels` (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=6 DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci ROW_FORMAT=DYNAMIC;
+) ENGINE=InnoDB AUTO_INCREMENT=8 DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci ROW_FORMAT=DYNAMIC;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -155,4 +155,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2021-08-23 21:06:16
+-- Dump completed on 2021-08-23 21:15:28
