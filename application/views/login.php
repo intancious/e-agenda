@@ -17,7 +17,7 @@
 
     <!-- Custom styles for this template-->
     <link href=<?php echo base_url('css/sb-admin-2.min.css') ?> rel="stylesheet">
-
+    <link href=<?php echo base_url('css/custom.css') ?> rel="stylesheet">
 </head>
 
 <body class="bg-gradient-primary">
@@ -48,12 +48,11 @@
                                         </div>
                                         <button type="submit" class="btn btn-primary btn-user btn-block">
                                             Login
-                                        </button>
+                                        </button><br>
                                         <?php if (strlen($this->session->flashdata('error_message')) > 0) { ?>
-                                            <div class="callout callout-danger">
-                                                <h4>Maaf</h4>
+                                            <div class="login-salah">
                                                 <!-- maaf salah login -->
-                                                <p><?= $this->session->flashdata('error_message') ?></p>
+                                                <p>Maaf <?= $this->session->flashdata('error_message') ?></p>
                                             </div>
                                         <?php } ?>
                                     </form>

@@ -32,6 +32,10 @@
     /*padding-right: 10px;*/
 }
 
+.login-salah p {
+color: #ff1500;
+text-align: center;
+}
 
 @media only screen and (min-width: 280px) and (max-width: 540px) {
 .keterangan {
