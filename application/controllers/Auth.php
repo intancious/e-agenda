@@ -18,7 +18,7 @@ class Auth extends CI_Controller
         if ($hasil->num_rows() == 1) {
 
             foreach ($hasil->result() as $sess) {
-                $sess_data['logged_in'] = 'Sudah Loggin';
+                $sess_data['logged_in'] = 'Sudah Login';
                 $sess_data['uid'] = $sess->uid;
                 $sess_data['email'] = $sess->email;
                 $sess_data['level'] = $sess->level;

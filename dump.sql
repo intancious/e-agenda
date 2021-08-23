@@ -1,8 +1,8 @@
--- MariaDB dump 10.19  Distrib 10.4.19-MariaDB, for Win64 (AMD64)
+-- MariaDB dump 10.19  Distrib 10.4.20-MariaDB, for Win64 (AMD64)
 --
 -- Host: localhost    Database: agenda
 -- ------------------------------------------------------
--- Server version	10.4.19-MariaDB
+-- Server version	10.4.20-MariaDB
 
 /*!40101 SET @OLD_CHARACTER_SET_CLIENT=@@CHARACTER_SET_CLIENT */;
 /*!40101 SET @OLD_CHARACTER_SET_RESULTS=@@CHARACTER_SET_RESULTS */;
@@ -55,7 +55,7 @@ CREATE TABLE `tb_agenda` (
   `kategori` varchar(255) COLLATE utf8_unicode_ci NOT NULL,
   `penyelenggara` varchar(255) COLLATE utf8_unicode_ci NOT NULL,
   `agenda` varchar(255) COLLATE utf8_unicode_ci NOT NULL,
-  `sub_agenda` varchar(255) COLLATE utf8_unicode_ci DEFAULT NULL,
+  `sub_agenda` text COLLATE utf8_unicode_ci DEFAULT NULL,
   `tanggal` date NOT NULL,
   `pukul` time NOT NULL,
   `tempat` varchar(255) COLLATE utf8_unicode_ci NOT NULL,
@@ -76,7 +76,7 @@ CREATE TABLE `tb_agenda` (
   `updated_at` datetime NOT NULL DEFAULT current_timestamp() ON UPDATE current_timestamp(),
   `deleted_at` datetime DEFAULT NULL,
   PRIMARY KEY (`id_agenda`) USING BTREE
-) ENGINE=InnoDB AUTO_INCREMENT=7 DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci ROW_FORMAT=DYNAMIC;
+) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci ROW_FORMAT=DYNAMIC;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -85,7 +85,7 @@ CREATE TABLE `tb_agenda` (
 
 LOCK TABLES `tb_agenda` WRITE;
 /*!40000 ALTER TABLE `tb_agenda` DISABLE KEYS */;
-INSERT INTO `tb_agenda` VALUES (1,'Lorem Ipsum is simply dummy text of the printing and typesetting industry','Sosialisasi','Lorem Ipsum','Bupati','Bapak Bupati','2021-08-16','17:35:08','Aula P.B. Sudirman','Batik','Lorem ipsum','Lorem Ipsum has been the industry\'s standard dummy text ever since the 1500s','1. Lorem Ipsum has been the industry\'s standard dummy text ever since the 1500s','1629126359965','Lorem Ipsum','Lorem Ipsum','Lorem Ipsum has been the industry\'s standard dummy text ever since the 1500s. Lorem Ipsum has been the industry\'s standard dummy text ever since the 1500s. Lorem Ipsum has been the industry\'s standard dummy text ever since the 1500s','1628986771001.pdf','1628986771001.pdf',4,2,'Om Harits','2021-08-16 11:39:31','2021-08-19 07:55:34',NULL),(2,'cobas','cobas','Lorem Ipsums','Bupati','cobas','2021-08-27','21:26:00','cobas','cobas','cobas','cobas','1. cobas; 2. cobas; 3. cobas','162912014494623','cobas','cobas','cobas','1629120144946.pdf','16291201449461.pdf',3,1,'Om Harits','2021-08-16 20:22:24','2021-08-19 09:21:18',NULL),(5,'testing','testing','Lorem Ipsum','Wakil Bupati','testing','2021-09-04','22:06:00','testing','testing','testing','testing','testing','1629126151503.PNG','testing','testing','testing','1629126151503.pdf','16291261515031.pdf',4,1,'Om Harits','2021-08-16 22:02:31','2021-08-19 07:55:34','2021-08-18 11:38:07'),(6,'test','test','Lorem Ipsum','Wakil Bupati','test','2021-08-28','16:42:00','test','test','test','test','test','1629193310097.PNG','test','test','test','1629193310097.pdf','16291933100971.pdf',4,1,'Om Harits','2021-08-17 16:41:50','2021-08-19 07:55:34','2021-08-18 10:58:26');
+INSERT INTO `tb_agenda` VALUES (1,'Vaksinasi Gratis Untuk Warga Kecamatan Silo','Peninjauan Langsung','Pemkab Jember','Bupati','1. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged.\r\n2. Lorem Ipsum has been the industry\'s standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.\r\n3. Lorem Ipsum is simply dummy text of the printing and typesetting industry. ','2021-08-23','08:38:00','Kecamatan Silo','Busana Muslim','Lorem Ipsum','Lorem Ipsum','Lorem Ipsum','Lorem Ipsum','Lorem Ipsum','Lorem Ipsum','Lorem Ipsum','1629682785190.pdf','1629682785190.jpg',1,1,'1','2021-08-23 08:39:45','2021-08-23 08:40:29',NULL);
 /*!40000 ALTER TABLE `tb_agenda` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -155,4 +155,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2021-08-19 22:16:06
+-- Dump completed on 2021-08-23  8:50:40

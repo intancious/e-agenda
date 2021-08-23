@@ -101,7 +101,8 @@ class Agenda extends CI_Controller
             'petugas_protokol' => $this->input->post('petugas_protokol'),
             'catatan' => $this->input->post('catatan'),
             'status_agenda' => 3,
-            'status_verifikasi' => 3
+            'status_verifikasi' => 3,
+            'user_id' => $this->session->userdata('id')
         );
 
         if (!empty($_FILES['sambutan']['name'])) {

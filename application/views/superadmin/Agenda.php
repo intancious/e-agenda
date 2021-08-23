@@ -406,7 +406,7 @@
                 $('[name="petugas_protokol"]').val(data.petugas_protokol);
                 $('[name="catatan"]').val(data.catatan);
 
-                if (data.user_level == 'Superadmins' || data.user_level == 'Admins') {
+                if (data.user_level == 'Superadmin' || data.user_level == 'Admin') {
 
                     if (data.sambutan) {
                         $('#file-previewsa').show();
