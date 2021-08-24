@@ -104,7 +104,7 @@
                     <p><strong>Tempat</strong> : Lorem Ipsum</p>
                     <p><strong>Pakaian</strong> : Lorem Ipsum</p>
                 </div>
-                <a href="<?php echo base_url(); ?>" class="btn btn-light btn-sm" style="border-radius: 0;">Lihat Detail</a>
+                <a href="<?php echo base_url(); ?>superadmin/beranda/detail" class="btn btn-light btn-sm" style="border-radius: 0;">Lihat Detail</a>
             </div>
         </div>
     </div>
