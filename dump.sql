@@ -76,7 +76,7 @@ CREATE TABLE `tb_agenda` (
   `updated_at` datetime NOT NULL DEFAULT current_timestamp() ON UPDATE current_timestamp(),
   `deleted_at` datetime DEFAULT NULL,
   PRIMARY KEY (`id_agenda`) USING BTREE
-) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci ROW_FORMAT=DYNAMIC;
+) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci ROW_FORMAT=DYNAMIC;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -85,7 +85,7 @@ CREATE TABLE `tb_agenda` (
 
 LOCK TABLES `tb_agenda` WRITE;
 /*!40000 ALTER TABLE `tb_agenda` DISABLE KEYS */;
-INSERT INTO `tb_agenda` VALUES (1,'Vaksinasi Gratis Untuk Warga Kecamatan Silo','Peninjauan Langsung','Pemkab Jember','Bupati','1. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged.\r\n2. Lorem Ipsum has been the industry\'s standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.\r\n3. Lorem Ipsum is simply dummy text of the printing and typesetting industry. ','2021-08-23','08:38:00','Kecamatan Silo','Busana Muslim','Lorem Ipsum','Lorem Ipsum','Lorem Ipsum','Lorem Ipsum','Lorem Ipsum','Lorem Ipsum','Lorem Ipsum','1629682785190.pdf','1629682785190.jpg',1,1,'1','2021-08-23 08:39:45','2021-08-23 13:33:03',NULL),(2,'testing','testing','testing','Wakil Bupati','testing','2021-08-24','14:31:00','testing','testing','testing','testing','testing','testing','testing','testing','testing','1629703944176.pdf','1629703944176.jpg',3,1,'5','2021-08-23 14:32:24','2021-08-23 14:33:24',NULL);
+INSERT INTO `tb_agenda` VALUES (1,'Vaksinasi Gratis Untuk Warga Kecamatan Silo','Peninjauan Langsung','Pemkab Jember','Bupati','1. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged.\r\n2. Lorem Ipsum has been the industry\'s standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.\r\n3. Lorem Ipsum is simply dummy text of the printing and typesetting industry. ','2021-08-23','08:38:00','Kecamatan Silo','Busana Muslim','Lorem Ipsum','Lorem Ipsum','Lorem Ipsum','Lorem Ipsum','Lorem Ipsum','Lorem Ipsum','Lorem Ipsum','1629682785190.pdf','1629682785190.jpg',1,1,'1','2021-08-23 08:39:45','2021-08-23 13:33:03',NULL),(2,'testings','testings','testings','Bupati','testings','2021-08-26','15:31:00','testings','testings','testings','testings','testings','testings','testings','testings','testings','1629703944176.pdf','1629703944176.jpg',2,2,'5','2021-08-23 14:32:24','2021-08-24 09:55:54','2021-08-24 09:55:54'),(3,'coba','coba','coba','Bupati','coba','2021-08-25','09:57:00','coba','coba','coba','coba','coba','coba','coba','coba','coba','1629773870835.pdf','1629773870835.jpg',3,3,'1','2021-08-24 09:57:50','2021-08-24 09:59:29',NULL);
 /*!40000 ALTER TABLE `tb_agenda` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -155,4 +155,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2021-08-24  9:34:08
+-- Dump completed on 2021-08-24 10:07:58
