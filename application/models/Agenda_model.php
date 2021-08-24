@@ -15,6 +15,17 @@ class Agenda_model extends CI_Model
         $this->load->database();
     }
 
+    public function getAll($opt){
+        if (isset($opt["waktu"])) {
+            $where["tanggal"] = $opt["waktu"];
+        }
+        if (isset($opt["agenda"])) {
+            $where["agenda"] = $opt["agenda"];
+        }
+        $result = $this->db->get_where('tb_agenda',$where)->result();
+        return $result;
+    }
+
     private function _get_datatables_query()
     {
 

@@ -23,4 +23,12 @@ class Beranda extends CI_Controller
         $data['title'] = "Detail Agenda";
         $this->load->view('superadmin/Detail', $data);
     }
+
+    public function getDataAgenda()
+    {
+        $this->load->model('agenda_model');
+        $param = $this->input->post();
+        $data = $this->agenda_model->getAll($param);
+        echo json_encode($data);
+    }
 }
