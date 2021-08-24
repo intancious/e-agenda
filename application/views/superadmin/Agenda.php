@@ -229,7 +229,7 @@
 
         <div class="card-body">
             <div class="table-responsive">
-                <table id="mytable" class="table table-bordered nowrap" id="dataTable" width="100%" cellspacing="0">
+                <table id="mytable" class="table table-bordered nowrap" width="100%" cellspacing="0">
                     <thead>
                         <tr>
                             <th>No</th>
@@ -324,19 +324,19 @@
                     "orderable": false, //set not orderable
                 },
                 {
-                    "targets": [-1], //last column
+                    "targets": [5], //last column
                     "orderable": false, //set not orderable
                 },
                 {
-                    "targets": [-2], //scnd last column
+                    "targets": [6], //scnd last column
                     "orderable": false, //set not orderable
                 },
                 {
-                    "targets": [-3], //thrd last column
+                    "targets": [7], //thrd last column
                     "orderable": false, //set not orderable
                 },
                 {
-                    "targets": [-4], //thrd last column
+                    "targets": [8], //thrd last column
                     "orderable": false, //set not orderable
                 }
             ],
@@ -406,7 +406,7 @@
                 $('[name="petugas_protokol"]').val(data.petugas_protokol);
                 $('[name="catatan"]').val(data.catatan);
 
-                if (data.user_level == 'Superadmins' || data.user_level == 'Admins') {
+                if (data.user_level == 'Superadmin' || data.user_level == 'Admin') {
 
                     if (data.sambutan) {
                         $('#file-previewsa').show();

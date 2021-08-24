@@ -5,8 +5,8 @@ class Agenda_model extends CI_Model
 {
 
     var $table = 'tb_agenda';
-    var $column_order = array('nama_kegiatan', 'tanggal', null); //set column field database for datatable orderable
-    var $column_search = array('nama_kegiatan', 'tanggal'); //set column field database for datatable searchable just firstname , lastname , address are searchable
+    var $column_order = array('nama_kegiatan', 'tempat', 'tanggal', null); //set column field database for datatable orderable
+    var $column_search = array('nama_kegiatan', 'tanggal', 'tempat', 'fullname'); //set column field database for datatable searchable just firstname , lastname , address are searchable
     var $order = array('id_agenda' => 'desc'); // default order 
 
     public function __construct()
