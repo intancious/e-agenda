@@ -65,7 +65,7 @@ class Auth
             ->get('users');
 
         if ($db->num_rows() < 1) {
-            $ci->session->set_flashdata('error_message', "Maaf Anda Belum Login");
+            $ci->session->set_flashdata('error_message', "Anda Belum Login");
             redirect('login');
         }
 
