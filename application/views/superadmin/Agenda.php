@@ -27,7 +27,7 @@
                             <div class="form-group">
                                 <label>Kategori</label>
                                 <input class="form-control" type="text" name="kategori" id="kategori" tabindex="2">
-                                <span class="help-block" style="color: red;"></span>
+                                <!-- <span class="help-block" style="color: red;"></span> -->
                             </div>
                         </div>
                     </div>
@@ -37,7 +37,7 @@
                             <div class="form-group">
                                 <label>Penyelenggara</label>
                                 <input class="form-control" type="text" name="penyelenggara" id="penyelenggara" tabindex="3">
-                                <span class="help-block" style="color: red;"></span>
+                                <!-- <span class="help-block" style="color: red;"></span> -->
                             </div>
                         </div>
                         <div class="col-md-6">
@@ -48,7 +48,7 @@
                                     <option value="Bupati">Bupati</option>
                                     <option value="Wakil Bupati">Wakil Bupati</option>
                                 </select>
-                                <span class="help-block" style="color: red;"></span>
+                                <!-- <span class="help-block" style="color: red;"></span> -->
                             </div>
                         </div>
 
@@ -60,28 +60,31 @@
                                 <label>Pembagian Tugas OPD</label>
                                 <textarea name="sub_agenda" id="sub_agenda" class="form-control" rows="5" tabindex="5"></textarea>
                                 <!-- <input class="form-control" type="text" name="sub_agenda" id="sub_agenda" tabindex="5"> -->
-                                <span class="help-block" style="color: red;"></span>
+
                             </div>
                         </div>
 
                     </div>
 
                     <div class="row">
-                        <div class="col-md-4">
+                        <div class="col-md-6">
                             <div class="form-group">
                                 <label>Tanggal</label>
                                 <input class="form-control" type="date" name="tanggal" id="tanggal" tabindex="6">
-                                <span class="help-block" style="color: red;"></span>
+
                             </div>
                         </div>
-                        <div class="col-md-4">
+                        <div class="col-md-6">
                             <div class="form-group">
                                 <label>Pukul (WIB) </label>
                                 <input class="form-control" type="time" name="pukul" id="pukul" tabindex="7">
-                                <span class="help-block" style="color: red;"></span>
+
                             </div>
                         </div>
-                        <div class="col-md-4">
+                    </div>
+
+                    <div class="row">
+                        <div class="col-md-6">
                             <div class="form-group">
                                 <label>Tempat</label>
                                 <input class="form-control" type="text" name="tempat" id="tempat" tabindex="8">
@@ -91,79 +94,77 @@
                                     <option value="Aula Bawah Timur">Aula Bawah Timur</option>
                                     <option value="Lainnya">Lainnya</option>
                                 </select> -->
-                                <span class="help-block" style="color: red;"></span>
+
                             </div>
                         </div>
-                    </div>
-
-                    <div class="row">
                         <div class="col-md-6">
                             <div class="form-group">
                                 <label>Pakaian</label>
                                 <input class="form-control" type="text" name="pakaian" id="pakaian" tabindex="9">
-                                <span class="help-block" style="color: red;"></span>
+
                             </div>
 
                         </div>
+                    </div>
+
+                    <div class="row">
                         <div class="col-md-6">
                             <div class="form-group">
                                 <label>Undangan</label>
                                 <input class="form-control" type="text" name="undangan" id="undangan" tabindex="10">
-                                <span class="help-block" style="color: red;"></span>
+
                             </div>
                         </div>
-                    </div>
-
-                    <div class="row">
                         <div class="col-md-6">
                             <div class="form-group">
                                 <label>Peran Pimpinan</label>
                                 <input class="form-control" type="text" name="peran_pimpinan" id="peran_pimpinan" tabindex="11">
-                                <span class="help-block" style="color: red;"></span>
+
                             </div>
 
                         </div>
-                        <div class="col-md-6">
-                            <div class="form-group">
-                                <label>Urutan Acara</label>
-                                <input class="form-control" type="text" name="urutan_acara" id="urutan_acara" tabindex="12">
-                                <span class="help-block" style="color: red;"></span>
-                            </div>
-                        </div>
+
                     </div>
 
                     <div class="row">
                         <div class="col-md-6">
                             <div class="form-group">
+                                <label>Susunan Acara</label>
+                                <input class="form-control" type="text" name="urutan_acara" id="urutan_acara" tabindex="12">
+
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="form-group">
                                 <label id="label-filetr">Tata Ruangan</label>
                                 <input class="form-control" type="text" name="tata_ruangan" id="tata_ruangan" tabindex="13">
-                                <span class="help-block" style="color: red;"></span>
+
                             </div>
 
                         </div>
-                        <div class="col-md-6">
+                        <!-- <div class="col-md-6">
                             <div class="form-group">
                                 <label>Pihak Terkait</label>
                                 <input class="form-control" type="text" name="pihak_terkait" id="pihak_terkait" tabindex="14">
                                 <span class="help-block" style="color: red;"></span>
-                            </div>
-                        </div>
+                            </div> Agenda
+                        </div> -->
                     </div>
 
                     <div class="row">
                         <div class="col-md-6">
                             <div class="form-group">
                                 <label>Petugas Protokol</label>
-                                <input class="form-control" type="text" name="petugas_protokol" id="petugas_protokol" tabindex="15">
-                                <span class="help-block" style="color: red;"></span>
+                                <input class="form-control" type="text" name="petugas_protokol" id="petugas_protokol" tabindex="14">
+
                             </div>
 
                         </div>
                         <div class="col-md-6">
                             <div class="form-group">
                                 <label>Catatan</label>
-                                <input class="form-control" type="text" name="catatan" id="catatan" tabindex="16">
-                                <span class="help-block" style="color: red;"></span>
+                                <input class="form-control" type="text" name="catatan" id="catatan" tabindex="15">
+
                             </div>
                         </div>
                     </div>
@@ -173,13 +174,13 @@
                         <div class="col-md-6">
                             <div class="form-group">
                                 <label id="label-filesa">Upload File Sambutan</label>
-                                <input class="form-control" type="file" name="sambutan" id="sambutan" tabindex="17">
+                                <input class="form-control" type="file" name="sambutan" id="sambutan" tabindex="16">
                             </div>
                         </div>
                         <div class="col-md-6">
                             <div class="form-group">
                                 <label id="label-filesu">Upload File Surat</label>
-                                <input class="form-control" type="file" name="surat" id="surat" tabindex="18">
+                                <input class="form-control" type="file" name="surat" id="surat" tabindex="17">
                             </div>
                         </div>
                     </div>
@@ -192,29 +193,23 @@
                                 <span class="help-block" style="color: red;"></span>
                             </div>
                         </div> -->
-                        <div class="col-md-4" id="file-previewsa">
+                        <div class="col-md-6" id="file-previewsa">
                             <div class="form-group">
                                 <label>Lihat Sambutan</label>
                                 <div id="lihatsa"></div>
                             </div>
                         </div>
-                        <div class="col-md-4" id="file-previewsu">
+                        <div class="col-md-6" id="file-previewsu">
                             <div class="form-group">
                                 <label>Lihat Surat</label>
                                 <div id="lihatsu"></div>
                             </div>
                         </div>
-                        <div class="col-md-4" id="file-previewpe">
-                            <div class="form-group">
-                                <label>Pembuat Agenda</label>
-                                <div id="lihatpe"></div>
-                            </div>
-                        </div>
                     </div>
                 </div>
                 <div class="modal-footer">
-                    <button type="button" class="btn btn-primary" id="btnSave" onclick="save()">Simpan</button>
-                    <button type="button" name="btnBatal" id="btnBatal" class="btn btn-secondary">Tutup</button>
+                    <button type="button" class="btn btn-primary" id="btnSave" onclick="save()" tabindex="18">Simpan</button>
+                    <button type="button" name="btnBatal" id="btnBatal" class="btn btn-secondary" tabindex="19">Tutup</button>
                 </div>
             </form>
         </div>
@@ -233,27 +228,25 @@
                     <thead>
                         <tr>
                             <th>No</th>
+                            <th>Tanggal Kegiatan</th>
                             <th>Nama Kegiatan</th>
                             <th>Agenda</th>
-                            <th>Tanggal</th>
                             <th>Tempat</th>
-                            <th>Pembuat Agenda</th>
-                            <th>Status</th>
-                            <th>Verifikasi</th>
-                            <th>Aksi</th>
+                            <th>Status Agenda</th>
+                            <th>Status Verifikasi</th>
+                            <th>Pilihan</th>
                         </tr>
                     </thead>
                     <tfoot>
                         <tr>
                             <th>No</th>
+                            <th>Tanggal Kegiatan</th>
                             <th>Nama Kegiatan</th>
                             <th>Agenda</th>
-                            <th>Tanggal</th>
                             <th>Tempat</th>
-                            <th>Pembuat Agenda</th>
-                            <th>Status</th>
-                            <th>Verifikasi</th>
-                            <th>Aksi</th>
+                            <th>Status Agenda</th>
+                            <th>Status Verifikasi</th>
+                            <th>Pilihan</th>
                         </tr>
                     </tfoot>
                     <tbody>
@@ -316,7 +309,7 @@
                     "orderable": false, //set not orderable
                 },
                 {
-                    "targets": [2], //second column
+                    "targets": [3], //second column
                     "orderable": false, //set not orderable
                 },
                 {
@@ -333,10 +326,6 @@
                 },
                 {
                     "targets": [7], //thrd last column
-                    "orderable": false, //set not orderable
-                },
-                {
-                    "targets": [8], //thrd last column
                     "orderable": false, //set not orderable
                 }
             ],
@@ -366,7 +355,6 @@
         $('.help-block').empty(); // clear error string
         $('#file-previewsa').hide();
         $('#file-previewsu').hide();
-        $('#file-previewpe').hide();
         CKEDITOR.instances['sub_agenda'].setData("");
     }
 
@@ -402,7 +390,7 @@
                 $('[name="peran_pimpinan"]').val(data.peran_pimpinan);
                 $('[name="urutan_acara"]').val(data.urutan_acara);
                 $('[name="tata_ruangan"]').val(data.tata_ruangan);
-                $('[name="pihak_terkait"]').val(data.pihak_terkait);
+                // $('[name="pihak_terkait"]').val(data.pihak_terkait);
                 $('[name="petugas_protokol"]').val(data.petugas_protokol);
                 $('[name="catatan"]').val(data.catatan);
 
@@ -430,24 +418,10 @@
                         $('#lihatsu').text('(Tidak ada surat)');
                     }
 
-                    if (data.fullname) {
-                        $('#file-previewpe').show();
-                        $('#lihatpe').html('<p> ' + data.fullname + '</p>');
-
-                    } else {
-                        $('#lihatpe').text('(Tidak ditemukan)');
-                    }
 
                 } else {
                     $('#file-previewsa').hide();
                     $('#file-previewsu').hide();
-                    if (data.fullname) {
-                        $('#file-previewpe').show();
-                        $('#lihatpe').html('<p> ' + data.fullname + '</p>');
-
-                    } else {
-                        $('#lihatpe').text('(Tidak ditemukan)');
-                    }
                 }
 
 

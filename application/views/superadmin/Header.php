@@ -9,7 +9,7 @@
     <meta name="description" content="">
     <meta name="author" content="">
 
-    <title>E-AGENDA | <?php echo $title; ?></title>
+    <title>KOPIPRO | <?php echo $title; ?></title>
 
     <!-- Custom fonts for this template-->
     <link href="<?= base_url() ?>assets/fontawesome-free/css/all.min.css" rel="stylesheet" type="text/css">
@@ -39,7 +39,7 @@
                 <div class="sidebar-brand-icon">
                     <i class="fas fa-user"></i>
                 </div>
-                <div class="sidebar-brand-text mx-3">E-Agenda</div>
+                <div class="sidebar-brand-text mx-3">KOPIPRO</div>
             </a>
 
             <!-- Divider -->

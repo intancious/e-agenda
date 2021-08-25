@@ -29,11 +29,10 @@ class Agenda extends CI_Controller
             $no++;
             $row = array();
             $row[] = $no;
+            $row[] = $this->tgl_indo(date($agenda->tanggal));
             $row[] = $this->limit_words($agenda->nama_kegiatan, 5) . ' ...';
             $row[] = $agenda->agenda;
-            $row[] = $this->tgl_indo(date($agenda->tanggal));
             $row[] = $agenda->tempat;
-            $row[] = $agenda->fullname;
             if ($agenda->status_agenda == 1)
                 $row[] = '<small class="label label-secondary"> Selesai </small>';
             elseif ($agenda->status_agenda == 2)
@@ -55,10 +54,10 @@ class Agenda extends CI_Controller
             // else
             //     $row[] = '(Tidak ada naskah)';
             //add html for action
-            $row[] = '<a class="btn btn-info btn-sm" href="javascript:void(0)" title="Edit" onclick="edit_agenda(' . "'" . $agenda->id_agenda . "'" . ')"><i class="fas fa-edit"></i></a>
-				  <a class="btn btn-danger btn-sm" href="javascript:void(0)" title="Hapus" onclick="hapus_agenda(' . "'" . $agenda->id_agenda . "'" . ')"><i class="fas fa-trash"></i></a>
+            $row[] = '<a class="btn btn-info btn-sm" href="javascript:void(0)" title="Edit Data" onclick="edit_agenda(' . "'" . $agenda->id_agenda . "'" . ')"><i class="fas fa-edit"></i></a>
+				  <a class="btn btn-danger btn-sm" href="javascript:void(0)" title="Hapus Data" onclick="hapus_agenda(' . "'" . $agenda->id_agenda . "'" . ')"><i class="fas fa-trash"></i></a>
                   <a class="btn btn-warning btn-sm" href="javascript:void(0)" title="Update Status" onclick="edit_status(' . "'" . $agenda->id_agenda . "'" . ')"><i class="fas fa-tasks"></i></a>
-                  <a class="btn btn-success btn-sm" href="javascript:void(0)" title="Verifikasi" onclick="verif_agenda(' . "'" . $agenda->id_agenda . "'" . ')"><i class="fas fa-check"></i></a>';
+                  <a class="btn btn-success btn-sm" href="javascript:void(0)" title="Update Verifikasi" onclick="verif_agenda(' . "'" . $agenda->id_agenda . "'" . ')"><i class="fas fa-check"></i></a>';
 
             $data[] = $row;
         }
@@ -97,7 +96,7 @@ class Agenda extends CI_Controller
             'peran_pimpinan' => $this->input->post('peran_pimpinan'),
             'urutan_acara' => $this->input->post('urutan_acara'),
             'tata_ruangan' => $this->input->post('tata_ruangan'),
-            'pihak_terkait' => $this->input->post('pihak_terkait'),
+            // 'pihak_terkait' => $this->input->post('pihak_terkait'),
             'petugas_protokol' => $this->input->post('petugas_protokol'),
             'catatan' => $this->input->post('catatan'),
             'status_agenda' => 3,
@@ -139,7 +138,7 @@ class Agenda extends CI_Controller
             'peran_pimpinan' => $this->input->post('peran_pimpinan'),
             'urutan_acara' => $this->input->post('urutan_acara'),
             'tata_ruangan' => $this->input->post('tata_ruangan'),
-            'pihak_terkait' => $this->input->post('pihak_terkait'),
+            // 'pihak_terkait' => $this->input->post('pihak_terkait'),
             'petugas_protokol' => $this->input->post('petugas_protokol'),
             'catatan' => $this->input->post('catatan'),
         );
@@ -292,65 +291,23 @@ class Agenda extends CI_Controller
             $data['status'] = FALSE;
         }
 
-        if ($this->input->post('kategori') == '') {
-            $data['inputerror'][] = 'kategori';
-            $data['error_string'][] = 'Kategori tidak boleh kosong';
-            $data['status'] = FALSE;
-        }
+        // if ($this->input->post('kategori') == '') {
+        //     $data['inputerror'][] = 'kategori';
+        //     $data['error_string'][] = 'Kategori tidak boleh kosong';
+        //     $data['status'] = FALSE;
+        // }
 
-        if ($this->input->post('penyelenggara') == '') {
-            $data['inputerror'][] = 'penyelenggara';
-            $data['error_string'][] = 'Penyelenggara tidak boleh kosong';
-            $data['status'] = FALSE;
-        }
+        // if ($this->input->post('penyelenggara') == '') {
+        //     $data['inputerror'][] = 'penyelenggara';
+        //     $data['error_string'][] = 'Penyelenggara tidak boleh kosong';
+        //     $data['status'] = FALSE;
+        // }
 
-        if ($this->input->post('agenda') == '') {
-            $data['inputerror'][] = 'agenda';
-            $data['error_string'][] = 'Agenda tidak boleh kosong';
-            $data['status'] = FALSE;
-        }
-
-        if ($this->input->post('tanggal') == '') {
-            $data['inputerror'][] = 'tanggal';
-            $data['error_string'][] = 'Tanggal tidak boleh kosong';
-            $data['status'] = FALSE;
-        }
-
-        if ($this->input->post('pukul') == '') {
-            $data['inputerror'][] = 'pukul';
-            $data['error_string'][] = 'Pukul tidak boleh kosong';
-            $data['status'] = FALSE;
-        }
-
-        if ($this->input->post('tempat') == '') {
-            $data['inputerror'][] = 'tempat';
-            $data['error_string'][] = 'Tempat tidak boleh kosong';
-            $data['status'] = FALSE;
-        }
-
-        if ($this->input->post('pakaian') == '') {
-            $data['inputerror'][] = 'pakaian';
-            $data['error_string'][] = 'Pakaian tidak boleh kosong';
-            $data['status'] = FALSE;
-        }
-
-        if ($this->input->post('undangan') == '') {
-            $data['inputerror'][] = 'undangan';
-            $data['error_string'][] = 'Undangan tidak boleh kosong';
-            $data['status'] = FALSE;
-        }
-
-        if ($this->input->post('peran_pimpinan') == '') {
-            $data['inputerror'][] = 'peran_pimpinan';
-            $data['error_string'][] = 'Peran pimpinan tidak boleh kosong';
-            $data['status'] = FALSE;
-        }
-
-        if ($this->input->post('urutan_acara') == '') {
-            $data['inputerror'][] = 'urutan_acara';
-            $data['error_string'][] = 'Urutan acara tidak boleh kosong';
-            $data['status'] = FALSE;
-        }
+        // if ($this->input->post('agenda') == '') {
+        //     $data['inputerror'][] = 'agenda';
+        //     $data['error_string'][] = 'Agenda tidak boleh kosong';
+        //     $data['status'] = FALSE;
+        // }
 
         if ($data['status'] === FALSE) {
             echo json_encode($data);
