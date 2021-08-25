@@ -32,10 +32,10 @@ class Agenda extends CI_Controller
             if ($agenda->tanggal == NULL) {
                 $row[] = "<strong style='color: red;'>Belum diinputkan</strong>";
             } else {
-                $row[] = $this->hari_ini(substr($agenda->tanggal, -2)) . ", " . $this->tgl_indo(date($agenda->tanggal));
+                $row[] = $this->hari_ini(date('l', strtotime($agenda->tanggal))) . ", " . $this->tgl_indo(date($agenda->tanggal));
             }
 
-            $row[] = $this->limit_words($agenda->nama_kegiatan, 5) . ' ...';
+            $row[] = $this->limit_words($agenda->nama_kegiatan, 3) . ' ...';
 
             if ($agenda->agenda == NULL) {
                 $row[] = "<strong style='color: red;'>Belum diinputkan</strong>";
@@ -557,36 +557,36 @@ class Agenda extends CI_Controller
         return implode(" ", array_splice($words, 0, $word_limit));
     }
 
-    function hari_ini()
+    function hari_ini($ini)
     {
-        $hari = date("D");
+        $hari = $ini;
 
         switch ($hari) {
-            case 'Sun':
+            case 'Sunday':
                 $hari_ini = "Minggu";
                 break;
 
-            case 'Mon':
+            case 'Monday':
                 $hari_ini = "Senin";
                 break;
 
-            case 'Tue':
+            case 'Tuesday':
                 $hari_ini = "Selasa";
                 break;
 
-            case 'Wed':
+            case 'Wednesday':
                 $hari_ini = "Rabu";
                 break;
 
-            case 'Thu':
+            case 'Thursday':
                 $hari_ini = "Kamis";
                 break;
 
-            case 'Fri':
+            case 'Friday':
                 $hari_ini = "Jumat";
                 break;
 
-            case 'Sat':
+            case 'Saturday':
                 $hari_ini = "Sabtu";
                 break;
 
@@ -596,10 +596,5 @@ class Agenda extends CI_Controller
         }
 
         return "<b>" . $hari_ini . "</b>";
-    }
-
-    function hehe()
-    {
-        echo "Hari ini adalah " . $this->hari_ini();
     }
 }

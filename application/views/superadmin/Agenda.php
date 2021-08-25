@@ -146,7 +146,7 @@
                     <div class="row">
                         <div class="col-md-12">
                             <div class="form-group">
-                                <label id="label-filetr">Tata Ruangan</label>
+                                <label id="label-filetr">Layout Acara</label>
                                 <textarea name="tata_ruangan" id="tata_ruangan" class="form-control" rows="8" tabindex="13"></textarea>
                                 <!-- <input class="form-control" type="text" name="tata_ruangan" id="tata_ruangan" tabindex="13"> -->
 
