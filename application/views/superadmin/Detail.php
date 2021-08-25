@@ -216,12 +216,21 @@
                         <div class="col-md-12">
                             <div class="form-group">
                                 <label>Keterangan</label>
-                                <select name="status_verifikasi" id="status_verifikasi" class="form-control">
-                                    <option value="3" disabled selected>Belum diverifikasi</option>
+                                <select id="verifikasi" name="verifikasi" class="form-control">
+                                    <option value="3" disabled selected>
+                                        Belum diverifikasi
+                                    </option>
                                     <option value="1">Disetujui</option>
                                     <option value="2">Tidak disetujui</option>
                                 </select>
-                                <span class="help-block" style="color: red;"></span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row" id="disposisi" style="display: none;">
+                        <div class="col-md-12">
+                            <div class="form-group">
+                                <label>Disposisi</label>
+                                <input class="form-control" type="text" name="pihak_terkait" id="pihak_terkait">
                             </div>
                         </div>
                     </div>
@@ -235,6 +244,16 @@
     </div>
 </div>
 
+<script type="text/javascript">
+    $("#verifikasi").change(function() {
+        var sel = $("#verifikasi option:selected").val();
+        if (sel == 2) {
+            document.getElementById("disposisi").style.display = "block";
+        } else if (sel == 1) {
+            document.getElementById("disposisi").style.display = "none";
+        }
+    });
+</script>
 </body>
 
 </html>
