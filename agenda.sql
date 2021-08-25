@@ -51,32 +51,32 @@ DROP TABLE IF EXISTS `tb_agenda`;
 /*!40101 SET character_set_client = utf8 */;
 CREATE TABLE `tb_agenda` (
   `id_agenda` int(10) unsigned NOT NULL AUTO_INCREMENT,
-  `nama_kegiatan` varchar(255) COLLATE utf8_unicode_ci NOT NULL,
-  `kategori` varchar(255) COLLATE utf8_unicode_ci NOT NULL,
-  `penyelenggara` varchar(255) COLLATE utf8_unicode_ci NOT NULL,
-  `agenda` varchar(255) COLLATE utf8_unicode_ci NOT NULL,
-  `sub_agenda` text COLLATE utf8_unicode_ci DEFAULT NULL,
-  `tanggal` date NOT NULL,
-  `pukul` time NOT NULL,
-  `tempat` varchar(255) COLLATE utf8_unicode_ci NOT NULL,
-  `pakaian` varchar(255) COLLATE utf8_unicode_ci NOT NULL,
-  `undangan` varchar(255) COLLATE utf8_unicode_ci NOT NULL,
-  `peran_pimpinan` varchar(255) COLLATE utf8_unicode_ci NOT NULL,
-  `urutan_acara` text COLLATE utf8_unicode_ci NOT NULL,
-  `tata_ruangan` varchar(255) COLLATE utf8_unicode_ci DEFAULT NULL,
-  `pihak_terkait` varchar(255) COLLATE utf8_unicode_ci DEFAULT NULL,
-  `petugas_protokol` varchar(255) COLLATE utf8_unicode_ci DEFAULT NULL,
+  `nama_kegiatan` text COLLATE utf8_unicode_ci NOT NULL,
+  `kategori` varchar(255) COLLATE utf8_unicode_ci DEFAULT '-',
+  `penyelenggara` varchar(255) COLLATE utf8_unicode_ci DEFAULT NULL,
+  `agenda` varchar(255) COLLATE utf8_unicode_ci DEFAULT '-',
+  `sub_agenda` longtext COLLATE utf8_unicode_ci DEFAULT NULL,
+  `tanggal` date DEFAULT NULL,
+  `pukul` time DEFAULT NULL,
+  `tempat` varchar(255) COLLATE utf8_unicode_ci DEFAULT '-',
+  `pakaian` varchar(255) COLLATE utf8_unicode_ci DEFAULT '-',
+  `undangan` longtext COLLATE utf8_unicode_ci DEFAULT NULL,
+  `peran_pimpinan` text COLLATE utf8_unicode_ci DEFAULT NULL,
+  `urutan_acara` longtext COLLATE utf8_unicode_ci DEFAULT NULL,
+  `tata_ruangan` longtext COLLATE utf8_unicode_ci DEFAULT NULL,
+  `pihak_terkait` varchar(255) COLLATE utf8_unicode_ci DEFAULT '-',
+  `petugas_protokol` longtext COLLATE utf8_unicode_ci DEFAULT NULL,
   `catatan` text COLLATE utf8_unicode_ci DEFAULT NULL,
   `sambutan` varchar(255) COLLATE utf8_unicode_ci DEFAULT NULL,
-  `surat` varchar(255) COLLATE utf8_unicode_ci NOT NULL,
+  `surat` varchar(255) COLLATE utf8_unicode_ci DEFAULT NULL,
   `status_agenda` int(11) NOT NULL COMMENT '1: selesai, 2: ditunda; 3: belum berjalan; 4: sedang berlangsung',
   `status_verifikasi` int(11) NOT NULL COMMENT '1: Disetujui; 2: Tidak disetujui; 3: Belum diverifikasi',
-  `user_id` varchar(50) COLLATE utf8_unicode_ci NOT NULL,
+  `user_id` int(10) NOT NULL,
   `created_at` datetime NOT NULL DEFAULT current_timestamp(),
   `updated_at` datetime NOT NULL DEFAULT current_timestamp() ON UPDATE current_timestamp(),
   `deleted_at` datetime DEFAULT NULL,
   PRIMARY KEY (`id_agenda`) USING BTREE
-) ENGINE=InnoDB AUTO_INCREMENT=6 DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci ROW_FORMAT=DYNAMIC;
+) ENGINE=InnoDB AUTO_INCREMENT=9 DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci ROW_FORMAT=DYNAMIC;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -85,7 +85,7 @@ CREATE TABLE `tb_agenda` (
 
 LOCK TABLES `tb_agenda` WRITE;
 /*!40000 ALTER TABLE `tb_agenda` DISABLE KEYS */;
-INSERT INTO `tb_agenda` VALUES (1,'Vaksinasi Gratis Untuk Warga Kecamatan Silo','Peninjauan Langsung','Pemkab Jember','Bupati','1. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged.\r\n2. Lorem Ipsum has been the industry\'s standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.\r\n3. Lorem Ipsum is simply dummy text of the printing and typesetting industry. ','2021-08-23','08:38:00','Kecamatan Silo','Busana Muslim','Lorem Ipsum','Lorem Ipsum','Lorem Ipsum','Lorem Ipsum','Lorem Ipsum','Lorem Ipsum','Lorem Ipsum','1629682785190.pdf','1629682785190.jpg',1,1,'1','2021-08-23 08:39:45','2021-08-23 13:33:03',NULL),(2,'testings','testings','testings','Bupati','testings','2021-08-26','15:31:00','testings','testings','testings','testings','testings','testings','testings','testings','testings','1629703944176.pdf','1629703944176.jpg',2,2,'5','2021-08-23 14:32:24','2021-08-24 09:55:54','2021-08-24 09:55:54'),(3,'coba','coba','coba','Bupati','coba','2021-08-25','09:57:00','coba','coba','coba','coba','coba','coba','coba','coba','coba','1629773870835.pdf','1629773870835.jpg',4,1,'4','2021-08-24 09:57:50','2021-08-24 10:21:40',NULL),(4,'jalan sehat berhadian 100$','hiburan rakyat','Mbak Desinta','Wakil Bupati','Mas Rosid : Pembagian Hadiah\r\nMbak Anis : Menyanyi\r\nMas Haritz : Membagikan konsumsi\r\n','2021-08-28','17:55:00','mana ajawes','bebass','mbak desinta','menonton','-','alun\" tengah','mbak desinta','mas wisnu','mas rosid wajib hadir','1629788202376.pdf','16297882023761.pdf',2,2,'1','2021-08-24 13:56:42','2021-08-24 13:58:51',NULL),(5,'agaggaga','jashjdhsajkdhkajs','jhdjaskhdkajd','Bupati','sdkajsdksja','2021-08-29','14:23:00','kjksdjl','kjkjlkjl','klhkjkj','hkhkljkj','jhjhkj','hjkhjhkjhkj','hjghjgjghj','jkhkjhkjnjkk','jhkkjk',NULL,'',3,3,'1','2021-08-24 14:20:02','2021-08-24 14:20:02',NULL);
+INSERT INTO `tb_agenda` VALUES (1,'Vaksinasi Gratis Untuk Warga Kecamatan Silo','Peninjauan Langsung','Pemkab Jember','Bupati','1. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged.\r\n2. Lorem Ipsum has been the industry\'s standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.\r\n3. Lorem Ipsum is simply dummy text of the printing and typesetting industry. ','2021-08-23','08:38:00','Kecamatan Silo','Busana Muslim','Lorem Ipsum','Lorem Ipsum','Lorem Ipsum','Lorem Ipsum','Lorem Ipsum','Lorem Ipsum','Lorem Ipsum','1629682785190.pdf','1629682785190.jpg',1,1,1,'2021-08-23 08:39:45','2021-08-23 13:33:03',NULL),(2,'testings','testings','testings','Bupati','testings','2021-08-26','15:31:00','testings','testings','testings','testings','testings','testings','testings','testings','testings','1629703944176.pdf','1629703944176.jpg',2,2,5,'2021-08-23 14:32:24','2021-08-24 09:55:54','2021-08-24 09:55:54'),(3,'coba','coba','coba','Bupati','coba','2021-08-25','09:57:00','coba','coba','coba','coba','coba','coba','coba','coba','coba','1629773870835.pdf','1629773870835.jpg',4,1,4,'2021-08-24 09:57:50','2021-08-24 10:21:40',NULL),(4,'jalan sehat berhadian 100$','hiburan rakyat','Mbak Desinta','Wakil Bupati','Mas Rosid : Pembagian Hadiah\r\nMbak Anis : Menyanyi\r\nMas Haritz : Membagikan konsumsi\r\n','2021-08-28','17:55:00','mana ajawes','bebass','mbak desinta','menonton','-','alun\" tengah','mbak desinta','mas wisnu','mas rosid wajib hadir','1629788202376.pdf','16297882023761.pdf',2,2,1,'2021-08-24 13:56:42','2021-08-24 13:58:51',NULL),(5,'agaggaga','jashjdhsajkdhkajs','jhdjaskhdkajd','Bupati','sdkajsdksja','2021-08-29','14:23:00','kjksdjl','kjkjlkjl','klhkjkj','hkhkljkj','jhjhkj','hjkhjhkjhkj','hjghjgjghj','jkhkjhkjnjkk','jhkkjk',NULL,'',3,3,1,'2021-08-24 14:20:02','2021-08-24 14:20:02',NULL),(8,'MUSYAWARAH DAERAH ASOSIASI KEPALA DESA KABUPATEN JEMBER TAHUN 2021.  dan PENGUKUHAN PENGURUS ASOSIASI KEPALA DESA KABUPATEN JEMBER MASA BHAKTI TAHUN 2021 S/D TAHUN 2025. ','Sosialisasi','Pemkab Jember','Bupati','1. Satpol PP\r\nMengamankan dan mengawasi keamanan tempat acara & area Pendopo Wahyawibawagraha \r\n\r\n2. Bagian Umum\r\n- Menyiapkan tempat acara di Aula Pendopo Wahyawibawagraha Lt.2\r\n- Penataan meja & kursi sesuai layout\r\n- Gardening\r\n- Sound System\r\n- Podium\r\n\r\n3. Bagian Dispesmasdes\r\n- Menyiapkan materi\r\n- Berkoordinasi dengan Asosiasi Kepala Desa\r\n- Menghadirkan Pengurus Asosiasi Kepala Desa\r\n- Menyiapkan absen daftar hadir & petugasnya acara Musda & acara Pengukuhan\r\n\r\n4. Bagian Protokol dan Komunikasi Pimpinan\r\n- menyiapkan MC dan dirigen\r\n- Penyusunan Standart Operasional Prosedur Acara \r\n- Petugas Protokoler (tata tempat, tata acara)\r\n- Pembuatan undangan VIP\r\n- SMS / WA Center OPD\r\n- Videotron\r\n\r\n5. Dinas Kesehatan\r\n- Penyiapan kelengkapan Swab antigen\r\n\r\n6. Diskominfo\r\n- Penyiapan Media dan tim liputan\r\n- Operator Lagu Kebangsaan Indonesia Raya & Lagu Mars Jember','2021-08-25','18:34:42','Aula Waryaloka Pendopo Wahyawibawagraha lantai 2','- Sipil: Batik \r\n- Pengurus AKD: PDH Khaky','Undangan VIP :\r\n1. Bupati Jember (Musda & Pengukuhan)\r\n\r\nUndangan OPD. Kabupaten Jember dan lainnya :\r\n1. Sekretaris Daerah (Pengukuhan) \r\n2. Ka. Dispemasdes (Musda & Pengukuhan) \r\n3. Kabag. Hukum (Pengukuhan)\r\n2. Peserta Musda & Pengukuhan : 28 orang Kades, diantaranya  sebagai Panitia Pemilihan Pengurus Asosiasi Kepala Desa Kabupaten Jember Tahun 2021 dan sebagai Koordinator Kecamatan (perwakilan seluruh Kades)',NULL,'Rundown : MUSYAWARAH DAERAH ASOSIASI KEPALA DESA KABUPATEN JEMBER TAHUN 2021 sebagai berikut : \r\n\r\n- Pukul 07.55 WIB Bupati Jember menuju lantai 2 Pendopo Waryaloka Wahyawibawagraha \r\n- Pukul 08:00 WIB acara dimulai dengan susunan sebagai berikut :\r\n1. Menyanyikan Lagu Kebangsaan Indonesia Raya dan Lagu Mars Jember. \r\n2. Pembukaan acara. \r\n3. Pembacaan doa oleh Bpk. Farhan.\r\n4. Laporan Ketua Panitia Pemilihan Pengurus Asosiasi Kepala Desa Kabupaten Jember Tahun 2021 oleh Bpk. Sunaryo. \r\n4. Sambutan perwakilan Asosiasi Kepala Desa Provinsi Jawa Timur oleh Bpk. Bisma Pradana. \r\n5. Sambutan Bupati Jember sekaligus membuka secara resmi acara Musyawarah Daerah Asosiasi Kepala Desa Kabupaten Jember Tahun 2021.\r\n6. Acara berhenti sejenak untuk memberikan kesempatan Kepada Bupati Jember meninggalkan lokasi acara. \r\n7. Foto bersama, tentative. \r\n- Doorstop media\r\n- Acara dilanjutkan Musda AKD Kabupaten Jember Tahun 2021 oleh Panitia Musda. \r\n\r\n\r\nRundown : PENGUKUHAN PENGURUS ASOSIASI KEPALA DESA KABUPATEN JEMBER MASA BHAKTI TAHUN 2021 S/D TAHUN 2025.   \r\n\r\n- Pukul 12.55 WIB Bupati Jember menuju lantai 2 pendopo Waryaloka Wahyawibawagraha \r\n- Pukul 13.00 WIB acara dimulai dengan susunan sebagai berikut :\r\n1. Menyanyikan Lagu Kebangsaan Indonesia Raya dan Lagu Mars Jember\r\n2. Pembukaan acara\r\n3. Pembacaan Keputusan Hasil Musyawarah Daerah Asosiasi Kepala Desa Kabupaten Jember Masa Bhakti 2021-2025.\r\n4. Prosesi Pengukuhan Asosiasi Kepala Desa :\r\n- Pengurus Asosiasi Kepala Desa yang akan dikukuhkan dimohon berdiri. \r\n- Hadirin disilahkan berdiri, Bupati Jember disilahkan mengambil tempat. \r\n- Pembacaan Pengukuhan oleh Bupati Jember. \r\n- Bupati Jember disilahkan kembali ketempat, hadirin disilahkan duduk kembali. \r\n- Pengurus Asosiasi Kepala Desa Kabupaten Jember Masa Bhakti Tahun 2021 s/d Tahun 2025 yang sudah dikukuhkan disilahkan   duduk kembali\r\n5. Sambutan Ketua AKD terpilih\r\n6. Bupati Jember. \r\n7. Pembacaan doa oleh Bpk. Farhan. \r\n8. Selesai, Penutupan acara.\r\n9. Foto bersama. \r\n- Doorstop media. \r\n- Acara selesai Bupati dan Ka. Opd meninggalkan lokasi acara\r\n\r\n*Pelaksanaan acara ini mengikuti & memperhatikan syarat Protokol Kesehatan Covid-19.\r\n\r\nCatatan : \r\n-	 Undangan Wajib menyerahkan hasil swab antigen dengan hasil Negatip. \r\n-	 Hasil swab antigen hanya berlaku 1 hari\r\n-	 Swab dapat dilakukan di Poli Kesehatan Pemerintah Kabupaten Jember / Puskesmas terdekat (peserta AKD). \r\n- Mohon hadir ditempat acara 1 (satu) jam sebelum acara dimulai. ','1. Musda AKD: Model Clasroom\r\n2. Pengukuhan pengurus AKD: Model Theatre, dengan posisi: Bupati dan Opd berada disisi barat hadap ke timur. Peserta Musda AKD hadap videotron. ',NULL,'02 Ambon\r\n (+62811-3253-009)\r\n03 Ambon\r\n (+62813-3652-0001)\r\n06 Ambon \r\n(+62851-0077-4299)\r\n08 Ambon\r\n(+62822-5715-8412)','Untuk kalangan sendiri','hehe.pdf','hehe.pdf',3,3,1,'2021-08-25 10:06:09','2021-08-25 10:40:22',NULL);
 /*!40000 ALTER TABLE `tb_agenda` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -155,4 +155,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2021-08-25  9:11:39
+-- Dump completed on 2021-08-25 10:43:34

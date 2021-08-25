@@ -37,7 +37,7 @@
                             <div class="form-group">
                                 <label>Penyelenggara</label>
                                 <input class="form-control" type="text" name="penyelenggara" id="penyelenggara" tabindex="3">
-                                <!-- <span class="help-block" style="color: red;"></span> -->
+                                <span class="help-block" style="color: red;"></span>
                             </div>
                         </div>
                         <div class="col-md-6">

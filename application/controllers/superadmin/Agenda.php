@@ -297,11 +297,11 @@ class Agenda extends CI_Controller
         //     $data['status'] = FALSE;
         // }
 
-        // if ($this->input->post('penyelenggara') == '') {
-        //     $data['inputerror'][] = 'penyelenggara';
-        //     $data['error_string'][] = 'Penyelenggara tidak boleh kosong';
-        //     $data['status'] = FALSE;
-        // }
+        if ($this->input->post('penyelenggara') == '') {
+            $data['inputerror'][] = 'penyelenggara';
+            $data['error_string'][] = 'Penyelenggara tidak boleh kosong';
+            $data['status'] = FALSE;
+        }
 
         // if ($this->input->post('agenda') == '') {
         //     $data['inputerror'][] = 'agenda';
