@@ -50,49 +50,49 @@
 
     }
 
-    let changeAgendaByWaktu = function(elm){
+    let changeAgendaByWaktu = function(elm) {
         temporarydata.waktu = $(elm).val()
         docuemtnready()
     }
-    let changeAgendaByAgenda = function(elm){
+    let changeAgendaByAgenda = function(elm) {
         temporarydata.agenda = $(elm).val()
         docuemtnready()
     }
-    let docuemtnready = function(){
+    let docuemtnready = function() {
         $.ajax({
-            url:"<?=base_url("superadmin/beranda/getDataAgenda")?>",
-            dataType:"JSON",
-            data:temporarydata,
-            method:"POST",
-            success:function(res){
+            url: "<?= base_url("superadmin/beranda/getDataAgenda") ?>",
+            dataType: "JSON",
+            data: temporarydata,
+            method: "POST",
+            success: function(res) {
                 let response = []
                 if (res.length) {
-                    res.map(function(v,i){
+                    res.map(function(v, i) {
                         response.push(`<div class="col-lg-6">
             <div class="card shadow mb-4">
                 <div class="card-header py-3">
                     <div class="row">
                         <div class="col-md-6">
-                            <h6 class="m-0 font-weight-bold text-primary">`+v.tanggal+`</h6>
-                            <h6 class="m-0 font-weight-bold text-primary">`+v.pukul+`</h6>
+                            <h6 class="m-0 font-weight-bold text-primary">` + v.tanggal + `</h6>
+                            <h6 class="m-0 font-weight-bold text-primary">` + v.pukul + `</h6>
                         </div>
                         <div class="col-md-6 keterangan">
-                            <small class="label label-success"> `+v.status_agenda+` </small>
+                            <small class="label label-success"> ` + v.status_agenda + ` </small>
                         </div>
                     </div>
                 </div>
-                <div class="card-body">
-                    <p><strong>Agenda</strong> : `+v.agenda+`</p>
-                    <p><strong>Nama Kegiatan</strong> : `+v.nama_kegiatan+`</p>
-                    <p><strong>Penyelenggara</strong> : `+v.penyelenggara+`</p>
-                    <p><strong>Tempat</strong> : `+v.tempat+`</p>
-                    <p><strong>Pakaian</strong> : `+v.pakaian+`</p>
+                <div class="card-body" style="text-align:justify">
+                    <p><strong>Agenda</strong> : ` + v.agenda + `</p>
+                    <p><strong>Nama Kegiatan</strong> : ` + v.nama_kegiatan + `</p>
+                    <p><strong>Penyelenggara</strong> : ` + v.penyelenggara + `</p>
+                    <p><strong>Tempat</strong> : ` + v.tempat + `</p>
+                    <p><strong>Disposisi</strong> : ` + v.pihak_terkait + `</p>
                 </div>
-                <a href="<?=base_url("superadmin/beranda/detail"); ?>" class="btn btn-light btn-sm" style="border-radius: 0;">Lihat Detail</a>
+                <a href="<?= base_url("superadmin/beranda/detail"); ?>" class="btn btn-light btn-sm" style="border-radius: 0;">Lihat Detail</a>
             </div>
         </div>`)
                     })
-                }else{
+                } else {
                     response.push(`<div class="col-lg-12">
             <div class="card shadow mb-4">
                 <div class="card-body">
@@ -107,9 +107,8 @@
     }
 
     docuemtnready()
-
-    
 </script>
 
 </body>
+
 </html>

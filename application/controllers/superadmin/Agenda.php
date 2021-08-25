@@ -32,7 +32,7 @@ class Agenda extends CI_Controller
             if ($agenda->tanggal == NULL) {
                 $row[] = "<strong style='color: red;'>Belum diinputkan</strong>";
             } else {
-                $row[] = $this->tgl_indo(date($agenda->tanggal));
+                $row[] = $this->hari_ini(substr($agenda->tanggal, -2)) . ", " . $this->tgl_indo(date($agenda->tanggal));
             }
 
             $row[] = $this->limit_words($agenda->nama_kegiatan, 5) . ' ...';
@@ -555,5 +555,51 @@ class Agenda extends CI_Controller
     {
         $words = explode(" ", $string);
         return implode(" ", array_splice($words, 0, $word_limit));
+    }
+
+    function hari_ini()
+    {
+        $hari = date("D");
+
+        switch ($hari) {
+            case 'Sun':
+                $hari_ini = "Minggu";
+                break;
+
+            case 'Mon':
+                $hari_ini = "Senin";
+                break;
+
+            case 'Tue':
+                $hari_ini = "Selasa";
+                break;
+
+            case 'Wed':
+                $hari_ini = "Rabu";
+                break;
+
+            case 'Thu':
+                $hari_ini = "Kamis";
+                break;
+
+            case 'Fri':
+                $hari_ini = "Jumat";
+                break;
+
+            case 'Sat':
+                $hari_ini = "Sabtu";
+                break;
+
+            default:
+                $hari_ini = "Tidak di ketahui";
+                break;
+        }
+
+        return "<b>" . $hari_ini . "</b>";
+    }
+
+    function hehe()
+    {
+        echo "Hari ini adalah " . $this->hari_ini();
     }
 }
