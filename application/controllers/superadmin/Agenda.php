@@ -29,10 +29,26 @@ class Agenda extends CI_Controller
             $no++;
             $row = array();
             $row[] = $no;
-            $row[] = $this->tgl_indo(date($agenda->tanggal));
+            if ($agenda->tanggal == NULL) {
+                $row[] = "<strong style='color: red;'>Belum diinputkan</strong>";
+            } else {
+                $row[] = $this->tgl_indo(date($agenda->tanggal));
+            }
+
             $row[] = $this->limit_words($agenda->nama_kegiatan, 5) . ' ...';
-            $row[] = $agenda->agenda;
-            $row[] = $agenda->tempat;
+
+            if ($agenda->agenda == NULL) {
+                $row[] = "<strong style='color: red;'>Belum diinputkan</strong>";
+            } else {
+                $row[] = $agenda->agenda;
+            }
+
+            if ($agenda->tempat == NULL) {
+                $row[] = "<strong style='color: red;'>Belum diinputkan</strong>";
+            } else {
+                $row[] = $this->limit_words($agenda->tempat, 2) . ' ...';
+            }
+
             if ($agenda->status_agenda == 1)
                 $row[] = '<small class="label label-secondary"> Selesai </small>';
             elseif ($agenda->status_agenda == 2)
