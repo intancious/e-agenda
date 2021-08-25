@@ -16,31 +16,32 @@
                 <input type="hidden" value="" name="id_agenda" />
                 <div class="modal-body">
                     <div class="row">
-                        <div class="col-md-6">
+                        <div class="col-md-12">
                             <div class="form-group">
                                 <label>Nama Kegiatan</label>
-                                <input class="form-control" type="text" name="nama_kegiatan" id="nama_kegiatan" tabindex="1">
+                                <textarea name="nama_kegiatan" id="nama_kegiatan" class="form-control" rows="2" tabindex="1"></textarea>
+                                <!-- <input class="form-control" type="text" name="nama_kegiatan" id="nama_kegiatan" tabindex="1"> -->
                                 <span class="help-block" style="color: red;"></span>
-                            </div>
-                        </div>
-                        <div class="col-md-6">
-                            <div class="form-group">
-                                <label>Kategori</label>
-                                <input class="form-control" type="text" name="kategori" id="kategori" tabindex="2">
-                                <!-- <span class="help-block" style="color: red;"></span> -->
                             </div>
                         </div>
                     </div>
 
                     <div class="row">
-                        <div class="col-md-6">
+                        <div class="col-md-4">
                             <div class="form-group">
                                 <label>Penyelenggara</label>
-                                <input class="form-control" type="text" name="penyelenggara" id="penyelenggara" tabindex="3">
+                                <input class="form-control" type="text" name="penyelenggara" id="penyelenggara" tabindex="2">
                                 <span class="help-block" style="color: red;"></span>
                             </div>
                         </div>
-                        <div class="col-md-6">
+                        <div class="col-md-4">
+                            <div class="form-group">
+                                <label>Kategori</label>
+                                <input class="form-control" type="text" name="kategori" id="kategori" tabindex="3">
+                                <!-- <span class="help-block" style="color: red;"></span> -->
+                            </div>
+                        </div>
+                        <div class="col-md-4">
                             <div class="form-group">
                                 <label>Agenda</label>
                                 <select name="agenda" id="agenda" class="form-control" tabindex="4">
@@ -58,7 +59,7 @@
                         <div class="col-md-12">
                             <div class="form-group">
                                 <label>Pembagian Tugas OPD</label>
-                                <textarea name="sub_agenda" id="sub_agenda" class="form-control" rows="5" tabindex="5"></textarea>
+                                <textarea name="sub_agenda" id="sub_agenda" class="form-control" rows="8" tabindex="5"></textarea>
                                 <!-- <input class="form-control" type="text" name="sub_agenda" id="sub_agenda" tabindex="5"> -->
 
                             </div>
@@ -87,7 +88,8 @@
                         <div class="col-md-6">
                             <div class="form-group">
                                 <label>Tempat</label>
-                                <input class="form-control" type="text" name="tempat" id="tempat" tabindex="8">
+                                <textarea name="tempat" id="tempat" class="form-control" rows="3" tabindex="8"></textarea>
+                                <!-- <input class="form-control" type="text" name="tempat" id="tempat" tabindex="8"> -->
                                 <!-- <select name="tempat" id="tempat" class="form-control" tabindex="7">
                                     <option value="" disabled selected>--- Pilih ---</option>
                                     <option value="Aula P.B. Sudirman">Aula P.B. Sudirman</option>
@@ -100,7 +102,8 @@
                         <div class="col-md-6">
                             <div class="form-group">
                                 <label>Pakaian</label>
-                                <input class="form-control" type="text" name="pakaian" id="pakaian" tabindex="9">
+                                <textarea name="pakaian" id="pakaian" class="form-control" rows="3" tabindex="9"></textarea>
+                                <!-- <input class="form-control" type="text" name="pakaian" id="pakaian" tabindex="9"> -->
 
                             </div>
 
@@ -108,36 +111,44 @@
                     </div>
 
                     <div class="row">
-                        <div class="col-md-6">
+                        <div class="col-md-12">
                             <div class="form-group">
                                 <label>Undangan</label>
-                                <input class="form-control" type="text" name="undangan" id="undangan" tabindex="10">
+                                <textarea name="undangan" id="undangan" class="form-control" rows="8" tabindex="10"></textarea>
+                                <!-- <input class="form-control" type="text" name="undangan" id="undangan" tabindex="10"> -->
 
                             </div>
                         </div>
-                        <div class="col-md-6">
+                    </div>
+
+                    <div class="row">
+                        <div class="col-md-12">
                             <div class="form-group">
                                 <label>Peran Pimpinan</label>
                                 <input class="form-control" type="text" name="peran_pimpinan" id="peran_pimpinan" tabindex="11">
 
                             </div>
-
                         </div>
 
                     </div>
 
                     <div class="row">
-                        <div class="col-md-6">
+                        <div class="col-md-12">
                             <div class="form-group">
                                 <label>Susunan Acara</label>
-                                <input class="form-control" type="text" name="urutan_acara" id="urutan_acara" tabindex="12">
+                                <textarea name="urutan_acara" id="urutan_acara" class="form-control" rows="8" tabindex="12"></textarea>
+                                <!-- <input class="form-control" type="text" name="urutan_acara" id="urutan_acara" tabindex="12"> -->
 
                             </div>
                         </div>
-                        <div class="col-md-6">
+                    </div>
+
+                    <div class="row">
+                        <div class="col-md-12">
                             <div class="form-group">
                                 <label id="label-filetr">Tata Ruangan</label>
-                                <input class="form-control" type="text" name="tata_ruangan" id="tata_ruangan" tabindex="13">
+                                <textarea name="tata_ruangan" id="tata_ruangan" class="form-control" rows="8" tabindex="13"></textarea>
+                                <!-- <input class="form-control" type="text" name="tata_ruangan" id="tata_ruangan" tabindex="13"> -->
 
                             </div>
 
@@ -152,15 +163,18 @@
                     </div>
 
                     <div class="row">
-                        <div class="col-md-6">
+                        <div class="col-md-12">
                             <div class="form-group">
                                 <label>Petugas Protokol</label>
-                                <input class="form-control" type="text" name="petugas_protokol" id="petugas_protokol" tabindex="14">
+                                <textarea name="petugas_protokol" id="petugas_protokol" class="form-control" rows="8" tabindex="14"></textarea>
+                                <!-- <input class="form-control" type="text" name="petugas_protokol" id="petugas_protokol" tabindex="14"> -->
 
                             </div>
-
                         </div>
-                        <div class="col-md-6">
+                    </div>
+
+                    <div class="row">
+                        <div class="col-md-12">
                             <div class="form-group">
                                 <label>Catatan</label>
                                 <input class="form-control" type="text" name="catatan" id="catatan" tabindex="15">
@@ -355,7 +369,6 @@
         $('.help-block').empty(); // clear error string
         $('#file-previewsa').hide();
         $('#file-previewsu').hide();
-        CKEDITOR.instances['sub_agenda'].setData("");
     }
 
     function edit_agenda(id) {

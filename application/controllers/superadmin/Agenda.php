@@ -98,23 +98,123 @@ class Agenda extends CI_Controller
     public function ajax_add()
     {
         $this->_validate();
+
+        $kategori = $this->input->post('kategori');
+        $penyelenggara = $this->input->post('penyelenggara');
+        $agenda = $this->input->post('agenda');
+        $subagenda = $this->input->post('sub_agenda');
+        $tanggal = $this->input->post('tanggal');
+        $pukul = $this->input->post('pukul');
+        $tempat = $this->input->post('tempat');
+        $pakaian = $this->input->post('pakaian');
+        $undangan = $this->input->post('undangan');
+        $peranpimpinan = $this->input->post('peran_pimpinan');
+        $urutanacara = $this->input->post('urutan_acara');
+        $tataruangan = $this->input->post('tata_ruangan');
+        $petugasprotokol = $this->input->post('petugas_protokol');
+        $catatan = $this->input->post('catatan');
+
+        if ($kategori == "") {
+            $kategori = NULL;
+        } else {
+            $kategori;
+        }
+
+        if ($penyelenggara == "") {
+            $penyelenggara = NULL;
+        } else {
+            $penyelenggara;
+        }
+
+        if ($agenda == "") {
+            $agenda = NULL;
+        } else {
+            $agenda;
+        }
+
+        if ($subagenda == "") {
+            $subagenda = NULL;
+        } else {
+            $subagenda;
+        }
+
+        if ($tanggal == "") {
+            $tanggal = NULL;
+        } else {
+            $tanggal;
+        }
+
+        if ($pukul == "") {
+            $pukul = NULL;
+        } else {
+            $pukul;
+        }
+
+        if ($tempat == "") {
+            $tempat = NULL;
+        } else {
+            $tempat;
+        }
+
+        if ($pakaian == "") {
+            $pakaian = NULL;
+        } else {
+            $pakaian;
+        }
+
+        if ($undangan == "") {
+            $undangan = NULL;
+        } else {
+            $undangan;
+        }
+
+        if ($peranpimpinan == "") {
+            $peranpimpinan = NULL;
+        } else {
+            $peranpimpinan;
+        }
+
+        if ($urutanacara == "") {
+            $urutanacara = NULL;
+        } else {
+            $urutanacara;
+        }
+
+        if ($tataruangan == "") {
+            $tataruangan = NULL;
+        } else {
+            $tataruangan;
+        }
+
+        if ($petugasprotokol == "") {
+            $petugasprotokol = NULL;
+        } else {
+            $petugasprotokol;
+        }
+
+        if ($catatan == "") {
+            $catatan = NULL;
+        } else {
+            $catatan;
+        }
+
         $data = array(
             'nama_kegiatan' => $this->input->post('nama_kegiatan'),
-            'kategori' => $this->input->post('kategori'),
-            'penyelenggara' => $this->input->post('penyelenggara'),
-            'agenda' => $this->input->post('agenda'),
-            'sub_agenda' => $this->input->post('sub_agenda'),
-            'tanggal' => $this->input->post('tanggal'),
-            'pukul' => $this->input->post('pukul'),
-            'tempat' => $this->input->post('tempat'),
-            'pakaian' => $this->input->post('pakaian'),
-            'undangan' => $this->input->post('undangan'),
-            'peran_pimpinan' => $this->input->post('peran_pimpinan'),
-            'urutan_acara' => $this->input->post('urutan_acara'),
-            'tata_ruangan' => $this->input->post('tata_ruangan'),
+            'kategori' => $kategori,
+            'penyelenggara' => $penyelenggara,
+            'agenda' => $agenda,
+            'sub_agenda' => $subagenda,
+            'tanggal' => $tanggal,
+            'pukul' => $pukul,
+            'tempat' => $tempat,
+            'pakaian' => $pakaian,
+            'undangan' => $undangan,
+            'peran_pimpinan' => $peranpimpinan,
+            'urutan_acara' => $urutanacara,
+            'tata_ruangan' => $tataruangan,
             // 'pihak_terkait' => $this->input->post('pihak_terkait'),
-            'petugas_protokol' => $this->input->post('petugas_protokol'),
-            'catatan' => $this->input->post('catatan'),
+            'petugas_protokol' => $petugasprotokol,
+            'catatan' => $catatan,
             'status_agenda' => 3,
             'status_verifikasi' => 3,
             'user_id' => $this->session->userdata('id')
@@ -140,23 +240,122 @@ class Agenda extends CI_Controller
     public function ajax_update()
     {
         $this->_validate();
+        $kategori = $this->input->post('kategori');
+        $penyelenggara = $this->input->post('penyelenggara');
+        $agenda = $this->input->post('agenda');
+        $subagenda = $this->input->post('sub_agenda');
+        $tanggal = $this->input->post('tanggal');
+        $pukul = $this->input->post('pukul');
+        $tempat = $this->input->post('tempat');
+        $pakaian = $this->input->post('pakaian');
+        $undangan = $this->input->post('undangan');
+        $peranpimpinan = $this->input->post('peran_pimpinan');
+        $urutanacara = $this->input->post('urutan_acara');
+        $tataruangan = $this->input->post('tata_ruangan');
+        $petugasprotokol = $this->input->post('petugas_protokol');
+        $catatan = $this->input->post('catatan');
+
+        if ($kategori == "") {
+            $kategori = NULL;
+        } else {
+            $kategori;
+        }
+
+        if ($penyelenggara == "") {
+            $penyelenggara = NULL;
+        } else {
+            $penyelenggara;
+        }
+
+        if ($agenda == "") {
+            $agenda = NULL;
+        } else {
+            $agenda;
+        }
+
+        if ($subagenda == "") {
+            $subagenda = NULL;
+        } else {
+            $subagenda;
+        }
+
+        if ($tanggal == "") {
+            $tanggal = NULL;
+        } else {
+            $tanggal;
+        }
+
+        if ($pukul == "") {
+            $pukul = NULL;
+        } else {
+            $pukul;
+        }
+
+        if ($tempat == "") {
+            $tempat = NULL;
+        } else {
+            $tempat;
+        }
+
+        if ($pakaian == "") {
+            $pakaian = NULL;
+        } else {
+            $pakaian;
+        }
+
+        if ($undangan == "") {
+            $undangan = NULL;
+        } else {
+            $undangan;
+        }
+
+        if ($peranpimpinan == "") {
+            $peranpimpinan = NULL;
+        } else {
+            $peranpimpinan;
+        }
+
+        if ($urutanacara == "") {
+            $urutanacara = NULL;
+        } else {
+            $urutanacara;
+        }
+
+        if ($tataruangan == "") {
+            $tataruangan = NULL;
+        } else {
+            $tataruangan;
+        }
+
+        if ($petugasprotokol == "") {
+            $petugasprotokol = NULL;
+        } else {
+            $petugasprotokol;
+        }
+
+        if ($catatan == "") {
+            $catatan = NULL;
+        } else {
+            $catatan;
+        }
+
         $data = array(
             'nama_kegiatan' => $this->input->post('nama_kegiatan'),
-            'kategori' => $this->input->post('kategori'),
-            'penyelenggara' => $this->input->post('penyelenggara'),
-            'agenda' => $this->input->post('agenda'),
-            'sub_agenda' => $this->input->post('sub_agenda'),
-            'tanggal' => $this->input->post('tanggal'),
-            'pukul' => $this->input->post('pukul'),
-            'tempat' => $this->input->post('tempat'),
-            'pakaian' => $this->input->post('pakaian'),
-            'undangan' => $this->input->post('undangan'),
-            'peran_pimpinan' => $this->input->post('peran_pimpinan'),
-            'urutan_acara' => $this->input->post('urutan_acara'),
-            'tata_ruangan' => $this->input->post('tata_ruangan'),
+            'kategori' => $kategori,
+            'penyelenggara' => $penyelenggara,
+            'agenda' => $agenda,
+            'sub_agenda' => $subagenda,
+            'tanggal' => $tanggal,
+            'pukul' => $pukul,
+            'tempat' => $tempat,
+            'pakaian' => $pakaian,
+            'undangan' => $undangan,
+            'peran_pimpinan' => $peranpimpinan,
+            'urutan_acara' => $urutanacara,
+            'tata_ruangan' => $tataruangan,
             // 'pihak_terkait' => $this->input->post('pihak_terkait'),
-            'petugas_protokol' => $this->input->post('petugas_protokol'),
-            'catatan' => $this->input->post('catatan'),
+            'petugas_protokol' => $petugasprotokol,
+            'catatan' => $catatan
         );
 
         if (!empty($_FILES['sambutan']['name'])) {
