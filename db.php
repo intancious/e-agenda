@@ -9,7 +9,7 @@ $database = 'agenda';
 $user = 'root';
 $pass = '';
 $host = 'localhost';
-$dir = dirname(__FILE__) . DS . 'dump.sql';
+$dir = dirname(__FILE__) . DS . 'agenda.sql';
 
 $mysqlDir = 'C:\xampp\mysql\bin';    // Paste your mysql directory here and be happy
 
