@@ -251,6 +251,7 @@
             document.getElementById("disposisi").style.display = "block";
         } else if (sel == 1) {
             document.getElementById("disposisi").style.display = "none";
+
         }
     });
 </script>
