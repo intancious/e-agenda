@@ -72,6 +72,7 @@ class Agenda extends CI_Controller
             //add html for action
             $row[] = '<a class="btn btn-info btn-sm" href="javascript:void(0)" title="Edit Data" onclick="edit_agenda(' . "'" . $agenda->id_agenda . "'" . ')"><i class="fas fa-edit"></i></a>
 				  <a class="btn btn-danger btn-sm" href="javascript:void(0)" title="Hapus Data" onclick="hapus_agenda(' . "'" . $agenda->id_agenda . "'" . ')"><i class="fas fa-trash"></i></a>
+                  <a class="btn btn-secondary btn-sm" href="javascript:void(0)" title="Lihat Data" onclick="lihat_agenda(' . "'" . $agenda->id_agenda . "'" . ')"><i class="fas fa-eye"></i></a>
                   <a class="btn btn-warning btn-sm" href="javascript:void(0)" title="Update Status" onclick="edit_status(' . "'" . $agenda->id_agenda . "'" . ')"><i class="fas fa-tasks"></i></a>
                   <a class="btn btn-success btn-sm" href="javascript:void(0)" title="Update Verifikasi" onclick="verif_agenda(' . "'" . $agenda->id_agenda . "'" . ')"><i class="fas fa-check"></i></a>';
 
@@ -424,6 +425,14 @@ class Agenda extends CI_Controller
         // $this->person->delete_by_id($id);
         $this->m_agenda->update(array('id_agenda' => $id), $data);
         echo json_encode(array("status" => TRUE));
+    }
+
+
+    public function lihat($id)
+    {
+        $data['title'] = "Lihat Agenda";
+        $data['lihat']  = $this->m_agenda->get_lihat_id($id);
+        $this->load->view('superadmin/Lihat', $data);
     }
 
     private function _do_uploadsa()

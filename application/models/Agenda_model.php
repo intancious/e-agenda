@@ -109,6 +109,18 @@ class Agenda_model extends CI_Model
         return $query->row();
     }
 
+    public function get_lihat_id($id)
+    {
+        $this->db->select('*');
+        $this->db->from($this->table);
+        $this->db->join('users', 'users.id = tb_agenda.user_id', 'left');
+        $this->db->join('user_levels', 'user_levels.id=users.user_level_id', 'left');
+        $this->db->where('tb_agenda.id_agenda', $id);
+        $query = $this->db->get();
+
+        return $query->result_array();
+    }
+
     public function save($data)
     {
         $this->db->insert($this->table, $data);
