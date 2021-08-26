@@ -32,10 +32,10 @@ class Agenda extends CI_Controller
             if ($agenda->tanggal == NULL) {
                 $row[] = "<strong style='color: red;'>Belum diinputkan</strong>";
             } else {
-                $row[] = $this->hari_ini(substr($agenda->tanggal, -2)) . ", " . $this->tgl_indo(date($agenda->tanggal));
+                $row[] = $this->hari_ini(date('l', strtotime($agenda->tanggal))) . ", " . $this->tgl_indo(date($agenda->tanggal));
             }
 
-            $row[] = $this->limit_words($agenda->nama_kegiatan, 5) . ' ...';
+            $row[] = $this->limit_words($agenda->nama_kegiatan, 3) . ' ...';
 
             if ($agenda->agenda == NULL) {
                 $row[] = "<strong style='color: red;'>Belum diinputkan</strong>";
@@ -72,6 +72,7 @@ class Agenda extends CI_Controller
             //add html for action
             $row[] = '<a class="btn btn-info btn-sm" href="javascript:void(0)" title="Edit Data" onclick="edit_agenda(' . "'" . $agenda->id_agenda . "'" . ')"><i class="fas fa-edit"></i></a>
 				  <a class="btn btn-danger btn-sm" href="javascript:void(0)" title="Hapus Data" onclick="hapus_agenda(' . "'" . $agenda->id_agenda . "'" . ')"><i class="fas fa-trash"></i></a>
+                  <a class="btn btn-secondary btn-sm" href="javascript:void(0)" title="Lihat Data" onclick="lihat_agenda(' . "'" . $agenda->id_agenda . "'" . ')"><i class="fas fa-eye"></i></a>
                   <a class="btn btn-warning btn-sm" href="javascript:void(0)" title="Update Status" onclick="edit_status(' . "'" . $agenda->id_agenda . "'" . ')"><i class="fas fa-tasks"></i></a>
                   <a class="btn btn-success btn-sm" href="javascript:void(0)" title="Update Verifikasi" onclick="verif_agenda(' . "'" . $agenda->id_agenda . "'" . ')"><i class="fas fa-check"></i></a>';
 
@@ -426,6 +427,14 @@ class Agenda extends CI_Controller
         echo json_encode(array("status" => TRUE));
     }
 
+
+    public function lihat($id)
+    {
+        $data['title'] = "Lihat Agenda";
+        $data['lihat']  = $this->m_agenda->get_lihat_id($id);
+        $this->load->view('superadmin/Lihat', $data);
+    }
+
     private function _do_uploadsa()
     {
         $config['upload_path']          = 'uploads/files/';
@@ -557,36 +566,36 @@ class Agenda extends CI_Controller
         return implode(" ", array_splice($words, 0, $word_limit));
     }
 
-    function hari_ini()
+    function hari_ini($ini)
     {
-        $hari = date("D");
+        $hari = $ini;
 
         switch ($hari) {
-            case 'Sun':
+            case 'Sunday':
                 $hari_ini = "Minggu";
                 break;
 
-            case 'Mon':
+            case 'Monday':
                 $hari_ini = "Senin";
                 break;
 
-            case 'Tue':
+            case 'Tuesday':
                 $hari_ini = "Selasa";
                 break;
 
-            case 'Wed':
+            case 'Wednesday':
                 $hari_ini = "Rabu";
                 break;
 
-            case 'Thu':
+            case 'Thursday':
                 $hari_ini = "Kamis";
                 break;
 
-            case 'Fri':
+            case 'Friday':
                 $hari_ini = "Jumat";
                 break;
 
-            case 'Sat':
+            case 'Saturday':
                 $hari_ini = "Sabtu";
                 break;
 
@@ -596,10 +605,5 @@ class Agenda extends CI_Controller
         }
 
         return "<b>" . $hari_ini . "</b>";
-    }
-
-    function hehe()
-    {
-        echo "Hari ini adalah " . $this->hari_ini();
     }
 }

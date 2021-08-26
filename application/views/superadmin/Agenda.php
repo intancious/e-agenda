@@ -14,213 +14,213 @@
         <div class="card-body" id="form-data" style="display:none;">
             <form action="#" id="form" class="form-horizontal">
                 <input type="hidden" value="" name="id_agenda" />
-                <div class="modal-body">
-                    <div class="row">
-                        <div class="col-md-12">
-                            <div class="form-group">
-                                <label>Nama Kegiatan</label>
-                                <textarea name="nama_kegiatan" id="nama_kegiatan" class="form-control" rows="2" tabindex="1"></textarea>
-                                <!-- <input class="form-control" type="text" name="nama_kegiatan" id="nama_kegiatan" tabindex="1"> -->
-                                <span class="help-block" style="color: red;"></span>
-                            </div>
+                <!-- <div class="modal-body"> -->
+                <div class="row">
+                    <div class="col-md-12">
+                        <div class="form-group">
+                            <label>Nama Kegiatan</label>
+                            <textarea name="nama_kegiatan" id="nama_kegiatan" class="form-control" rows="2" tabindex="1"></textarea>
+                            <!-- <input class="form-control" type="text" name="nama_kegiatan" id="nama_kegiatan" tabindex="1"> -->
+                            <span class="help-block" style="color: red;"></span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="row">
+                    <div class="col-md-4">
+                        <div class="form-group">
+                            <label>Penyelenggara</label>
+                            <input class="form-control" type="text" name="penyelenggara" id="penyelenggara" tabindex="2">
+                            <span class="help-block" style="color: red;"></span>
+                        </div>
+                    </div>
+                    <div class="col-md-4">
+                        <div class="form-group">
+                            <label>Kategori</label>
+                            <input class="form-control" type="text" name="kategori" id="kategori" tabindex="3">
+                            <!-- <span class="help-block" style="color: red;"></span> -->
+                        </div>
+                    </div>
+                    <div class="col-md-4">
+                        <div class="form-group">
+                            <label>Agenda</label>
+                            <select name="agenda" id="agenda" class="form-control" tabindex="4">
+                                <option value="" disabled selected>--- Pilih ---</option>
+                                <option value="Bupati">Bupati</option>
+                                <option value="Wakil Bupati">Wakil Bupati</option>
+                            </select>
+                            <!-- <span class="help-block" style="color: red;"></span> -->
                         </div>
                     </div>
 
-                    <div class="row">
-                        <div class="col-md-4">
-                            <div class="form-group">
-                                <label>Penyelenggara</label>
-                                <input class="form-control" type="text" name="penyelenggara" id="penyelenggara" tabindex="2">
-                                <span class="help-block" style="color: red;"></span>
-                            </div>
-                        </div>
-                        <div class="col-md-4">
-                            <div class="form-group">
-                                <label>Kategori</label>
-                                <input class="form-control" type="text" name="kategori" id="kategori" tabindex="3">
-                                <!-- <span class="help-block" style="color: red;"></span> -->
-                            </div>
-                        </div>
-                        <div class="col-md-4">
-                            <div class="form-group">
-                                <label>Agenda</label>
-                                <select name="agenda" id="agenda" class="form-control" tabindex="4">
-                                    <option value="" disabled selected>--- Pilih ---</option>
-                                    <option value="Bupati">Bupati</option>
-                                    <option value="Wakil Bupati">Wakil Bupati</option>
-                                </select>
-                                <!-- <span class="help-block" style="color: red;"></span> -->
-                            </div>
-                        </div>
+                </div>
 
-                    </div>
+                <div class="row">
+                    <div class="col-md-12">
+                        <div class="form-group">
+                            <label>Pembagian Tugas OPD</label>
+                            <textarea name="sub_agenda" id="sub_agenda" class="form-control" rows="8" tabindex="5"></textarea>
+                            <!-- <input class="form-control" type="text" name="sub_agenda" id="sub_agenda" tabindex="5"> -->
 
-                    <div class="row">
-                        <div class="col-md-12">
-                            <div class="form-group">
-                                <label>Pembagian Tugas OPD</label>
-                                <textarea name="sub_agenda" id="sub_agenda" class="form-control" rows="8" tabindex="5"></textarea>
-                                <!-- <input class="form-control" type="text" name="sub_agenda" id="sub_agenda" tabindex="5"> -->
-
-                            </div>
-                        </div>
-
-                    </div>
-
-                    <div class="row">
-                        <div class="col-md-6">
-                            <div class="form-group">
-                                <label>Tanggal</label>
-                                <input class="form-control" type="date" name="tanggal" id="tanggal" tabindex="6">
-
-                            </div>
-                        </div>
-                        <div class="col-md-6">
-                            <div class="form-group">
-                                <label>Pukul (WIB) </label>
-                                <input class="form-control" type="time" name="pukul" id="pukul" tabindex="7">
-
-                            </div>
                         </div>
                     </div>
 
-                    <div class="row">
-                        <div class="col-md-6">
-                            <div class="form-group">
-                                <label>Tempat</label>
-                                <textarea name="tempat" id="tempat" class="form-control" rows="3" tabindex="8"></textarea>
-                                <!-- <input class="form-control" type="text" name="tempat" id="tempat" tabindex="8"> -->
-                                <!-- <select name="tempat" id="tempat" class="form-control" tabindex="7">
+                </div>
+
+                <div class="row">
+                    <div class="col-md-6">
+                        <div class="form-group">
+                            <label>Tanggal</label>
+                            <input class="form-control" type="date" name="tanggal" id="tanggal" tabindex="6">
+
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+                        <div class="form-group">
+                            <label>Pukul (WIB) </label>
+                            <input class="form-control" type="time" name="pukul" id="pukul" tabindex="7">
+
+                        </div>
+                    </div>
+                </div>
+
+                <div class="row">
+                    <div class="col-md-6">
+                        <div class="form-group">
+                            <label>Tempat</label>
+                            <textarea name="tempat" id="tempat" class="form-control" rows="3" tabindex="8"></textarea>
+                            <!-- <input class="form-control" type="text" name="tempat" id="tempat" tabindex="8"> -->
+                            <!-- <select name="tempat" id="tempat" class="form-control" tabindex="7">
                                     <option value="" disabled selected>--- Pilih ---</option>
                                     <option value="Aula P.B. Sudirman">Aula P.B. Sudirman</option>
                                     <option value="Aula Bawah Timur">Aula Bawah Timur</option>
                                     <option value="Lainnya">Lainnya</option>
                                 </select> -->
 
-                            </div>
                         </div>
-                        <div class="col-md-6">
-                            <div class="form-group">
-                                <label>Pakaian</label>
-                                <textarea name="pakaian" id="pakaian" class="form-control" rows="3" tabindex="9"></textarea>
-                                <!-- <input class="form-control" type="text" name="pakaian" id="pakaian" tabindex="9"> -->
+                    </div>
+                    <div class="col-md-6">
+                        <div class="form-group">
+                            <label>Pakaian</label>
+                            <textarea name="pakaian" id="pakaian" class="form-control" rows="3" tabindex="9"></textarea>
+                            <!-- <input class="form-control" type="text" name="pakaian" id="pakaian" tabindex="9"> -->
 
-                            </div>
+                        </div>
+
+                    </div>
+                </div>
+
+                <div class="row">
+                    <div class="col-md-12">
+                        <div class="form-group">
+                            <label>Undangan</label>
+                            <textarea name="undangan" id="undangan" class="form-control" rows="8" tabindex="10"></textarea>
+                            <!-- <input class="form-control" type="text" name="undangan" id="undangan" tabindex="10"> -->
+
+                        </div>
+                    </div>
+                </div>
+
+                <div class="row">
+                    <div class="col-md-12">
+                        <div class="form-group">
+                            <label>Peran Pimpinan</label>
+                            <input class="form-control" type="text" name="peran_pimpinan" id="peran_pimpinan" tabindex="11">
 
                         </div>
                     </div>
 
-                    <div class="row">
-                        <div class="col-md-12">
-                            <div class="form-group">
-                                <label>Undangan</label>
-                                <textarea name="undangan" id="undangan" class="form-control" rows="8" tabindex="10"></textarea>
-                                <!-- <input class="form-control" type="text" name="undangan" id="undangan" tabindex="10"> -->
+                </div>
 
-                            </div>
+                <div class="row">
+                    <div class="col-md-12">
+                        <div class="form-group">
+                            <label>Susunan Acara</label>
+                            <textarea name="urutan_acara" id="urutan_acara" class="form-control" rows="8" tabindex="12"></textarea>
+                            <!-- <input class="form-control" type="text" name="urutan_acara" id="urutan_acara" tabindex="12"> -->
+
                         </div>
                     </div>
+                </div>
 
-                    <div class="row">
-                        <div class="col-md-12">
-                            <div class="form-group">
-                                <label>Peran Pimpinan</label>
-                                <input class="form-control" type="text" name="peran_pimpinan" id="peran_pimpinan" tabindex="11">
+                <div class="row">
+                    <div class="col-md-12">
+                        <div class="form-group">
+                            <label id="label-filetr">Layout Acara</label>
+                            <textarea name="tata_ruangan" id="tata_ruangan" class="form-control" rows="8" tabindex="13"></textarea>
+                            <!-- <input class="form-control" type="text" name="tata_ruangan" id="tata_ruangan" tabindex="13"> -->
 
-                            </div>
                         </div>
 
                     </div>
-
-                    <div class="row">
-                        <div class="col-md-12">
-                            <div class="form-group">
-                                <label>Susunan Acara</label>
-                                <textarea name="urutan_acara" id="urutan_acara" class="form-control" rows="8" tabindex="12"></textarea>
-                                <!-- <input class="form-control" type="text" name="urutan_acara" id="urutan_acara" tabindex="12"> -->
-
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="row">
-                        <div class="col-md-12">
-                            <div class="form-group">
-                                <label id="label-filetr">Tata Ruangan</label>
-                                <textarea name="tata_ruangan" id="tata_ruangan" class="form-control" rows="8" tabindex="13"></textarea>
-                                <!-- <input class="form-control" type="text" name="tata_ruangan" id="tata_ruangan" tabindex="13"> -->
-
-                            </div>
-
-                        </div>
-                        <!-- <div class="col-md-6">
+                    <!-- <div class="col-md-6">
                             <div class="form-group">
                                 <label>Pihak Terkait</label>
                                 <input class="form-control" type="text" name="pihak_terkait" id="pihak_terkait" tabindex="14">
                                 <span class="help-block" style="color: red;"></span>
                             </div> Agenda
                         </div> -->
-                    </div>
+                </div>
 
-                    <div class="row">
-                        <div class="col-md-12">
-                            <div class="form-group">
-                                <label>Petugas Protokol</label>
-                                <textarea name="petugas_protokol" id="petugas_protokol" class="form-control" rows="8" tabindex="14"></textarea>
-                                <!-- <input class="form-control" type="text" name="petugas_protokol" id="petugas_protokol" tabindex="14"> -->
+                <div class="row">
+                    <div class="col-md-12">
+                        <div class="form-group">
+                            <label>Petugas Protokol</label>
+                            <textarea name="petugas_protokol" id="petugas_protokol" class="form-control" rows="8" tabindex="14"></textarea>
+                            <!-- <input class="form-control" type="text" name="petugas_protokol" id="petugas_protokol" tabindex="14"> -->
 
-                            </div>
                         </div>
                     </div>
+                </div>
 
-                    <div class="row">
-                        <div class="col-md-12">
-                            <div class="form-group">
-                                <label>Catatan</label>
-                                <input class="form-control" type="text" name="catatan" id="catatan" tabindex="15">
+                <div class="row">
+                    <div class="col-md-12">
+                        <div class="form-group">
+                            <label>Catatan</label>
+                            <input class="form-control" type="text" name="catatan" id="catatan" tabindex="15">
 
-                            </div>
                         </div>
                     </div>
+                </div>
 
 
-                    <div class="row">
-                        <div class="col-md-6">
-                            <div class="form-group">
-                                <label id="label-filesa">Upload File Sambutan</label>
-                                <input class="form-control" type="file" name="sambutan" id="sambutan" tabindex="16">
-                            </div>
-                        </div>
-                        <div class="col-md-6">
-                            <div class="form-group">
-                                <label id="label-filesu">Upload File Surat</label>
-                                <input class="form-control" type="file" name="surat" id="surat" tabindex="17">
-                            </div>
+                <div class="row">
+                    <div class="col-md-6">
+                        <div class="form-group">
+                            <label id="label-filesa">Upload File Sambutan</label>
+                            <input class="form-control" type="file" name="sambutan" id="sambutan" tabindex="16">
                         </div>
                     </div>
+                    <div class="col-md-6">
+                        <div class="form-group">
+                            <label id="label-filesu">Upload File Surat</label>
+                            <input class="form-control" type="file" name="surat" id="surat" tabindex="17">
+                        </div>
+                    </div>
+                </div>
 
-                    <div class="row">
-                        <!-- <div class="col-md-4" id="file-previewtr">
+                <div class="row">
+                    <!-- <div class="col-md-4" id="file-previewtr">
                             <div class="form-group">
                                 <label>Lihat Tata Ruangan</label>
                                 <div id="lihattr"></div>
                                 <span class="help-block" style="color: red;"></span>
                             </div>
                         </div> -->
-                        <div class="col-md-6" id="file-previewsa">
-                            <div class="form-group">
-                                <label>Lihat Sambutan</label>
-                                <div id="lihatsa"></div>
-                            </div>
+                    <div class="col-md-6" id="file-previewsa">
+                        <div class="form-group">
+                            <label>Lihat Sambutan</label>
+                            <div id="lihatsa"></div>
                         </div>
-                        <div class="col-md-6" id="file-previewsu">
-                            <div class="form-group">
-                                <label>Lihat Surat</label>
-                                <div id="lihatsu"></div>
-                            </div>
+                    </div>
+                    <div class="col-md-6" id="file-previewsu">
+                        <div class="form-group">
+                            <label>Lihat Surat</label>
+                            <div id="lihatsu"></div>
                         </div>
                     </div>
                 </div>
+                <!-- </div> -->
                 <div class="modal-footer">
                     <button type="button" class="btn btn-primary" id="btnSave" onclick="save()" tabindex="18">Simpan</button>
                     <button type="button" name="btnBatal" id="btnBatal" class="btn btn-secondary" tabindex="19">Tutup</button>
@@ -715,6 +715,10 @@
             });
 
         }
+    }
+
+    function lihat_agenda(data) {
+        window.location = "agenda/lihat/" + data;
     }
 </script>
 
