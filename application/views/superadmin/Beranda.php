@@ -58,7 +58,17 @@
         temporarydata.agenda = $(elm).val()
         docuemtnready()
     }
+
     let docuemtnready = function() {
+        let getStatusName = function(status) {
+            let list_status = [
+                "Selesai",
+                "Ditunda",
+                "Belum Berjalan",
+                "Sedang Berlangsung",
+            ]
+            return list_status[parseFloat(status) - 1];
+        }
         $.ajax({
             url: "<?= base_url("superadmin/beranda/getDataAgenda") ?>",
             dataType: "JSON",
@@ -77,7 +87,7 @@
                             <h6 class="m-0 font-weight-bold text-primary">` + v.pukul + `</h6>
                         </div>
                         <div class="col-md-6 keterangan">
-                            <small class="label label-success"> ` + v.status_agenda + ` </small>
+                            <small class="label label-success"> ` + getStatusName(v.status_agenda) + ` </small> 
                         </div>
                     </div>
                 </div>
@@ -88,7 +98,7 @@
                     <p><strong>Tempat</strong> : ` + v.tempat + `</p>
                     <p><strong>Disposisi</strong> : ` + v.pihak_terkait + `</p>
                 </div>
-                <a href="<?= base_url("superadmin/beranda/detail"); ?>" class="btn btn-light btn-sm" style="border-radius: 0;">Lihat Detail</a>
+                <a href="<?= base_url("superadmin/beranda/detail/"); ?>` + v.id_agenda + `" class="btn btn-light btn-sm" style="border-radius: 0;">Lihat Detail</a>
             </div>
         </div>`)
                     })

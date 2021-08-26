@@ -20,9 +20,19 @@ class Beranda extends CI_Controller
         $this->load->view('superadmin/Beranda', $data);
     }
 
-    public function detail()
+    public function detail($id = null)
     {
         $data['title'] = "Detail Agenda";
+        $this->load->model('Beranda_model');
+        $data['agenda'] = $this->Beranda_model->tampil_agenda($id);
+        if (count($data['agenda'])) {
+            $data['agenda'] = $data['agenda'][0];
+        } else {
+            redirect(base_url("superadmin/beranda"));
+        }
+
+        // var_dump($data['agenda']);
+        // die;
         $this->load->view('superadmin/Detail', $data);
     }
 

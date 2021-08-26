@@ -17,6 +17,7 @@ class Agenda_model extends CI_Model
 
     public function getAll($opt)
     {
+        $where = array();
         if (isset($opt["waktu"])) {
             $where["tanggal"] = $opt["waktu"];
         }
