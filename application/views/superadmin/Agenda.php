@@ -289,17 +289,17 @@
         timer: 3000
     });
 
+    $("#btnBatal").click(function() {
+        $('#form-data').slideUp(500);
+        $('html, body').animate({
+            scrollTop: 0
+        }, 'slow');
+        $('#judulBtn').html('<button class="btn btn-light shadow-sm" onclick="add_agenda()"><i class="fas fa-plus"></i> Tambah Agenda</button>');
+
+    });
+
+
     $(document).ready(function() {
-
-        $("#btnBatal").click(function() {
-            $('#form-data').slideUp(500);
-            $('html, body').animate({
-                scrollTop: 0
-            }, 'slow');
-            $('#judulBtn').html('<button class="btn btn-light shadow-sm" onclick="add_agenda()"><i class="fas fa-plus"></i> Tambah Agenda</button>');
-
-        });
-
         //datatables
         table = $('#mytable').DataTable({
 
@@ -357,8 +357,6 @@
         });
 
     });
-
-
 
     function add_agenda() {
         save_method = 'add';
