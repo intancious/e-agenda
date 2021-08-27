@@ -16,7 +16,14 @@ class Beranda extends CI_Controller
 
     public function index()
     {
-        $list = $this->m_beranda->tampil_agenda();
-        echo json_encode($list);
+        $data['title'] = "Beranda";
+        $data['list'] = $this->m_beranda->agenda_admin_user();
+        $this->load->view('user/Beranda', $data);
+    }
+
+    public function detail()
+    {
+        $data['title'] = "Detail Agenda";
+        $this->load->view('user/Detail', $data);
     }
 }

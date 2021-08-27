@@ -722,19 +722,40 @@
     }
 </script>
 
-erus berarti yah?value="3">Belum Berjalan</option>
-<option value="4">Sedang Berlangsung</option>
-</select>
-<span class="help-block" style="color: red;"></span>
-</div>
-</div>l </div>
-<div class="modal-footer">
-    <button type="button" class="btn btn-primary" id="btnUp" onclick="up_status()">Simpan</button>
-    <button type="button" class="btn btn-secondary" data-dismiss="modal">Tutup</button>
-</div>
-</foerm>
-</div>
-</div>
+<div class="modal fade" id="modal_form_up" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title">Status Agenda</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <form action="#" id="form_up" class="form-horizontal">
+                <input type="hidden" value="" name="id_agenda" />
+                <div class="modal-body">
+                    <div class="row">
+                        <div class="col-md-12">
+                            <div class="form-group">
+                                <label>Keterangan</label>
+                                <select name="status_agenda" id="status_agenda" class="form-control">
+                                    <option value="1">Selesai</option>
+                                    <option value="2">Ditunda</option>
+                                    <option value="3">Belum Berjalan</option>
+                                    <option value="4">Sedang Berlangsung</option>
+                                </select>
+                                <span class="help-block" style="color: red;"></span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-primary" id="btnUp" onclick="up_status()">Simpan</button>
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Tutup</button>
+                </div>
+            </form>
+        </div>
+    </div>
 </div>
 
 <div class="modal fade" id="modal_form_verif" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">

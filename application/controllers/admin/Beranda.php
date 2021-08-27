@@ -16,17 +16,15 @@ class Beranda extends CI_Controller
 
     public function index()
     {
-        $list = $this->m_beranda->tampil_agenda();
-        echo json_encode($list);
-        // $no = 0;
-        // foreach ($list as $agenda) {
-        //     $no++;
-        //     echo "No : " . $no . "<br>";
-        //     echo "NIM : " . $agenda->nama_kegiatan . "<br>";
-        //     echo "Nama : " . $agenda->agenda . "<br>";
-        //     echo "Alamat : " . $agenda->tempat . "<br>";
-        //     echo "Jurusan : " . $agenda->tanggal . "<br>";
-        //     echo "<br>";
-        // }
+        // echo json_encode($list);
+        $data['title'] = "Beranda";
+        $data['list'] = $this->m_beranda->agenda_admin_user();
+        $this->load->view('admin/Beranda', $data);
+    }
+
+    public function detail()
+    {
+        $data['title'] = "Detail Agenda";
+        $this->load->view('admin/Detail', $data);
     }
 }

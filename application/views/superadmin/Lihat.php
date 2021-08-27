@@ -192,61 +192,6 @@
 <!-- End of Main Content -->
 <?php include "Footer.php" ?>
 
-<div class="modal fade" id="modal_form_verif" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
-    <div class="modal-dialog" role="document">
-        <div class="modal-content">
-            <div class="modal-header">
-                <h5 class="modal-title">Verifikasi Agenda</h5>
-                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                    <span aria-hidden="true">&times;</span>
-                </button>
-            </div>
-            <form action="#" id="form_verif" class="form-horizontal">
-                <input type="hidden" value="" name="id_agenda" />
-                <div class="modal-body">
-                    <div class="row">
-                        <div class="col-md-12">
-                            <div class="form-group">
-                                <label>Keterangan</label>
-                                <select id="verifikasi" name="verifikasi" class="form-control">
-                                    <option value="3" disabled selected>
-                                        Belum diverifikasi
-                                    </option>
-                                    <option value="1">Disetujui</option>
-                                    <option value="2">Tidak disetujui</option>
-                                </select>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="row" id="disposisi" style="display: none;">
-                        <div class="col-md-12">
-                            <div class="form-group">
-                                <label>Disposisi</label>
-                                <input class="form-control" type="text" name="pihak_terkait" id="pihak_terkait">
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="modal-footer">
-                    <button type="button" class="btn btn-primary" id="btnVerif" onclick="verifikasi()">Simpan</button>
-                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Tutup</button>
-                </div>
-            </form>
-        </div>
-    </div>
-</div>
-
-<script type="text/javascript">
-    $("#verifikasi").change(function() {
-        var sel = $("#verifikasi option:selected").val();
-        if (sel == 2) {
-            document.getElementById("disposisi").style.display = "block";
-        } else if (sel == 1) {
-            document.getElementById("disposisi").style.display = "none";
-
-        }
-    });
-</script>
 </body>
 
 </html>

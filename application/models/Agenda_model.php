@@ -31,20 +31,12 @@ class Agenda_model extends CI_Model
     private function _get_datatables_query()
     {
 
-        if ($this->session->userdata('user_level_id') == 2 || $this->session->userdata('user_level_id') == 3) {
-            $this->db->select('*');
-            $this->db->from($this->table);
-            $this->db->join('users', 'users.id = tb_agenda.user_id', 'left');
-            $this->db->join('user_levels', 'user_levels.id=users.user_level_id', 'left');
-            $this->db->where('tb_agenda.deleted_at', null);
-        } else {
-            $this->db->select('*');
-            $this->db->from($this->table);
-            $this->db->join('users', 'users.id = tb_agenda.user_id', 'left');
-            $this->db->join('user_levels', 'user_levels.id=users.user_level_id', 'left');
-            $this->db->where('tb_agenda.deleted_at', null);
-            $this->db->where('tb_agenda.user_id', $this->session->userdata('id'));
-        }
+        $this->db->select('tb_agenda.*, users.fullname, user_levels.user_level');
+        $this->db->from($this->table);
+        $this->db->join('users', 'users.id = tb_agenda.user_id', 'left');
+        $this->db->join('user_levels', 'user_levels.id=users.user_level_id', 'left');
+        $this->db->where('tb_agenda.deleted_at', null);
+
 
         $i = 0;
 
@@ -100,7 +92,7 @@ class Agenda_model extends CI_Model
 
     public function get_by_id($id)
     {
-        $this->db->select('*');
+        $this->db->select('tb_agenda.*, users.fullname, user_levels.user_level');
         $this->db->from($this->table);
         $this->db->join('users', 'users.id = tb_agenda.user_id', 'left');
         $this->db->join('user_levels', 'user_levels.id=users.user_level_id', 'left');
@@ -112,7 +104,7 @@ class Agenda_model extends CI_Model
 
     public function get_lihat_id($id)
     {
-        $this->db->select('*');
+        $this->db->select('tb_agenda.*, users.fullname, user_levels.user_level');
         $this->db->from($this->table);
         $this->db->join('users', 'users.id = tb_agenda.user_id', 'left');
         $this->db->join('user_levels', 'user_levels.id=users.user_level_id', 'left');
