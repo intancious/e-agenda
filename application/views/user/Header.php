@@ -9,7 +9,7 @@
     <meta name="description" content="">
     <meta name="author" content="">
 
-    <title>KOPIPRO | <?php echo $title; ?></title>
+    <title><?= " " . NAMA_APLIKASI ?></title>
 
     <!-- Custom fonts for this template-->
     <link href="<?= base_url() ?>assets/fontawesome-free/css/all.min.css" rel="stylesheet" type="text/css">

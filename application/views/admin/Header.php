@@ -9,7 +9,7 @@
     <meta name="description" content="">
     <meta name="author" content="">
 
-    <title>KOPIPRO | <?php echo $title; ?></title>
+    <title><?= " " . NAMA_APLIKASI ?></title>
 
     <!-- Custom fonts for this template-->
     <link href="<?= base_url() ?>assets/fontawesome-free/css/all.min.css" rel="stylesheet" type="text/css">
@@ -55,7 +55,7 @@
 
             <!-- Nav Item - Dashboard -->
             <li class="nav-item <?php if (strtolower($this->uri->segment(2)) == 'beranda') echo 'active' ?>">
-                <a class="nav-link" href="<?= base_url() ?>superadmin/beranda">
+                <a class="nav-link" href="<?= base_url() ?>admin/beranda">
                     <i class="fas fa-fw fa-tachometer-alt"></i>
                     <span>Beranda</span></a>
             </li>

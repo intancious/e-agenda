@@ -17,7 +17,7 @@ class Beranda extends CI_Controller
     public function index()
     {
         $data['title'] = "Beranda";
-        $this->load->view('superadmin/Beranda', $data);
+        $this->load->view('admin/Beranda', $data);
     }
 
     public function detail($id = null)
@@ -28,12 +28,12 @@ class Beranda extends CI_Controller
         if (count($data['agenda'])) {
             $data['agenda'] = $data['agenda'][0];
         } else {
-            redirect(base_url("superadmin/beranda"));
+            redirect(base_url("admin/beranda"));
         }
 
         // var_dump($data['agenda']);
         // die;
-        $this->load->view('superadmin/Detail', $data);
+        $this->load->view('admin/Detail', $data);
     }
 
     public function getDataAgenda()
