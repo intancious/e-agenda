@@ -24,6 +24,7 @@ class Agenda_model extends CI_Model
         if (isset($opt["agenda"])) {
             $where["agenda"] = $opt["agenda"];
         }
+        $this->db->order_by('tanggal DESC'); //DESC untuk sorting dari terbesar -> terkecil
         $result = $this->db->get_where('tb_agenda', $where)->result();
         return $result;
     }

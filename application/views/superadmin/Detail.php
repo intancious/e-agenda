@@ -183,7 +183,7 @@
                 <!-- </div> -->
                 <div class="modal-footer">
                     <a class="btn btn-success shadow-sm" href="#" data-toggle="modal" data-target="#modal_form_verif">Verifikasi</a>
-                    <a href="<?php echo base_url(); ?>superadmin/beranda" class="btn btn-secondary">Kembali</a>
+                    <a href="<?= base_url("superadmin/beranda"); ?>" class="btn btn-secondary">Kembali</a>
                 </div>
 
             </form>
@@ -217,13 +217,13 @@
                 </button>
             </div>
             <form action="#" id="form_verif" class="form-horizontal">
-                <input type="hidden" value="" name="id_agenda" />
+                <input type="hidden" value="<?= $agenda->id_agenda; ?>" name="id_agenda" />
                 <div class="modal-body">
                     <div class="row">
                         <div class="col-md-12">
                             <div class="form-group">
                                 <label>Keterangan</label>
-                                <select name="status_verifikasi" id="status_verifikasi" class="form-control">
+                                <select name="status_verifikasi" class="form-control">
                                     <option value="3" disabled selected>Belum diverifikasi</option>
                                     <option value="1">Disetujui</option>
                                     <option value="2">Tidak disetujui</option>
@@ -241,6 +241,67 @@
         </div>
     </div>
 </div>
+<script>
+    const Toast = Swal.mixin({
+        toast: true,
+        position: 'top-end',
+        showConfirmButton: false,
+        timer: 3000
+    });
+
+    function verifikasi() {
+        $('#btnVerif').text('Proses...'); //change button text
+        $('#btnVerif').attr('disabled', true); //set button disable 
+        var url = "<?php echo site_url('superadmin/agenda/ajax_verif') ?>";
+
+        // ajax adding data to database
+        var formData = new FormData($('#form_verif')[0]);
+        $.ajax({
+            url: url,
+            type: "POST",
+            data: formData,
+            contentType: false,
+            processData: false,
+            dataType: "JSON",
+            // beforeSend: () => {
+            //     Swal.fire({
+            //         html: 'Proses',
+            //         onBeforeOpen: () => {
+            //             Swal.showLoading()
+            //         },
+            //         allowOutsideClick: () => !Swal.isLoading()
+            //     });
+            // },
+            success: function(data) {
+
+                if (data.status) //if success close modal and reload ajax table
+                {
+                    $('#modal_form_verif').modal('hide');
+                    Toast.fire({
+                        type: 'success',
+                        title: 'Status verifikasi berhasil diubah'
+                    });
+
+                } else {
+                    for (var i = 0; i < data.inputerror.length; i++) {
+                        $('[name="' + data.inputerror[i] + '"]').parent().parent().addClass('has-error'); //select parent twice to select div form-group class and add has-error class
+                        $('[name="' + data.inputerror[i] + '"]').next().text(data.error_string[i]); //select span help-block class set text error string
+                    }
+                }
+                $('#btnVerif').text('Simpan'); //change button text
+                $('#btnVerif').attr('disabled', false); //set button enable 
+
+
+            },
+            error: function(jqXHR, textStatus, errorThrown) {
+                alert('Error adding / update data');
+                $('#btnVerif').text('Simpan'); //change button text
+                $('#btnVerif').attr('disabled', false); //set button enable 
+
+            }
+        });
+    }
+</script>
 
 </body>
 

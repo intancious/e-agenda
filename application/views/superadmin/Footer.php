@@ -54,3 +54,65 @@
  <!-- Page level custom scripts -->
 
  <script src="<?= base_url() ?>js/demo/datatables-demo.js"></script>
+
+
+ <script>
+     let get_date = function(date_value, format, separator) {
+         separator = (separator === undefined) ? '-' : separator;
+
+         var zero_in_left = function(n) {
+             /*to add zero in single date : ex : 1-9 to 01-09 */
+             var str = "" + n,
+                 pad = "00";
+             return pad.substring(0, pad.length - str.length) + str;
+         };
+         var date_var = new Date();
+         if (date_value) {
+             date_var = new Date(date_value);
+         }
+         var date_time = date_var.getTime();
+         var date_miliseconds = date_var.getMilliseconds();
+         var date_seconds = zero_in_left(date_var.getSeconds());
+         var date_minutes = zero_in_left(date_var.getMinutes());
+         var date_hours = zero_in_left(date_var.getHours());
+         var date_days = date_var.getDay();
+         var date_dates = zero_in_left(date_var.getDate());
+         var date_months_real = zero_in_left(parseInt(date_var.getMonth()) + 1);
+         var date_months = parseInt(date_var.getMonth());
+         var date_years = date_var.getFullYear();
+         var date_list_days = ['Ahad', 'Senin', 'Selasa', 'Rabu', 'Kamis', 'Jum\'at', 'Sabtu'];
+         var date_list_months = ['Jan', 'Feb', 'Mar', 'Apr', 'Mei', 'Jun', 'Jul', 'Agt', 'Sep', 'Okt', 'Nop', 'Des'];
+         var date_list_monthsFull = ['Januari', 'February', 'Mar', 'Apr', 'Mei', 'Jun', 'Jul', 'Agtustus', 'Sep', 'Okt', 'Nop', 'Des'];
+         var pattern = {
+             /*2019-10-10*/
+             default: date_years + separator + date_months_real + separator + date_dates,
+             /*10-10-2019*/
+             default_indonesia: date_dates + separator + date_months_real + separator + date_years,
+             /*10 Agustus 2021*/
+             default_indonesia_fullMonth: date_dates + " " + date_list_monthsFull[date_months] + " " + date_years,
+             /*Ahad, 10 Mei 2019*/
+             indonesia_with_day: date_list_days[date_days] + ', ' + date_dates + ' ' + date_list_months[date_months] +
+                 ' ' + date_years,
+             /*2019-10-10 10:10:10*/
+             default_with_time: date_years + separator + date_months_real + separator + date_dates + ' ' +
+                 date_hours + ':' + date_minutes + ':' + date_seconds,
+             /*10:10:10*/
+             fulltime: date_hours + ':' + date_minutes + ':' + date_seconds,
+             /*Ahad, 10 Mei 2019 10:10:10*/
+             indonesia_with_day_time: date_list_days[date_days] + ', ' + date_dates + ' ' + date_list_months[date_months] + ' ' +
+                 date_years + ' ' + date_hours + ':' + date_minutes + ':' + date_seconds,
+             /*10:10 | Ahad, 10 Mei 2019*/
+             indonesia_with_day_time_format1: date_hours + ':' + date_minutes + ' | ' +
+                 date_list_days[date_days] + ', ' + date_dates + ' ' + date_list_months[date_months] + ' ' + date_years,
+             /*10:10*/
+             time: date_hours + ':' + date_minutes,
+             /*10-May-2019*/
+             indonesia_with_month_name: date_dates + separator + date_list_months[date_months] + separator + date_years,
+             /*8917238971237180*/
+             milisecond: date_time,
+             /*8917238971*/
+             second: Math.floor(date_time / 1000),
+         };
+         return (format) ? pattern[format] : pattern.second;
+     };
+ </script>

@@ -11,7 +11,8 @@ $pass = '';
 $host = 'localhost';
 $dir = dirname(__FILE__) . DS . 'agenda.sql';
 
-$mysqlDir = 'C:\xampp\mysql\bin';    // Paste your mysql directory here and be happy
+// $mysqlDir = 'C:\xampp\mysql\bin';    // Paste your mysql directory here and be happy
+$mysqlDir = 'C:\laragon\bin\mysql\mysql-5.7.33-winx64\bin';    // PC INTAN
 
 // print_r($argv);
 // die();
@@ -20,7 +21,7 @@ if ($argv[1] == 'export') {
     $mysqldump = $mysqlDir . DS . 'mysqldump';
     echo "\nBacking up database to {$dir} ";
     echo "\n...\n";
-    exec("{$mysqldump} --user={$user} --password={$pass} --host={$host} {$database} --result-file={$dir} 2>&1", $output);
+    exec("{$mysqldump} --user={$user} --host={$host} {$database} --result-file={$dir} 2>&1", $output);
 
     foreach ($output as $echo) {
         echo "\n";
@@ -32,7 +33,7 @@ if ($argv[1] == 'import') {
     $mysqldump = $mysqlDir . DS . 'mysql';
     echo "\nImporting database from {$dir} to {$database} ";
     echo "\n...\n";
-    exec("{$mysqldump} --user={$user} --password={$pass} --host={$host} {$database} < {$dir} ", $output);
+    exec("{$mysqldump} --user={$user} --host={$host} {$database} < {$dir} ", $output);
 
     foreach ($output as $echo) {
         echo "\n";
