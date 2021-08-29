@@ -71,7 +71,7 @@
             return list_status[parseFloat(status) - 1];
         }
         $.ajax({
-            url: "<?= base_url("superadmin/beranda/getDataAgenda") ?>",
+            url: "<?= base_url("user/beranda/getDataAgenda") ?>",
             dataType: "JSON",
             data: temporarydata,
             method: "POST",
@@ -99,7 +99,7 @@
                     <p><strong>Tempat</strong> : ` + v.tempat + `</p>
                     <p><strong>Disposisi</strong> : ` + v.pihak_terkait + `</p>
                 </div>
-                <a href="<?= base_url("superadmin/beranda/detail/"); ?>` + v.id_agenda + `" class="btn btn-light btn-sm" style="border-radius: 0;">Lihat Detail</a>
+                <a href="<?= base_url("user/beranda/detail/"); ?>` + v.id_agenda + `" class="btn btn-light btn-sm" style="border-radius: 0;">Lihat Detail</a>
             </div>
         </div>`)
                     })

@@ -55,7 +55,7 @@
 
             <!-- Nav Item - Dashboard -->
             <li class="nav-item <?php if (strtolower($this->uri->segment(2)) == 'beranda') echo 'active' ?>">
-                <a class="nav-link" href="<?= base_url() ?>superadmin/beranda">
+                <a class="nav-link" href="<?= base_url() ?>user/beranda">
                     <i class="fas fa-fw fa-tachometer-alt"></i>
                     <span>Beranda</span></a>
             </li>

@@ -3,13 +3,13 @@ defined('BASEPATH') or exit('No direct script access allowed');
 
 class Beranda extends CI_Controller
 {
-
-    function __construct()
+    public function __construct()
     {
         parent::__construct();
-        $this->load->model('Beranda_model', 'm_beranda');
         $this->load->library('Auth');
-
+        // if ($this->session->userdata('email') == "") {
+        //     redirect('auth');
+        // }
         $auth = new Auth();
         $auth->is_logged_in();
     }
@@ -17,13 +17,30 @@ class Beranda extends CI_Controller
     public function index()
     {
         $data['title'] = "Beranda";
-        $data['list'] = $this->m_beranda->agenda_admin_user();
         $this->load->view('user/Beranda', $data);
     }
 
-    public function detail()
+    public function detail($id = null)
     {
         $data['title'] = "Detail Agenda";
+        $this->load->model('Beranda_model');
+        $data['agenda'] = $this->Beranda_model->tampil_agenda($id);
+        if (count($data['agenda'])) {
+            $data['agenda'] = $data['agenda'][0];
+        } else {
+            redirect(base_url("user/beranda"));
+        }
+
+        // var_dump($data['agenda']);
+        // die;
         $this->load->view('user/Detail', $data);
+    }
+
+    public function getDataAgenda()
+    {
+        $this->load->model('agenda_model');
+        $param = $this->input->post();
+        $data = $this->agenda_model->getAll($param);
+        echo json_encode($data);
     }
 }
