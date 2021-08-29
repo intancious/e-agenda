@@ -84,7 +84,7 @@
                 <div class="card-header py-3">
                     <div class="row">
                         <div class="col-md-6">
-                            <h6 class="m-0 font-weight-bold text-primary">` + get_date(v.tanggal, 'default_indonesia_fullMonth') + `</h6>
+                            <h6 class="m-0 font-weight-bold text-primary">` + get_date(v.tanggal, 'indonesia_with_day') + `</h6>
                             <h6 class="m-0 font-weight-bold text-primary">` + v.pukul + `</h6>
                         </div>
                         <div class="col-md-6 keterangan">

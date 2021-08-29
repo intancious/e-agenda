@@ -80,9 +80,9 @@
          var date_months_real = zero_in_left(parseInt(date_var.getMonth()) + 1);
          var date_months = parseInt(date_var.getMonth());
          var date_years = date_var.getFullYear();
-         var date_list_days = ['Ahad', 'Senin', 'Selasa', 'Rabu', 'Kamis', 'Jum\'at', 'Sabtu'];
+         var date_list_days = ['Minggu', 'Senin', 'Selasa', 'Rabu', 'Kamis', 'Jum\'at', 'Sabtu'];
          var date_list_months = ['Jan', 'Feb', 'Mar', 'Apr', 'Mei', 'Jun', 'Jul', 'Agt', 'Sep', 'Okt', 'Nop', 'Des'];
-         var date_list_monthsFull = ['Januari', 'February', 'Mar', 'Apr', 'Mei', 'Jun', 'Jul', 'Agtustus', 'Sep', 'Okt', 'Nop', 'Des'];
+         var date_list_monthsFull = ['Januari', 'Februari', 'Maret', 'April', 'Mei', 'Juni', 'Juli', 'Agtustus', 'September', 'Oktober', 'November', 'Desember'];
          var pattern = {
              /*2019-10-10*/
              default: date_years + separator + date_months_real + separator + date_dates,
@@ -90,7 +90,7 @@
              default_indonesia: date_dates + separator + date_months_real + separator + date_years,
              /*10 Agustus 2021*/
              default_indonesia_fullMonth: date_dates + " " + date_list_monthsFull[date_months] + " " + date_years,
-             /*Ahad, 10 Mei 2019*/
+             /*Minggu, 10 Mei 2019*/
              indonesia_with_day: date_list_days[date_days] + ', ' + date_dates + ' ' + date_list_months[date_months] +
                  ' ' + date_years,
              /*2019-10-10 10:10:10*/
