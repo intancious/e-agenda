@@ -1,13 +1,8 @@
 <?php include "Header.php" ?>
-
-<!-- Begin Page Content -->
 <div class="container-fluid">
-
-    <!-- Page Heading -->
     <div class="d-sm-flex align-items-center justify-content-between mb-4">
         <h1 class="h3 mb-0 text-gray-800">Beranda</h1>
     </div>
-
     <div class="row">
         <div class="col-md-12">
             <div class="card shadow mb-4">
@@ -20,18 +15,17 @@
                     <div class="card-body">
                         <form>
                             <div class="row">
-
                                 <div class="col-md-6">
                                     <div class="form-group">
                                         <label>Tanggal Kegiatan</label>
-                                        <input class="form-control" type="date" name="tanggal_kegiatan" id="tanggal_kegiatan" tabindex="1">
+                                        <input onchange="return changeAgendaByWaktu(this)" class="form-control" type="date" name="tanggal_kegiatan" id="tanggal_kegiatan" tabindex="1">
                                         <span class="help-block" style="color: red;"></span>
                                     </div>
                                 </div>
                                 <div class="col-md-6">
                                     <div class="form-group">
                                         <label>Agenda</label>
-                                        <select name="agenda" id="agenda" class="form-control" tabindex="3">
+                                        <select onchange="return changeAgendaByAgenda(this)" name="agenda" id="agenda" class="form-control" tabindex="3">
                                             <option value="" disabled selected>--- Pilih ---</option>
                                             <option value="Bupati">Bupati</option>
                                             <option value="Wakil Bupati">Wakil Bupati</option>
@@ -40,83 +34,91 @@
                                     </div>
                                 </div>
                             </div>
-
                         </form>
                     </div>
                 </div>
             </div>
         </div>
     </div>
-
-    <!-- Content Row -->
-    <div class="row">
-
-        <div class="col-lg-6">
-
-            <!-- Basic Card Example -->
-            <div class="card shadow mb-4">
-                <div class="card-header py-3">
-                    <div class="row">
-                        <div class="col-md-6">
-                            <h6 class="m-0 font-weight-bold text-primary">Rabu, 18 Agustus 2021</h6>
-                            <h6 class="m-0 font-weight-bold text-primary">08.00 WIB</h6>
-                        </div>
-                        <div class="col-md-6 keterangan">
-                            <small class="label label-success"> Sedang Berlangsung </small>
-                        </div>
-
-                    </div>
-                </div>
-
-
-                <div class="card-body">
-                    <p><strong>Nama Kegiatan</strong> : Lorem Ipsum is simply dummy text of the printing and typesetting industry</p>
-                    <p><strong>Penyelenggara</strong> : Lorem Ipsum</p>
-                    <p><strong>Tempat</strong> : Lorem Ipsum</p>
-                    <p><strong>Disposisi</strong> : Lorem Ipsum</p>
-                </div>
-
-
-                <a href="<?php echo base_url(); ?>user/beranda/detail" class="btn btn-light btn-sm" style="border-radius: 0;">Lihat Detail</a>
-
-
-            </div>
-
-        </div>
-        <div class="col-lg-6">
-            <!-- Basic Card Example -->
-            <div class="card shadow mb-4">
-                <div class="card-header py-3">
-                    <div class="row">
-                        <div class="col-md-6">
-                            <h6 class="m-0 font-weight-bold text-primary">Rabu, 18 Agustus 2021</h6>
-                            <h6 class="m-0 font-weight-bold text-primary">08.00 WIB</h6>
-                        </div>
-                        <div class="col-md-6 keterangan">
-                            <small class="label label-warning"> Belum Berjalan </small>
-                        </div>
-
-                    </div>
-                </div>
-                <div class="card-body">
-                    <p><strong>Nama Kegiatan</strong> : Lorem Ipsum is simply dummy text of the printing and typesetting industry</p>
-                    <p><strong>Penyelenggara</strong> : Lorem Ipsum</p>
-                    <p><strong>Tempat</strong> : Lorem Ipsum</p>
-                    <p><strong>Disposisi</strong> : Lorem Ipsum</p>
-                </div>
-                <a href="<?php echo base_url(); ?>user/beranda/detail" class="btn btn-light btn-sm" style="border-radius: 0;">Lihat Detail</a>
-            </div>
-        </div>
-    </div>
-
-    <!-- Content Row -->
-
+    <div class="row" id="contentdata"></div>
 </div>
-<!-- /.container-fluid -->
-
 </div>
-<!-- End of Main Content -->
+
 <?php include "Footer.php" ?>
+
+<script type="text/javascript">
+    let temporarydata = {
+
+    }
+
+    let changeAgendaByWaktu = function(elm) {
+        temporarydata.waktu = $(elm).val()
+        docuemtnready()
+    }
+    let changeAgendaByAgenda = function(elm) {
+        temporarydata.agenda = $(elm).val()
+        docuemtnready()
+    }
+
+    let docuemtnready = function() {
+        let getStatusName = function(status) {
+            let list_status = [
+                "Selesai",
+                "Ditunda",
+                "Belum Berjalan",
+                "Sedang Berlangsung",
+            ]
+            return list_status[parseFloat(status) - 1];
+        }
+        $.ajax({
+            url: "<?= base_url("superadmin/beranda/getDataAgenda") ?>",
+            dataType: "JSON",
+            data: temporarydata,
+            method: "POST",
+            success: function(res) {
+                let response = []
+                if (res.length) {
+                    res.map(function(v, i) {
+                        response.push(`<div class="col-lg-6">
+            <div class="card shadow mb-4">
+                <div class="card-header py-3">
+                    <div class="row">
+                        <div class="col-md-6">
+                            <h6 class="m-0 font-weight-bold text-primary">` + get_date(v.tanggal, 'indonesia_with_day') + `</h6>
+                            <h6 class="m-0 font-weight-bold text-primary">` + v.pukul + `</h6>
+                        </div>
+                        <div class="col-md-6 keterangan">
+                            <small class="label label-success"> ` + getStatusName(v.status_agenda) + ` </small> 
+                        </div>
+                    </div>
+                </div>
+                <div class="card-body" style="text-align:justify">
+                    <p><strong>Agenda</strong> : ` + v.agenda + `</p>
+                    <p><strong>Nama Kegiatan</strong> : ` + v.nama_kegiatan + `</p>
+                    <p><strong>Penyelenggara</strong> : ` + v.penyelenggara + `</p>
+                    <p><strong>Tempat</strong> : ` + v.tempat + `</p>
+                    <p><strong>Disposisi</strong> : ` + v.pihak_terkait + `</p>
+                </div>
+                <a href="<?= base_url("superadmin/beranda/detail/"); ?>` + v.id_agenda + `" class="btn btn-light btn-sm" style="border-radius: 0;">Lihat Detail</a>
+            </div>
+        </div>`)
+                    })
+                } else {
+                    response.push(`<div class="col-lg-12">
+            <div class="card shadow mb-4">
+                <div class="card-body">
+                    <p class="text-center"><strong>Belum ada data yang dapat ditampilkan.</strong>
+                </div>
+            </div>
+        </div>`)
+                }
+                $('#contentdata').html(response.join(""))
+            },
+        })
+    }
+
+    docuemtnready()
+</script>
 
 </body>
 
