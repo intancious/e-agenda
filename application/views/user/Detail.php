@@ -15,125 +15,135 @@
             <form action="#" id="form" class="form-horizontal">
                 <input type="hidden" value="" name="id_agenda" />
                 <!-- <div class="modal-body"> -->
+
                 <div class="row">
-                    <div class="col-md-6">
+                    <div class="col-md-12">
                         <div class="form-group">
                             <label>Nama Kegiatan</label>
-                            <input class="form-control" value="<?= $agenda->nama_kegiatan; ?>" type="text" name="nama_kegiatan" id="nama_kegiatan" tabindex="1" readonly>
-                        </div>
-                    </div>
-                    <div class="col-md-6">
-                        <div class="form-group">
-                            <label>Kategori</label>
-                            <input class="form-control" value="<?= $agenda->kategori; ?>" type="text" name="kategori" id="kategori" tabindex="2" readonly>
+                            <textarea name="nama_kegiatan" id="nama_kegiatan" class="form-control" rows="2" tabindex="1" readonly><?= $agenda->nama_kegiatan; ?></textarea>
                         </div>
                     </div>
                 </div>
 
                 <div class="row">
-                    <div class="col-md-6">
+                    <div class="col-md-4">
                         <div class="form-group">
                             <label>Penyelenggara</label>
-                            <input class="form-control" value="<?= $agenda->penyelenggara; ?>" type="text" name="penyelenggara" id="penyelenggara" tabindex="3" readonly>
+                            <input class="form-control" value="<?= $agenda->penyelenggara; ?>" type="text" name="penyelenggara" id="penyelenggara" tabindex="2" readonly>
                         </div>
                     </div>
-                    <div class="col-md-6">
+                    <div class="col-md-4">
+                        <div class="form-group">
+                            <label>Kategori</label>
+                            <input class="form-control" value="<?= $agenda->kategori; ?>" type="text" name="kategori" id="kategori" tabindex="3" readonly>
+                        </div>
+                    </div>
+                    <div class="col-md-4">
                         <div class="form-group">
                             <label>Agenda</label>
                             <input class="form-control" value="<?= $agenda->agenda; ?>" type="text" name="agenda" id="agenda" tabindex="4" readonly>
                         </div>
                     </div>
+                </div>
 
+                <div class="row">
+                    <div class="col-md-12">
+                        <div class="form-group">
+                            <label>Disposisi</label>
+                            <input class="form-control" type="text" name="disposisi" id="disposisi" tabindex="5" value="<?= $agenda->pihak_terkait; ?>" readonly>
+                        </div>
+                    </div>
                 </div>
 
                 <div class="row">
                     <div class="col-md-12">
                         <div class="form-group">
                             <label>Pembagian Tugas OPD</label>
-                            <textarea class="form-control" name="sub_agenda" id="sub_agenda" rows="5" tabindex="5" readonly><?= $agenda->sub_agenda; ?></textarea>
+                            <textarea class="form-control" name="sub_agenda" id="sub_agenda" rows="5" tabindex="6" readonly><?= $agenda->sub_agenda; ?></textarea>
                         </div>
                     </div>
                 </div>
 
                 <div class="row">
-                    <div class="col-md-4">
+                    <div class="col-md-6">
                         <div class="form-group">
                             <label>Tanggal</label>
-                            <input class="form-control" value="<?= $agenda->tanggal; ?>" type="date" name="tanggal" id="tanggal" tabindex="6" readonly>
+                            <input class="form-control" value="<?= $agenda->tanggal; ?>" type="date" name="tanggal" id="tanggal" tabindex="7" readonly>
                         </div>
                     </div>
-                    <div class="col-md-4">
+                    <div class="col-md-6">
                         <div class="form-group">
                             <label>Pukul (WIB) </label>
-                            <input class="form-control" value="<?= $agenda->pukul; ?>" type="time" name="pukul" id="pukul" tabindex="7" readonly>
+                            <input class="form-control" value="<?= $agenda->pukul; ?>" type="time" name="pukul" id="pukul" tabindex="8" readonly>
                         </div>
                     </div>
-                    <div class="col-md-4">
-                        <div class="form-group">
-                            <label>Tempat</label>
-                            <input class="form-control" value="<?= $agenda->tempat; ?>" type="text" name="tempat" id="tempat" tabindex="8" readonly>
-                        </div>
-                    </div>
+
                 </div>
 
                 <div class="row">
-
+                    <div class="col-md-6">
+                        <div class="form-group">
+                            <label>Tempat</label>
+                            <textarea name="tempat" id="tempat" class="form-control" rows="3" tabindex="9" readonly><?= $agenda->tempat; ?></textarea>
+                        </div>
+                    </div>
                     <div class="col-md-6">
                         <div class="form-group">
                             <label>Pakaian</label>
-                            <input class="form-control" value="<?= $agenda->pakaian; ?>" type="text" name="pakaian" id="pakaian" tabindex="9" readonly>
+                            <textarea name="pakaian" id="pakaian" class="form-control" rows="3" tabindex="10" readonly><?= $agenda->pakaian; ?></textarea>
                         </div>
-
                     </div>
-                    <div class="col-md-6">
+                </div>
+
+                <div class="row">
+                    <div class="col-md-12">
                         <div class="form-group">
                             <label>Undangan</label>
-                            <input class="form-control" value="<?= $agenda->undangan; ?>" type="text" name="undangan" id="undangan" tabindex="10" readonly>
+                            <textarea name="undangan" id="undangan" class="form-control" rows="8" tabindex="11" readonly><?= $agenda->undangan; ?></textarea>
                         </div>
                     </div>
                 </div>
 
                 <div class="row">
-                    <div class="col-md-6">
+                    <div class="col-md-12">
                         <div class="form-group">
                             <label>Peran Pimpinan</label>
-                            <input class="form-control" value="<?= $agenda->peran_pimpinan; ?>" type="text" name="peran_pimpinan" id="peran_pimpinan" tabindex="11" readonly>
+                            <input class="form-control" value="<?= $agenda->peran_pimpinan; ?>" type="text" name="peran_pimpinan" id="peran_pimpinan" tabindex="12" readonly>
                         </div>
 
                     </div>
-                    <div class="col-md-6">
+                </div>
+
+                <div class="row">
+                    <div class="col-md-12">
                         <div class="form-group">
-                            <label>Urutan Acara</label>
-                            <input class="form-control" value="<?= $agenda->urutan_acara; ?>" type="text" name="urutan_acara" id="urutan_acara" tabindex="12" readonly>
+                            <label>Susunan Acara</label>
+                            <textarea name="urutan_acara" id="urutan_acara" class="form-control" rows="8" tabindex="13" readonly><?= $agenda->urutan_acara; ?></textarea>
                         </div>
                     </div>
                 </div>
 
                 <div class="row">
-                    <div class="col-md-6">
+                    <div class="col-md-12">
                         <div class="form-group">
-                            <label id="label-filetr">Tata Ruangan</label>
-                            <input class="form-control" value="<?= $agenda->tata_ruangan; ?>" type="text" name="tata_ruangan" id="tata_ruangan" tabindex="13" readonly>
-                        </div>
-
-                    </div>
-                    <div class="col-md-6">
-                        <div class="form-group">
-                            <label>Disposisi</label>
-                            <input class="form-control" value="<?= $agenda->pihak_terkait; ?>" type="text" name="pihak_terkait" id="pihak_terkait" tabindex="14" readonly>
+                            <label id="label-filetr">Layout Acara</label>
+                            <textarea name="tata_ruangan" id="tata_ruangan" class="form-control" rows="8" tabindex="14" readonly><?= $agenda->tata_ruangan; ?></textarea>
                         </div>
                     </div>
                 </div>
 
                 <div class="row">
-                    <div class="col-md-6">
+                    <div class="col-md-12">
                         <div class="form-group">
                             <label>Petugas Protokol</label>
-                            <input class="form-control" value="<?= $agenda->petugas_protokol; ?>" type="text" name="petugas_protokol" id="petugas_protokol" tabindex="15" readonly>
+                            <textarea name="petugas_protokol" id="petugas_protokol" class="form-control" rows="8" tabindex="15" readonly><?= $agenda->petugas_protokol; ?></textarea>
                         </div>
 
                     </div>
-                    <div class="col-md-6">
+                </div>
+
+                <div class="row">
+                    <div class="col-md-12">
                         <div class="form-group">
                             <label>Catatan</label>
                             <input class="form-control" value="<?= $agenda->catatan; ?>" type="text" name="catatan" id="catatan" tabindex="16" readonly>
@@ -146,37 +156,48 @@
                     <div class="col-md-6">
                         <div class="form-group">
                             <label>Status Verifikasi</label>
-                            <input class="form-control" value="<?= $agenda->status_verifikasi; ?>" type="text" name="status_verifikasi" id="status_verifikasi" tabindex="18" readonly>
+                            <?php if ($agenda->status_verifikasi == 1) {
+                                $verif = "Disetujui";
+                            } else if ($agenda->status_verifikasi == 2) {
+                                $verif = "Tidak disetujui";
+                            } else {
+                                $verif = "Belum diverifikasi";
+                            }
+                            ?>
+                            <input class="form-control" value="<?= $verif; ?>" type="text" name="status_verifikasi" id="status_verifikasi" tabindex="17" readonly>
                         </div>
 
                     </div>
                     <div class="col-md-6">
                         <div class="form-group">
                             <label>Keterangan</label>
-                            <input class="form-control" value="<?= $agenda->status_agenda; ?>" type="text" name="status_agenda" id="status_agenda" tabindex="19" readonly>
+                            <?php if ($agenda->status_agenda == 1) {
+                                $ket = "Selesai";
+                            } else if ($agenda->status_agenda == 2) {
+                                $ket = "Ditunda";
+                            } else if ($agenda->status_agenda == 3) {
+                                $ket = "Belum Berjalan";
+                            } else {
+                                $ket = "Sedang Berlangsung";
+                            }
+                            ?>
+                            <input class="form-control" value="<?= $ket; ?>" type="text" name="status_agenda" id="status_agenda" tabindex="18" readonly>
                         </div>
                     </div>
                 </div>
 
                 <div class="row">
 
-                    <div class="col-md-4" id="file-previewsa">
+                    <div class="col-md-6" id="file-previewsa">
                         <div class="form-group">
                             <label>Lihat File Sambutan</label>
                             <div id="lihatsa"><?= $agenda->sambutan ?></div>
                         </div>
                     </div>
-                    <div class="col-md-4" id="file-previewsu">
+                    <div class="col-md-6" id="file-previewsu">
                         <div class="form-group">
                             <label>Lihat File Surat</label>
                             <div id="lihatsu"><?= $agenda->surat ?></div>
-                        </div>
-                    </div>
-                    <div class="col-md-4">
-                        <div class="form-group">
-                            <label>Pembuat Agenda</label>
-                            <!-- lihat nih.. -->
-                            <div id="lihatpe"><?= $agenda->pembuat; ?></div>
                         </div>
                     </div>
                 </div>
