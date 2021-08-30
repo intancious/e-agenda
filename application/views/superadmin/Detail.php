@@ -185,7 +185,6 @@
                     <a class="btn btn-success shadow-sm" href="#" data-toggle="modal" data-target="#modal_form_verif">Verifikasi</a>
                     <a href="<?= base_url("superadmin/beranda"); ?>" class="btn btn-secondary">Kembali</a>
                 </div>
-
             </form>
         </div>
 
