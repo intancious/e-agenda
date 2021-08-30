@@ -81,7 +81,7 @@
          var date_years = date_var.getFullYear();
          var date_list_days = ['Minggu', 'Senin', 'Selasa', 'Rabu', 'Kamis', 'Jum\'at', 'Sabtu'];
          var date_list_months = ['Jan', 'Feb', 'Mar', 'Apr', 'Mei', 'Jun', 'Jul', 'Agt', 'Sep', 'Okt', 'Nop', 'Des'];
-         var date_list_monthsFull = ['Januari', 'Februari', 'Maret', 'April', 'Mei', 'Juni', 'Juli', 'Agtustus', 'September', 'Oktober', 'November', 'Desember'];
+         var date_list_monthsFull = ['Januari', 'Februari', 'Maret', 'April', 'Mei', 'Juni', 'Juli', 'Agustus', 'September', 'Oktober', 'November', 'Desember'];
          var pattern = {
              /*2019-10-10*/
              default: date_years + separator + date_months_real + separator + date_dates,
