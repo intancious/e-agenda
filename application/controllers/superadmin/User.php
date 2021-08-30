@@ -72,7 +72,11 @@ class User extends CI_Controller
     }
     function delete($id)
     {
-        $this->User_model->delete('users', $id);
+        date_default_timezone_set('Asia/Jakarta');
+        $dihapus = date('Y-m-d H:i:s');
+        $data['deleted_at'] = $dihapus;
+        // $this->User_model->delete('users', $id);
+        $this->User_model->update('users', $data, $id);
         redirect('superadmin/user');
     }
 }

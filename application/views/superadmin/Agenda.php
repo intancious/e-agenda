@@ -379,7 +379,7 @@
         $('.form-group').removeClass('has-error'); // clear error class
         $('.help-block').empty(); // clear error string
         $('#judulBtn').html('<button class="btn btn-light shadow-sm"><i class="fas fa-edit"></i> Edit Agenda</button>');
-
+        $('#btnSave').text('Update');
         //Ajax Load data from ajax
         $.ajax({
             url: "<?php echo site_url('superadmin/agenda/ajax_edit/') ?>/" + id,

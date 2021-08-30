@@ -10,7 +10,7 @@
     <!-- DataTales Example -->
     <div class="card shadow mb-4">
         <div class="card-header py-3" id="judulBtn">
-            <a href="<?php echo base_url(); ?>superadmin/user/create" class="btn btn-light shadow-sm"><i class="fas fa-plus"></i>Tambah Data User</a>
+            <a href="<?php echo base_url(); ?>superadmin/user/create" class="btn btn-light shadow-sm"><i class="fas fa-plus"></i> Tambah Data User</a>
         </div>
         <div class="card-body">
             <div class="table-responsive">
@@ -48,7 +48,7 @@
                                 <td><?php echo $row->created_at ?></td>
                                 <td>
                                     <a href="<?php echo base_url(); ?>superadmin/user/edit/<?php echo $row->id; ?>" title="Edit Data" class="btn btn-info btn-sm"><i class="fas fa-edit"></i></a>
-                                    <a href="<?php echo base_url(); ?>superadmin/user/delete/<?php echo $row->id; ?>" title="Hapus Data" class="btn btn-danger btn-sm"><i class="fas fa-trash"></i></a>
+                                    <a href="javascript:void(0);" onclick="hapus(<?php echo $row->id; ?>);" title="Hapus Data" class="btn btn-danger btn-sm"><i class="fas fa-trash"></i></a>
                                 </td>
 
                             </tr>
@@ -70,6 +70,18 @@
 
 <!-- End of Main Content -->
 <?php include "Footer.php" ?>
+<script type="text/javascript">
+    var url = "<?php echo base_url(); ?>";
+
+    function hapus(id) {
+        var r = confirm("Apakah Anda yakin menghapus data ini?")
+        if (r == true)
+            window.location = url + "superadmin/user/delete/" + id;
+        else
+            return false;
+    }
+</script>
+
 </body>
 
 </html>

@@ -20,7 +20,7 @@ class User_model extends CI_Model
     {
         $this->db->select('*');
         $this->db->from('user_levels');
-        $this->db->where(array('users.id<>' => (int)$this->session->userdata('id')));
+        $this->db->where(array('users.id<>' => (int)$this->session->userdata('id'), 'users.deleted_at' => NULL));
         $this->db->join('users', 'users.user_level_id = user_levels.id');
         $query = $this->db->get();
         return $query;

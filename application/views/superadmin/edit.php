@@ -16,29 +16,30 @@
             <form method="post" action="<?php echo base_url(); ?>superadmin/user/update">
                 <div class="form-group">
                     <label for="nama">Nama</label>
-                    <input type="text" class="form-control" id="fullname" name="fullname" value="<?php echo $users->fullname; ?>">
+                    <input type="text" class="form-control" id="fullname" name="fullname" value="<?php echo $users->fullname; ?>" tabindex="1" autofocus>
                 </div>
 
                 <div class="form-group">
                     <label for="email">Email</label>
-                    <input type="text" class="form-control" id="email" name="email" value="<?php echo $users->email; ?>">
+                    <input type="text" class="form-control" id="email" name="email" value="<?php echo $users->email; ?>" tabindex="2">
                 </div>
 
                 <div class="form-group">
                     <label for="password">Password</label>
-                    <input type="password" class="form-control" id="password" name="password" value="<?php echo $users->password; ?>">
+                    <input type="password" class="form-control" id="password" name="password" value="<?php echo $users->password; ?>" tabindex="3">
                 </div>
 
                 <div class="form-group">
                     <label for="user_level">Hak Akses</label>
-                    <select name="user_level" id="user_level" class="form-control">
+                    <select name="user_level" id="user_level" class="form-control" tabindex="4">
                         <option <?= ($users->user_level_id === "1") ? "selected" : ""; ?> value="1" selected>Superadmin</option>
                         <option <?= ($users->user_level_id === "2") ? "selected" : ""; ?> value="2">Admin</option>
                         <option <?= ($users->user_level_id === "3") ? "selected" : ""; ?> value="3">User</option>
                     </select>
                 </div>
                 <input type="hidden" name="id" value="<?php echo $users->id; ?>">
-                <button type="submit" class="btn btn-primary">Update</button>
+                <button type="submit" class="btn btn-primary" tabindex="5">Update</button>
+                <a href="<?= base_url("superadmin/user"); ?>" class="btn btn-secondary" tabindex="6">Kembali</a>
             </form>
         </div>
     </div>
