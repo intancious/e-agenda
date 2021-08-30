@@ -21,8 +21,7 @@
                             <th>Nama</th>
                             <th>Email</th>
                             <th>Hak Akses</th>
-                            <th>Create At</th>
-                            <th>Updated At</th>
+                            <th>Tanggal Dibuat</th>
                             <th>Aksi</th>
                         </tr>
                     </thead>
@@ -32,8 +31,7 @@
                             <th>Nama</th>
                             <th>Email</th>
                             <th>Hak Akses</th>
-                            <th>Create At</th>
-                            <th>Updated At</th>
+                            <th>Tanggal Dibuat</th>
                             <th>Aksi</th>
                         </tr>
                     </tfoot>
@@ -48,10 +46,9 @@
                                 <td><?php echo $row->email ?></td>
                                 <td><?php echo $row->user_level ?></td>
                                 <td><?php echo $row->created_at ?></td>
-                                <td><?php echo $row->updated_at ?></td>
                                 <td>
-                                    <a href="<?php echo base_url(); ?>superadmin/user/edit/<?php echo $row->id; ?>" class="btn btn-warning">Edit</a>
-                                    <a href="<?php echo base_url(); ?>superadmin/user/delete/<?php echo $row->id; ?>" class="btn btn-danger">Hapus</a>
+                                    <a href="<?php echo base_url(); ?>superadmin/user/edit/<?php echo $row->id; ?>" title="Edit Data" class="btn btn-info btn-sm"><i class="fas fa-edit"></i></a>
+                                    <a href="<?php echo base_url(); ?>superadmin/user/delete/<?php echo $row->id; ?>" title="Hapus Data" class="btn btn-danger btn-sm"><i class="fas fa-trash"></i></a>
                                 </td>
 
                             </tr>
