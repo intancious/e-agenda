@@ -92,6 +92,9 @@
              /*Minggu, 10 Mei 2019*/
              indonesia_with_day: date_list_days[date_days] + ', ' + date_dates + ' ' + date_list_months[date_months] +
                  ' ' + date_years,
+             /*Minggu, 10 Mei 2019 with monthfull*/
+             indonesia_with_dayFull: date_list_days[date_days] + ', ' + date_dates + ' ' + date_list_monthsFull[date_months] +
+                 ' ' + date_years,
              /*2019-10-10 10:10:10*/
              default_with_time: date_years + separator + date_months_real + separator + date_dates + ' ' +
                  date_hours + ':' + date_minutes + ':' + date_seconds,
