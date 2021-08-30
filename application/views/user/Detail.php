@@ -163,13 +163,13 @@
                     <div class="col-md-4" id="file-previewsa">
                         <div class="form-group">
                             <label>Lihat File Sambutan</label>
-                            <div id="lihatsa"><a href="<?= base_url('uploads/files/' . $agenda->sambutan) ?>" target="_blank"><?= $agenda->sambutan ?></a></div>
+                            <div id="lihatsa"><?= $agenda->sambutan ?></div>
                         </div>
                     </div>
                     <div class="col-md-4" id="file-previewsu">
                         <div class="form-group">
                             <label>Lihat File Surat</label>
-                            <div id="lihatsu"><a href="<?= base_url('uploads/files/' . $agenda->surat) ?>" target="_blank"><?= $agenda->surat ?></a></div>
+                            <div id="lihatsu"><?= $agenda->surat ?></div>
                         </div>
                     </div>
                     <div class="col-md-4">
