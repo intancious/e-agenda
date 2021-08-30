@@ -237,12 +237,20 @@
                         <div class="col-md-12">
                             <div class="form-group">
                                 <label>Keterangan</label>
-                                <select name="status_verifikasi" class="form-control">
+                                <select id="verifikasi" name="verifikasi" class="form-control">
                                     <option value="3" disabled selected>Belum diverifikasi</option>
                                     <option value="1">Disetujui</option>
                                     <option value="2">Tidak disetujui</option>
                                 </select>
                                 <span class="help-block" style="color: red;"></span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row" id="disposisi" style="display: none;">
+                        <div class="col-md-12">
+                            <div class="form-group">
+                                <label>Disposisi</label>
+                                <input class="form-control" type="text" name="fdisposisi" id="fdisposisi">
                             </div>
                         </div>
                     </div>
@@ -261,6 +269,19 @@
         position: 'top-end',
         showConfirmButton: false,
         timer: 3000
+    });
+
+    $("#verifikasi").change(function() {
+        var sel = $("#verifikasi option:selected").val();
+        if (sel == 2) {
+            document.getElementById("disposisi").style.display = "block";
+            document.getElementById("fdisposisi").focus();
+
+        } else if (sel == 1) {
+            document.getElementById("disposisi").style.display = "none";
+            document.getElementById("fdisposisi").value = "-";
+
+        }
     });
 
     function verifikasi() {
