@@ -197,142 +197,172 @@
                 </div>
                 <!-- </div> -->
                 <div class="modal-footer">
-                    <a class="btn btn-success shadow-sm" href="#" data-toggle="modal" data-target="#modal_form_verif">Verifikasi</a>
+                    <a class="btn btn-success shadow-sm" href="javascript:void(0)" onclick="edit_verif(<?= $agenda->id_agenda ?>)">Verifikasi</a>
                     <a href="<?= base_url("admin/beranda"); ?>" class="btn btn-secondary">Kembali</a>
                 </div>
-
             </form>
         </div>
 
     </div>
 
-    <!-- End of Main Content -->
-    <?php include "Footer.php" ?>
+
+    <!-- Content Row -->
+
+</div>
+<!-- /.container-fluid -->
+
+</div>
+<!-- End of Main Content -->
+<?php include "Footer.php" ?>
 
 
 
 
 
 
-    <!-- NIH -->
-    <div class="modal fade" id="modal_form_verif" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
-        <div class="modal-dialog" role="document">
-            <div class="modal-content">
-                <div class="modal-header">
-                    <h5 class="modal-title">Verifikasi Agenda</h5>
-                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                        <span aria-hidden="true">&times;</span>
-                    </button>
-                </div>
-                <form action="#" id="form_verif" class="form-horizontal">
-                    <input type="hidden" value="<?= $agenda->id_agenda; ?>" name="id_agenda" />
-                    <div class="modal-body">
-                        <div class="row">
-                            <div class="col-md-12">
-                                <div class="form-group">
-                                    <label>Keterangan</label>
-                                    <select id="verifikasi" name="verifikasi" class="form-control">
-                                        <option value="3" disabled selected>Belum diverifikasi</option>
-                                        <option value="1">Disetujui</option>
-                                        <option value="2">Tidak disetujui</option>
-                                    </select>
-                                    <span class="help-block" style="color: red;"></span>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="row" id="disposisi" style="display: none;">
-                            <div class="col-md-12">
-                                <div class="form-group">
-                                    <label>Disposisi</label>
-                                    <input class="form-control" type="text" name="fdisposisi" id="fdisposisi">
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="modal-footer">
-                        <button type="button" class="btn btn-primary" id="btnVerif" onclick="verifikasi()">Simpan</button>
-                        <button type="button" class="btn btn-secondary" data-dismiss="modal">Tutup</button>
-                    </div>
-                </form>
+<!-- NIH -->
+<div class="modal fade" id="modal_form_verif" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title">Verifikasi Agenda</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
             </div>
+            <form action="#" id="form_verif" class="form-horizontal">
+                <input type="hidden" value="<?= $agenda->id_agenda; ?>" name="id_agenda" />
+                <div class="modal-body">
+                    <div class="row">
+                        <div class="col-md-12">
+                            <div class="form-group">
+                                <label>Keterangan</label>
+                                <select id="verifikasi" name="verifikasi" class="form-control">
+                                    <option value="3" disabled>Belum diverifikasi</option>
+                                    <option value="1">Disetujui</option>
+                                    <option value="2">Tidak disetujui</option>
+                                </select>
+                                <span class="help-block" style="color: red;"></span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row" id="disposisi" style="display: none;">
+                        <div class="col-md-12">
+                            <div class="form-group">
+                                <label>Disposisi</label>
+                                <input class="form-control" type="text" name="fdisposisi" id="fdisposisi">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-primary" id="btnVerif" onclick="verifikasi_update()">Simpan</button>
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Tutup</button>
+                </div>
+            </form>
         </div>
     </div>
+</div>
+<script>
+    const Toast = Swal.mixin({
+        toast: true,
+        position: 'top-end',
+        showConfirmButton: false,
+        timer: 3000
+    });
 
-    <script>
-        const Toast = Swal.mixin({
-            toast: true,
-            position: 'top-end',
-            showConfirmButton: false,
-            timer: 3000
+    $("#verifikasi").change(function() {
+        var sel = $("#verifikasi option:selected").val();
+        if (sel == 2) {
+            document.getElementById("disposisi").style.display = "block";
+            document.getElementById("fdisposisi").focus();
+
+        } else if (sel == 1) {
+            document.getElementById("disposisi").style.display = "none";
+            document.getElementById("fdisposisi").value = "-";
+
+        }
+    });
+
+    function edit_verif(id) {
+        save_method = 'verif';
+        $('#form_verif')[0].reset(); // reset form on modals
+        $('.form-group').removeClass('has-error'); // clear error class
+        $('.help-block').empty(); // clear error string
+
+        //Ajax Load data from ajax
+        $.ajax({
+            url: "<?php echo site_url('admin/agenda/ajax_edit/') ?>/" + id,
+            type: "GET",
+            dataType: "JSON",
+            success: function(data) {
+
+                $('[name="id_agenda"]').val(data.id_agenda);
+                $('[name="verifikasi"]').val(data.status_verifikasi);
+                $('#modal_form_verif').modal('show'); // show bootstrap modal when complete loaded
+                $('.modal-title').text('Verifikasi Agenda'); // Set title to Bootstrap modal title
+
+            },
+            error: function(jqXHR, textStatus, errorThrown) {
+                alert('Error get data from ajax');
+            }
         });
+    }
 
-        $("#verifikasi").change(function() {
-            var sel = $("#verifikasi option:selected").val();
-            if (sel == 2) {
-                document.getElementById("disposisi").style.display = "block";
-                document.getElementById("fdisposisi").focus();
+    function verifikasi_update() {
+        $('#btnVerif').text('Proses...'); //change button text
+        $('#btnVerif').attr('disabled', true); //set button disable 
+        var url = "<?php echo site_url('admin/agenda/verif_detail') ?>";
 
-            } else if (sel == 1) {
-                document.getElementById("disposisi").style.display = "none";
-                document.getElementById("fdisposisi").value = "-";
+        // ajax adding data to database
+        var formData = new FormData($('#form_verif')[0]);
+        $.ajax({
+            url: url,
+            type: "POST",
+            data: formData,
+            contentType: false,
+            processData: false,
+            dataType: "JSON",
+            // beforeSend: () => {
+            //     Swal.fire({
+            //         html: 'Proses',
+            //         onBeforeOpen: () => {
+            //             Swal.showLoading()
+            //         },
+            //         allowOutsideClick: () => !Swal.isLoading()
+            //     });
+            // },
+            success: function(data) {
+
+                if (data.status) //if success close modal and reload ajax table
+                {
+                    $('#modal_form_verif').modal('hide');
+                    Toast.fire({
+                        type: 'success',
+                        title: 'Status verifikasi berhasil diubah'
+                    });
+
+                } else {
+                    for (var i = 0; i < data.inputerror.length; i++) {
+                        $('[name="' + data.inputerror[i] + '"]').parent().parent().addClass('has-error'); //select parent twice to select div form-group class and add has-error class
+                        $('[name="' + data.inputerror[i] + '"]').next().text(data.error_string[i]); //select span help-block class set text error string
+                    }
+                }
+                $('#btnVerif').text('Simpan'); //change button text
+                $('#btnVerif').attr('disabled', false); //set button enable 
+
+
+            },
+            error: function(jqXHR, textStatus, errorThrown) {
+                alert('Error adding / update data');
+                $('#btnVerif').text('Simpan'); //change button text
+                $('#btnVerif').attr('disabled', false); //set button enable 
 
             }
         });
+    }
+</script>
 
-        function verifikasi() {
-            $('#btnVerif').text('Proses...'); //change button text
-            $('#btnVerif').attr('disabled', true); //set button disable 
-            var url = "<?php echo site_url('superadmin/agenda/ajax_verif') ?>";
+</body>
 
-            // ajax adding data to database
-            var formData = new FormData($('#form_verif')[0]);
-            $.ajax({
-                url: url,
-                type: "POST",
-                data: formData,
-                contentType: false,
-                processData: false,
-                dataType: "JSON",
-                // beforeSend: () => {
-                //     Swal.fire({
-                //         html: 'Proses',
-                //         onBeforeOpen: () => {
-                //             Swal.showLoading()
-                //         },
-                //         allowOutsideClick: () => !Swal.isLoading()
-                //     });
-                // },
-                success: function(data) {
-
-                    if (data.status) //if success close modal and reload ajax table
-                    {
-                        $('#modal_form_verif').modal('hide');
-                        Toast.fire({
-                            type: 'success',
-                            title: 'Status verifikasi berhasil diubah'
-                        });
-
-                    } else {
-                        for (var i = 0; i < data.inputerror.length; i++) {
-                            $('[name="' + data.inputerror[i] + '"]').parent().parent().addClass('has-error'); //select parent twice to select div form-group class and add has-error class
-                            $('[name="' + data.inputerror[i] + '"]').next().text(data.error_string[i]); //select span help-block class set text error string
-                        }
-                    }
-                    $('#btnVerif').text('Simpan'); //change button text
-                    $('#btnVerif').attr('disabled', false); //set button enable 
-
-
-                },
-                error: function(jqXHR, textStatus, errorThrown) {
-                    alert('Error adding / update data');
-                    $('#btnVerif').text('Simpan'); //change button text
-                    $('#btnVerif').attr('disabled', false); //set button enable 
-
-                }
-            });
-        }
-    </script>
-
-    </body>
-
-    </html>
+</html>

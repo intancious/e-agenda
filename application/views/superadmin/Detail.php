@@ -197,7 +197,7 @@
                 </div>
                 <!-- </div> -->
                 <div class="modal-footer">
-                    <a class="btn btn-success shadow-sm" href="#" data-toggle="modal" data-target="#modal_form_verif">Verifikasi</a>
+                    <a class="btn btn-success shadow-sm" href="javascript:void(0)" onclick="edit_verif(<?= $agenda->id_agenda ?>)">Verifikasi</a>
                     <a href="<?= base_url("superadmin/beranda"); ?>" class="btn btn-secondary">Kembali</a>
                 </div>
             </form>
@@ -283,6 +283,31 @@
 
         }
     });
+
+    function edit_verif(id) {
+        save_method = 'verif';
+        $('#form_verif')[0].reset(); // reset form on modals
+        $('.form-group').removeClass('has-error'); // clear error class
+        $('.help-block').empty(); // clear error string
+
+        //Ajax Load data from ajax
+        $.ajax({
+            url: "<?php echo site_url('superadmin/agenda/ajax_edit/') ?>/" + id,
+            type: "GET",
+            dataType: "JSON",
+            success: function(data) {
+
+                $('[name="id_agenda"]').val(data.id_agenda);
+                $('[name="verifikasi"]').val(data.status_verifikasi);
+                $('#modal_form_verif').modal('show'); // show bootstrap modal when complete loaded
+                $('.modal-title').text('Verifikasi Agenda'); // Set title to Bootstrap modal title
+
+            },
+            error: function(jqXHR, textStatus, errorThrown) {
+                alert('Error get data from ajax');
+            }
+        });
+    }
 
     function verifikasi_update() {
         $('#btnVerif').text('Proses...'); //change button text
