@@ -71,13 +71,13 @@
                             <div class="col-md-6">
                                 <div class="form-group">
                                     <label>Tanggal</label>
-                                    <input class="form-control" type="text" name="tanggal" id="tanggal" tabindex="7" value="<?php echo $data['tanggal'] ?>" readonly>
+                                    <input class="form-control" type="date" name="tanggal" id="tanggal" tabindex="7" value="<?php echo $data['tanggal'] ?>" readonly>
                                 </div>
                             </div>
                             <div class="col-md-6">
                                 <div class="form-group">
                                     <label>Pukul (WIB) </label>
-                                    <input class="form-control" type="text" name="pukul" id="pukul" tabindex="8" value="<?php echo $data['pukul'] ?>" readonly>
+                                    <input class="form-control" type="time" name="pukul" id="pukul" tabindex="8" value="<?php echo $data['pukul'] ?>" readonly>
                                 </div>
                             </div>
                         </div>

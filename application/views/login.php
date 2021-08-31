@@ -39,6 +39,9 @@
                                     <div class="text-center">
                                         <h1 class="h4 text-gray-900 mb-4">Selamat Datang di KOPIPRO</h1>
                                     </div>
+                                    <div class="inipesansukses">
+                                        <?php echo $this->session->flashdata('user_registered'); ?>
+                                    </div>
                                     <form class="user" action="<?= base_url() . 'login/submit/' ?>" method="post">
                                         <div class="form-group">
                                             <input type="email" class="form-control form-control-user" id="exampleInputEmail" name="email" aria-describedby="emailHelp" placeholder="Masukkan Email Anda">
@@ -56,6 +59,10 @@
                                             </div>
                                         <?php } ?>
                                     </form>
+                                    <hr>
+                                    <div class="text-center">
+                                        <a class="small" href="<?= base_url('daftar') ?>">Daftar Akun</a>
+                                    </div>
                                 </div>
                             </div>
                         </div>
