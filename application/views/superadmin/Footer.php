@@ -111,7 +111,7 @@
              indonesia_with_day_time_formatFull: date_hours + ':' + date_minutes + ' | ' +
                  date_list_days[date_days] + ', ' + date_dates + ' ' + date_list_monthsFull[date_months] + ' ' + date_years,
              /*Ahad, 10 Mei 2019 full | 10:10*/
-             indonesia_with_day_time_formatFullTerbalik: date_list_days[date_days] + ', ' + date_dates + ' ' + date_list_monthsFull[date_months] + ' ' + date_years + '  ' + date_hours + ':' + date_minutes,
+             indonesia_with_day_time_formatFullTerbalik: date_list_days[date_days] + ', ' + date_dates + ' ' + date_list_monthsFull[date_months] + ' ' + date_years + '<br>' + date_hours + ':' + date_minutes,
              /*10:10*/
              time: date_hours + ':' + date_minutes,
              /*10-May-2019*/
