@@ -238,7 +238,7 @@
                             <div class="form-group">
                                 <label>Keterangan</label>
                                 <select id="verifikasi" name="verifikasi" class="form-control">
-                                    <option value="3" disabled selected>Belum diverifikasi</option>
+                                    <option value="3" disabled>Belum diverifikasi</option>
                                     <option value="1">Disetujui</option>
                                     <option value="2">Tidak disetujui</option>
                                 </select>
@@ -256,7 +256,7 @@
                     </div>
                 </div>
                 <div class="modal-footer">
-                    <button type="button" class="btn btn-primary" id="btnVerif" onclick="verifikasi()">Simpan</button>
+                    <button type="button" class="btn btn-primary" id="btnVerif" onclick="verifikasi_update()">Simpan</button>
                     <button type="button" class="btn btn-secondary" data-dismiss="modal">Tutup</button>
                 </div>
             </form>
@@ -284,10 +284,10 @@
         }
     });
 
-    function verifikasi() {
+    function verifikasi_update() {
         $('#btnVerif').text('Proses...'); //change button text
         $('#btnVerif').attr('disabled', true); //set button disable 
-        var url = "<?php echo site_url('superadmin/agenda/ajax_verif') ?>";
+        var url = "<?php echo site_url('superadmin/agenda/verif_detail') ?>";
 
         // ajax adding data to database
         var formData = new FormData($('#form_verif')[0]);

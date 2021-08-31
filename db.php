@@ -11,8 +11,8 @@ $pass = '';
 $host = 'localhost';
 $dir = dirname(__FILE__) . DS . 'agenda.sql';
 
-$mysqlDir = 'C:\xampp\mysql\bin';    // Paste your mysql directory here and be happy
-// $mysqlDir = 'C:\laragon\bin\mysql\mysql-5.7.33-winx64\bin';    // PC INTAN
+//$mysqlDir = 'C:\xampp\mysql\bin';    // Paste your mysql directory here and be happy
+$mysqlDir = 'C:\laragon\bin\mysql\mysql-5.7.33-winx64\bin';    // PC INTAN
 
 // print_r($argv);
 // die();
