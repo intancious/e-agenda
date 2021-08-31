@@ -337,6 +337,7 @@
                 if (data.status) //if success close modal and reload ajax table
                 {
                     $('#modal_form_verif').modal('hide');
+                    location.reload();
                     Toast.fire({
                         type: 'success',
                         title: 'Status verifikasi berhasil diubah'
