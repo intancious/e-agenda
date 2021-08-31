@@ -68,18 +68,23 @@
                 </div>
 
                 <div class="row">
-                    <div class="col-md-6">
+                    <div class="col-md-4">
                         <div class="form-group">
                             <label>Tanggal</label>
                             <input class="form-control" type="date" name="tanggal" id="tanggal" tabindex="6">
 
                         </div>
                     </div>
-                    <div class="col-md-6">
+                    <div class="col-md-4">
                         <div class="form-group">
-                            <label>Pukul (WIB) </label>
+                            <label>Jam Mulai (WIB) </label>
                             <input class="form-control" type="time" name="pukul" id="pukul" tabindex="7">
-
+                        </div>
+                    </div>
+                    <div class="col-md-4">
+                        <div class="form-group">
+                            <label>Jam Selesai (WIB) </label>
+                            <input class="form-control" type="time" name="pukul2" id="pukul2" tabindex="8">
                         </div>
                     </div>
                 </div>
@@ -88,7 +93,7 @@
                     <div class="col-md-6">
                         <div class="form-group">
                             <label>Tempat</label>
-                            <textarea name="tempat" id="tempat" class="form-control" rows="3" tabindex="8"></textarea>
+                            <textarea name="tempat" id="tempat" class="form-control" rows="3" tabindex="9"></textarea>
                             <!-- <input class="form-control" type="text" name="tempat" id="tempat" tabindex="8"> -->
                             <!-- <select name="tempat" id="tempat" class="form-control" tabindex="7">
                                     <option value="" disabled selected>--- Pilih ---</option>
@@ -102,7 +107,7 @@
                     <div class="col-md-6">
                         <div class="form-group">
                             <label>Pakaian</label>
-                            <textarea name="pakaian" id="pakaian" class="form-control" rows="3" tabindex="9"></textarea>
+                            <textarea name="pakaian" id="pakaian" class="form-control" rows="3" tabindex="10"></textarea>
                             <!-- <input class="form-control" type="text" name="pakaian" id="pakaian" tabindex="9"> -->
 
                         </div>
@@ -114,7 +119,7 @@
                     <div class="col-md-12">
                         <div class="form-group">
                             <label>Undangan</label>
-                            <textarea name="undangan" id="undangan" class="form-control" rows="8" tabindex="10"></textarea>
+                            <textarea name="undangan" id="undangan" class="form-control" rows="8" tabindex="11"></textarea>
                             <!-- <input class="form-control" type="text" name="undangan" id="undangan" tabindex="10"> -->
 
                         </div>
@@ -125,7 +130,7 @@
                     <div class="col-md-12">
                         <div class="form-group">
                             <label>Peran Pimpinan</label>
-                            <input class="form-control" type="text" name="peran_pimpinan" id="peran_pimpinan" tabindex="11">
+                            <input class="form-control" type="text" name="peran_pimpinan" id="peran_pimpinan" tabindex="12">
 
                         </div>
                     </div>
@@ -136,7 +141,7 @@
                     <div class="col-md-12">
                         <div class="form-group">
                             <label>Susunan Acara</label>
-                            <textarea name="urutan_acara" id="urutan_acara" class="form-control" rows="8" tabindex="12"></textarea>
+                            <textarea name="urutan_acara" id="urutan_acara" class="form-control" rows="8" tabindex="13"></textarea>
                             <!-- <input class="form-control" type="text" name="urutan_acara" id="urutan_acara" tabindex="12"> -->
 
                         </div>
@@ -147,7 +152,7 @@
                     <div class="col-md-12">
                         <div class="form-group">
                             <label id="label-filetr">Layout Acara</label>
-                            <textarea name="tata_ruangan" id="tata_ruangan" class="form-control" rows="8" tabindex="13"></textarea>
+                            <textarea name="tata_ruangan" id="tata_ruangan" class="form-control" rows="8" tabindex="14"></textarea>
                             <!-- <input class="form-control" type="text" name="tata_ruangan" id="tata_ruangan" tabindex="13"> -->
 
                         </div>
@@ -166,7 +171,7 @@
                     <div class="col-md-12">
                         <div class="form-group">
                             <label>Petugas Protokol</label>
-                            <textarea name="petugas_protokol" id="petugas_protokol" class="form-control" rows="8" tabindex="14"></textarea>
+                            <textarea name="petugas_protokol" id="petugas_protokol" class="form-control" rows="8" tabindex="15"></textarea>
                             <!-- <input class="form-control" type="text" name="petugas_protokol" id="petugas_protokol" tabindex="14"> -->
 
                         </div>
@@ -177,7 +182,7 @@
                     <div class="col-md-12">
                         <div class="form-group">
                             <label>Catatan</label>
-                            <input class="form-control" type="text" name="catatan" id="catatan" tabindex="15">
+                            <input class="form-control" type="text" name="catatan" id="catatan" tabindex="16">
 
                         </div>
                     </div>
@@ -188,13 +193,13 @@
                     <div class="col-md-6">
                         <div class="form-group">
                             <label id="label-filesa">Upload File Sambutan</label>
-                            <input class="form-control" type="file" name="sambutan" id="sambutan" tabindex="16">
+                            <input class="form-control" type="file" name="sambutan" id="sambutan" tabindex="17">
                         </div>
                     </div>
                     <div class="col-md-6">
                         <div class="form-group">
                             <label id="label-filesu">Upload File Surat</label>
-                            <input class="form-control" type="file" name="surat" id="surat" tabindex="17">
+                            <input class="form-control" type="file" name="surat" id="surat" tabindex="18">
                         </div>
                     </div>
                 </div>
@@ -395,6 +400,7 @@
                 $('[name="sub_agenda"]').val(data.sub_agenda);
                 $('[name="tanggal"]').val(data.tanggal);
                 $('[name="pukul"]').val(data.pukul);
+                $('[name="pukul2"]').val(data.pukul2);
                 $('[name="tempat"]').val(data.tempat);
                 $('[name="pakaian"]').val(data.pakaian);
                 $('[name="undangan"]').val(data.undangan);

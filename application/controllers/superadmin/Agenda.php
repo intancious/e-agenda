@@ -106,6 +106,7 @@ class Agenda extends CI_Controller
         $subagenda = $this->input->post('sub_agenda');
         $tanggal = $this->input->post('tanggal');
         $pukul = $this->input->post('pukul');
+        $pukul2 = $this->input->post('pukul2');
         $tempat = $this->input->post('tempat');
         $pakaian = $this->input->post('pakaian');
         $undangan = $this->input->post('undangan');
@@ -149,6 +150,12 @@ class Agenda extends CI_Controller
             $pukul = NULL;
         } else {
             $pukul;
+        }
+
+        if ($pukul2 == "") {
+            $pukul2 = NULL;
+        } else {
+            $pukul2;
         }
 
         if ($tempat == "") {
@@ -207,6 +214,7 @@ class Agenda extends CI_Controller
             'sub_agenda' => $subagenda,
             'tanggal' => $tanggal,
             'pukul' => $pukul,
+            'pukul2' => $pukul2,
             'tempat' => $tempat,
             'pakaian' => $pakaian,
             'undangan' => $undangan,
@@ -247,6 +255,7 @@ class Agenda extends CI_Controller
         $subagenda = $this->input->post('sub_agenda');
         $tanggal = $this->input->post('tanggal');
         $pukul = $this->input->post('pukul');
+        $pukul2 = $this->input->post('pukul2');
         $tempat = $this->input->post('tempat');
         $pakaian = $this->input->post('pakaian');
         $undangan = $this->input->post('undangan');
@@ -290,6 +299,12 @@ class Agenda extends CI_Controller
             $pukul = NULL;
         } else {
             $pukul;
+        }
+
+        if ($pukul2 == "") {
+            $pukul2 = NULL;
+        } else {
+            $pukul2;
         }
 
         if ($tempat == "") {
@@ -348,6 +363,7 @@ class Agenda extends CI_Controller
             'sub_agenda' => $subagenda,
             'tanggal' => $tanggal,
             'pukul' => $pukul,
+            'pukul2' => $pukul2,
             'tempat' => $tempat,
             'pakaian' => $pakaian,
             'undangan' => $undangan,

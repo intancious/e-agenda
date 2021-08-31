@@ -68,16 +68,22 @@
                         </div>
 
                         <div class="row">
-                            <div class="col-md-6">
+                            <div class="col-md-4">
                                 <div class="form-group">
                                     <label>Tanggal</label>
                                     <input class="form-control" type="date" name="tanggal" id="tanggal" tabindex="7" value="<?php echo $data['tanggal'] ?>" readonly>
                                 </div>
                             </div>
-                            <div class="col-md-6">
+                            <div class="col-md-4">
                                 <div class="form-group">
-                                    <label>Pukul (WIB) </label>
+                                    <label>Jam Mulai (WIB) </label>
                                     <input class="form-control" type="time" name="pukul" id="pukul" tabindex="8" value="<?php echo $data['pukul'] ?>" readonly>
+                                </div>
+                            </div>
+                            <div class="col-md-4">
+                                <div class="form-group">
+                                    <label>Jam Selesai (WIB) </label>
+                                    <input class="form-control" type="time" name="pukul2" id="pukul2" tabindex="9" value="<?php echo $data['pukul2'] ?>" readonly>
                                 </div>
                             </div>
                         </div>
@@ -86,13 +92,13 @@
                             <div class="col-md-6">
                                 <div class="form-group">
                                     <label>Tempat</label>
-                                    <textarea name="tempat" id="tempat" class="form-control" rows="3" tabindex="9" readonly><?php echo $data['tempat'] ?></textarea>
+                                    <textarea name="tempat" id="tempat" class="form-control" rows="3" tabindex="10" readonly><?php echo $data['tempat'] ?></textarea>
                                 </div>
                             </div>
                             <div class="col-md-6">
                                 <div class="form-group">
                                     <label>Pakaian</label>
-                                    <textarea name="pakaian" id="pakaian" class="form-control" rows="3" tabindex="10" readonly><?php echo $data['pakaian'] ?></textarea>
+                                    <textarea name="pakaian" id="pakaian" class="form-control" rows="3" tabindex="11" readonly><?php echo $data['pakaian'] ?></textarea>
                                 </div>
                             </div>
                         </div>
@@ -101,7 +107,7 @@
                             <div class="col-md-12">
                                 <div class="form-group">
                                     <label>Undangan</label>
-                                    <textarea name="undangan" id="undangan" class="form-control" rows="8" tabindex="11" readonly><?php echo $data['undangan'] ?></textarea>
+                                    <textarea name="undangan" id="undangan" class="form-control" rows="8" tabindex="12" readonly><?php echo $data['undangan'] ?></textarea>
                                 </div>
                             </div>
                         </div>
@@ -110,7 +116,7 @@
                             <div class="col-md-12">
                                 <div class="form-group">
                                     <label>Peran Pimpinan</label>
-                                    <input class="form-control" type="text" name="peran_pimpinan" id="peran_pimpinan" tabindex="12" value="<?php echo $data['peran_pimpinan'] ?>" readonly>
+                                    <input class="form-control" type="text" name="peran_pimpinan" id="peran_pimpinan" tabindex="13" value="<?php echo $data['peran_pimpinan'] ?>" readonly>
                                 </div>
                             </div>
                         </div>
@@ -119,7 +125,7 @@
                             <div class="col-md-12">
                                 <div class="form-group">
                                     <label>Susunan Acara</label>
-                                    <textarea name="urutan_acara" id="urutan_acara" class="form-control" rows="8" tabindex="13" readonly><?php echo $data['urutan_acara'] ?></textarea>
+                                    <textarea name="urutan_acara" id="urutan_acara" class="form-control" rows="8" tabindex="14" readonly><?php echo $data['urutan_acara'] ?></textarea>
                                 </div>
                             </div>
                         </div>
@@ -128,7 +134,7 @@
                             <div class="col-md-12">
                                 <div class="form-group">
                                     <label id="label-filetr">Layout Acara</label>
-                                    <textarea name="tata_ruangan" id="tata_ruangan" class="form-control" rows="8" tabindex="14" readonly><?php echo $data['tata_ruangan'] ?></textarea>
+                                    <textarea name="tata_ruangan" id="tata_ruangan" class="form-control" rows="8" tabindex="15" readonly><?php echo $data['tata_ruangan'] ?></textarea>
                                 </div>
                             </div>
                         </div>
@@ -137,7 +143,7 @@
                             <div class="col-md-12">
                                 <div class="form-group">
                                     <label>Petugas Protokol</label>
-                                    <textarea name="petugas_protokol" id="petugas_protokol" class="form-control" rows="8" tabindex="15" readonly><?php echo $data['petugas_protokol'] ?></textarea>
+                                    <textarea name="petugas_protokol" id="petugas_protokol" class="form-control" rows="8" tabindex="16" readonly><?php echo $data['petugas_protokol'] ?></textarea>
                                 </div>
                             </div>
                         </div>
@@ -146,7 +152,7 @@
                             <div class="col-md-12">
                                 <div class="form-group">
                                     <label>Catatan</label>
-                                    <input class="form-control" type="text" name="catatan" id="catatan" tabindex="16" value="<?php echo $data['catatan'] ?>" readonly>
+                                    <input class="form-control" type="text" name="catatan" id="catatan" tabindex="17" value="<?php echo $data['catatan'] ?>" readonly>
 
                                 </div>
                             </div>
