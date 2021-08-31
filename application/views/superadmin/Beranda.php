@@ -63,10 +63,10 @@
     let docuemtnready = function() {
         let getStatusName = function(status) {
             let list_status = [
-                "Selesai",
-                "Ditunda",
-                "Belum Berjalan",
-                "Sedang Berlangsung",
+                '<small class="label label-secondary"> Selesai </small>',
+                '<small class="label label-danger"> Ditunda </small>',
+                '<small class="label label-warning"> Belum berjalan </small>',
+                '<small class="label label-success"> Sedang berlangsung </small>'
             ]
             return list_status[parseFloat(status) - 1];
         }
@@ -87,7 +87,7 @@
                             <h6 class="m-0 font-weight-bold text-primary">` + get_date(v.tanggal + ' ' + v.pukul, 'indonesia_with_day_time_formatFullTerbalik') + "  WIB" + `</h6>
                         </div>
                         <div class="col-md-6 keterangan">
-                            <small class="label label-success"> ` + getStatusName(v.status_agenda) + ` </small> 
+                            <small class="label"> ` + getStatusName(v.status_agenda) + ` </small> 
                         </div>
                     </div>
                 </div>
