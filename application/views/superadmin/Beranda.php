@@ -93,7 +93,6 @@
                 </div>
                 <div class="card-body" style="text-align:justify">
                     <p><strong>Agenda</strong> : ` + v.agenda + `</p>
-                    <p><strong>Nama Kegiatan</strong> : ` + v.nama_kegiatan + `</p>
                     <p><strong>Nama Kegiatan</strong> : ` + `${v.nama_kegiatan.substring(0, 45)}` + " ...." + `</p>
                     <p><strong>Tempat</strong> : ` + v.tempat + `</p>
                     <p><strong>Disposisi</strong> : ` + v.pihak_terkait + `</p>
