@@ -87,7 +87,7 @@
                             <h6 class="m-0 font-weight-bold text-primary">` + get_date(v.tanggal + '  ' + v.pukul, 'indonesia_with_day_time_formatFullTerbalik') + "  WIB" + `</h6>
                         </div>
                         <div class="col-md-6 keterangan">
-                            <small class="label"> ` + getStatusName(v.status_agenda) + ` </small> 
+                            ` + getStatusName(v.status_agenda) + `
                         </div>
                     </div>
                 </div>

@@ -17,13 +17,19 @@ class Agenda_model extends CI_Model
 
     public function getAll($opt)
     {
+        $tgl = new DateTime("now");
+
+        $curr_date = $tgl->format('Y-m-d ');
         $where = array();
         if (isset($opt["waktu"])) {
             $where["tanggal"] = $opt["waktu"];
+        } else {
+            $where["DATE(tanggal)"] = $curr_date;
         }
         if (isset($opt["agenda"])) {
             $where["agenda"] = $opt["agenda"];
         }
+        // $this->db->where('DATE(tanggal)', $curr_date);
         $this->db->order_by('tanggal DESC'); //DESC untuk sorting dari terbesar -> terkecil
         $result = $this->db->get_where('tb_agenda', $where)->result();
         return $result;

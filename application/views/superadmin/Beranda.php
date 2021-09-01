@@ -25,7 +25,7 @@
                                 <div class="col-md-6">
                                     <div class="form-group">
                                         <label>Agenda</label>
-                                        <select onchange="return changeAgendaByAgenda(this)" name="agenda" id="agenda" class="form-control" tabindex="3">
+                                        <select onchange="return changeAgendaByAgenda(this)" name="agenda" id="agenda" class="form-control" tabindex="2">
                                             <option value="" disabled selected>--- Pilih ---</option>
                                             <option value="Bupati">Bupati</option>
                                             <option value="Wakil Bupati">Wakil Bupati</option>
@@ -87,7 +87,7 @@
                             <h6 class="m-0 font-weight-bold text-primary">` + get_date(v.tanggal + ' ' + v.pukul, 'indonesia_with_day_time_formatFullTerbalik') + "  WIB" + `</h6>
                         </div>
                         <div class="col-md-6 keterangan">
-                            <small class="label"> ` + getStatusName(v.status_agenda) + ` </small> 
+                            ` + getStatusName(v.status_agenda) + ` 
                         </div>
                     </div>
                 </div>
