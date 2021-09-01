@@ -65,32 +65,37 @@
                 </div>
 
                 <div class="row">
-                    <div class="col-md-6">
+                    <div class="col-md-4">
                         <div class="form-group">
                             <label>Tanggal</label>
                             <input class="form-control" value="<?= $agenda->tanggal; ?>" type="date" name="tanggal" id="tanggal" tabindex="7" readonly>
                         </div>
                     </div>
-                    <div class="col-md-6">
+                    <div class="col-md-4">
                         <div class="form-group">
-                            <label>Pukul (WIB) </label>
+                            <label>Jam Mulai (WIB) </label>
                             <input class="form-control" value="<?= $agenda->pukul; ?>" type="time" name="pukul" id="pukul" tabindex="8" readonly>
                         </div>
                     </div>
-
+                    <div class="col-md-4">
+                        <div class="form-group">
+                            <label>Jam Selesai (WIB) </label>
+                            <input class="form-control" value="<?= $agenda->pukul2; ?>" type="time" name="pukul2" id="pukul2" tabindex="9" readonly>
+                        </div>
+                    </div>
                 </div>
 
                 <div class="row">
                     <div class="col-md-6">
                         <div class="form-group">
                             <label>Tempat</label>
-                            <textarea name="tempat" id="tempat" class="form-control" rows="3" tabindex="9" readonly><?= $agenda->tempat; ?></textarea>
+                            <textarea name="tempat" id="tempat" class="form-control" rows="3" tabindex="10" readonly><?= $agenda->tempat; ?></textarea>
                         </div>
                     </div>
                     <div class="col-md-6">
                         <div class="form-group">
                             <label>Pakaian</label>
-                            <textarea name="pakaian" id="pakaian" class="form-control" rows="3" tabindex="10" readonly><?= $agenda->pakaian; ?></textarea>
+                            <textarea name="pakaian" id="pakaian" class="form-control" rows="3" tabindex="11" readonly><?= $agenda->pakaian; ?></textarea>
                         </div>
                     </div>
                 </div>
@@ -99,7 +104,7 @@
                     <div class="col-md-12">
                         <div class="form-group">
                             <label>Undangan</label>
-                            <textarea name="undangan" id="undangan" class="form-control" rows="8" tabindex="11" readonly><?= $agenda->undangan; ?></textarea>
+                            <textarea name="undangan" id="undangan" class="form-control" rows="8" tabindex="12" readonly><?= $agenda->undangan; ?></textarea>
                         </div>
                     </div>
                 </div>
@@ -108,7 +113,7 @@
                     <div class="col-md-12">
                         <div class="form-group">
                             <label>Peran Pimpinan</label>
-                            <input class="form-control" value="<?= $agenda->peran_pimpinan; ?>" type="text" name="peran_pimpinan" id="peran_pimpinan" tabindex="12" readonly>
+                            <input class="form-control" value="<?= $agenda->peran_pimpinan; ?>" type="text" name="peran_pimpinan" id="peran_pimpinan" tabindex="13" readonly>
                         </div>
 
                     </div>
@@ -118,7 +123,7 @@
                     <div class="col-md-12">
                         <div class="form-group">
                             <label>Susunan Acara</label>
-                            <textarea name="urutan_acara" id="urutan_acara" class="form-control" rows="8" tabindex="13" readonly><?= $agenda->urutan_acara; ?></textarea>
+                            <textarea name="urutan_acara" id="urutan_acara" class="form-control" rows="8" tabindex="14" readonly><?= $agenda->urutan_acara; ?></textarea>
                         </div>
                     </div>
                 </div>
@@ -127,7 +132,7 @@
                     <div class="col-md-12">
                         <div class="form-group">
                             <label id="label-filetr">Layout Acara</label>
-                            <textarea name="tata_ruangan" id="tata_ruangan" class="form-control" rows="8" tabindex="14" readonly><?= $agenda->tata_ruangan; ?></textarea>
+                            <textarea name="tata_ruangan" id="tata_ruangan" class="form-control" rows="8" tabindex="15" readonly><?= $agenda->tata_ruangan; ?></textarea>
                         </div>
                     </div>
                 </div>
@@ -136,7 +141,7 @@
                     <div class="col-md-12">
                         <div class="form-group">
                             <label>Petugas Protokol</label>
-                            <textarea name="petugas_protokol" id="petugas_protokol" class="form-control" rows="8" tabindex="15" readonly><?= $agenda->petugas_protokol; ?></textarea>
+                            <textarea name="petugas_protokol" id="petugas_protokol" class="form-control" rows="8" tabindex="16" readonly><?= $agenda->petugas_protokol; ?></textarea>
                         </div>
 
                     </div>
@@ -146,7 +151,7 @@
                     <div class="col-md-12">
                         <div class="form-group">
                             <label>Catatan</label>
-                            <input class="form-control" value="<?= $agenda->catatan; ?>" type="text" name="catatan" id="catatan" tabindex="16" readonly>
+                            <input class="form-control" value="<?= $agenda->catatan; ?>" type="text" name="catatan" id="catatan" tabindex="17" readonly>
                         </div>
                     </div>
                 </div>
@@ -164,7 +169,7 @@
                                 $verif = "Belum diverifikasi";
                             }
                             ?>
-                            <input class="form-control" value="<?= $verif; ?>" type="text" name="status_verifikasi" id="status_verifikasi" tabindex="17" readonly>
+                            <input class="form-control" value="<?= $verif; ?>" type="text" name="status_verifikasi" id="status_verifikasi" tabindex="18" readonly>
                         </div>
 
                     </div>
@@ -181,7 +186,7 @@
                                 $ket = "Sedang Berlangsung";
                             }
                             ?>
-                            <input class="form-control" value="<?= $ket; ?>" type="text" name="status_agenda" id="status_agenda" tabindex="18" readonly>
+                            <input class="form-control" value="<?= $ket; ?>" type="text" name="status_agenda" id="status_agenda" tabindex="19" readonly>
                         </div>
                     </div>
                 </div>
@@ -203,7 +208,7 @@
                 </div>
                 <!-- </div> -->
                 <div class="modal-footer">
-                    <a href="<?= base_url("user/beranda"); ?>" class="btn btn-secondary">Kembali</a>
+                    <a href="<?= base_url("user/beranda"); ?>" class="btn btn-secondary" tabindex="20">Kembali</a>
                 </div>
 
             </form>
