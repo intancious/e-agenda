@@ -23,15 +23,26 @@ class Agenda_model extends CI_Model
         $where = array();
         if (isset($opt["waktu"])) {
             $where["tanggal"] = $opt["waktu"];
+            $this->db->order_by('tanggal ASC'); //DESC untuk sorting dari terbesar -> terkecil
+            $result = $this->db->get_where('tb_agenda', $where)->result();
         } else {
-            $where["DATE(tanggal)"] = $curr_date;
+            $this->db->select('*');
+            $this->db->where('status_agenda =', 2);
+            $this->db->or_where('status_agenda =', 3);
+            $this->db->order_by('tanggal ASC');
+            $result = $this->db->get('tb_agenda')->result();
         }
+        //  else {
+        //     $where["DATE(tanggal)"] = $curr_date;
+        // }
         if (isset($opt["agenda"])) {
             $where["agenda"] = $opt["agenda"];
+            $this->db->order_by('tanggal ASC'); //DESC untuk sorting dari terbesar -> terkecil
+            $result = $this->db->get_where('tb_agenda', $where)->result();
         }
+
         // $this->db->where('DATE(tanggal)', $curr_date);
-        $this->db->order_by('tanggal DESC'); //DESC untuk sorting dari terbesar -> terkecil
-        $result = $this->db->get_where('tb_agenda', $where)->result();
+
         return $result;
     }
 
