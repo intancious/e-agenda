@@ -21,11 +21,23 @@ class Agenda_model extends CI_Model
 
         $curr_date = $tgl->format('Y-m-d ');
         $where = array();
-        if (isset($opt["waktu"])) {
-            // $where["tanggal"] = $opt["waktu"];
+        if (isset($opt["waktu"]) && isset($opt["agenda"])) {
+            $this->db->select('*');
+            $this->db->where('status_agenda >=', 1);
+            $this->db->where('tanggal =', $opt["waktu"]);
+            $this->db->where('agenda =', $opt["agenda"]);
+            $this->db->order_by('tanggal ASC'); //DESC untuk sorting dari terbesar -> terkecil
+            $result = $this->db->get('tb_agenda')->result();
+        } else if (isset($opt["waktu"])) {
+            $this->db->select('*');
+            $this->db->where('status_agenda >=', 1);
+            $this->db->where('tanggal =', $opt["waktu"]);
+            $this->db->order_by('tanggal ASC'); //DESC untuk sorting dari terbesar -> terkecil
+            $result = $this->db->get('tb_agenda')->result();
+        } else if (isset($opt["agenda"])) {
             $this->db->select('*');
             $this->db->where('status_agenda !=', 1);
-            $this->db->where('tanggal =', $opt["waktu"]);
+            $this->db->where('agenda =', $opt["agenda"]);
             $this->db->order_by('tanggal ASC'); //DESC untuk sorting dari terbesar -> terkecil
             $result = $this->db->get('tb_agenda')->result();
         } else {
@@ -34,18 +46,6 @@ class Agenda_model extends CI_Model
             $this->db->order_by('tanggal ASC');
             $result = $this->db->get('tb_agenda')->result();
         }
-        //  else {
-        //     $where["DATE(tanggal)"] = $curr_date;
-        // }
-        if (isset($opt["agenda"])) {
-            // $where["agenda"] = $opt["agenda"];
-            $this->db->where('status_agenda !=', 1);
-            $this->db->where('agenda =', $opt["agenda"]);
-            $this->db->order_by('tanggal ASC'); //DESC untuk sorting dari terbesar -> terkecil
-            $result = $this->db->get('tb_agenda')->result();
-        }
-
-        // $this->db->where('DATE(tanggal)', $curr_date);
 
         return $result;
     }
