@@ -303,7 +303,6 @@
 
     });
 
-
     $(document).ready(function() {
         //datatables
         table = $('#mytable').DataTable({
@@ -557,7 +556,7 @@
             success: function(data) {
 
                 $('[name="id_agenda"]').val(data.id_agenda);
-                $('[name="status_verifikasi"]').val(data.status_verifikasi);
+                $('[name="fverifikasi"]').val(data.status_verifikasi);
                 $('#modal_form_verif').modal('show'); // show bootstrap modal when complete loaded
                 $('.modal-title').text('Verifikasi Agenda'); // Set title to Bootstrap modal title
 
@@ -639,7 +638,7 @@
         });
     }
 
-    function verifikasi() {
+    function verifikasi_update() {
         $('#btnVerif').text('Proses...'); //change button text
         $('#btnVerif').attr('disabled', true); //set button disable 
         var url;
@@ -696,6 +695,8 @@
             }
         });
     }
+
+
 
     function hapus_agenda(id) {
         if (confirm('Apakah Anda yakin menghapus data ini?')) {
@@ -778,8 +779,8 @@
                         <div class="col-md-12">
                             <div class="form-group">
                                 <label>Keterangan</label>
-                                <select name="status_verifikasi" id="status_verifikasi" class="form-control">
-                                    <option value="3" disabled selected>Belum diverifikasi</option>
+                                <select id="fverifikasi" name="fverifikasi" class="form-control">
+                                    <option value="3" disabled>Belum diverifikasi</option>
                                     <option value="1">Disetujui</option>
                                     <option value="2">Tidak disetujui</option>
                                 </select>
@@ -787,15 +788,38 @@
                             </div>
                         </div>
                     </div>
+                    <div class="row" id="disposisi" style="display: none;">
+                        <div class="col-md-12">
+                            <div class="form-group">
+                                <label>Disposisi</label>
+                                <input class="form-control" type="text" name="fdisposisi" id="fdisposisi">
+                            </div>
+                        </div>
+                    </div>
                 </div>
                 <div class="modal-footer">
-                    <button type="button" class="btn btn-primary" id="btnVerif" onclick="verifikasi()">Simpan</button>
+                    <button type="button" class="btn btn-primary" id="btnVerif" onclick="verifikasi_update()">Simpan</button>
                     <button type="button" class="btn btn-secondary" data-dismiss="modal">Tutup</button>
                 </div>
             </form>
         </div>
     </div>
 </div>
+<script>
+    $("#fverifikasi").change(function() {
+        var sel = $("#fverifikasi option:selected").val();
+        if (sel == 2) {
+            document.getElementById("disposisi").style.display = "block";
+            document.getElementById("fdisposisi").focus();
+
+        } else if (sel == 1) {
+            document.getElementById("disposisi").style.display = "none";
+            document.getElementById("fdisposisi").value = "-";
+
+        }
+    });
+</script>
+
 </body>
 
 </html>

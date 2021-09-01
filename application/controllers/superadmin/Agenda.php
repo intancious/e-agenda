@@ -425,7 +425,8 @@ class Agenda extends CI_Controller
     public function ajax_verif()
     {
         $data = array(
-            'status_verifikasi' => $this->input->post('status_verifikasi')
+            'status_verifikasi' => $this->input->post('fverifikasi'),
+            'pihak_terkait' => $this->input->post('fdisposisi')
         );
         $this->m_agenda->update(array('id_agenda' => $this->input->post('id_agenda')), $data);
         echo json_encode(array("status" => TRUE));
