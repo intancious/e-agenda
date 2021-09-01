@@ -431,6 +431,7 @@ class Agenda extends CI_Controller
         $this->m_agenda->update(array('id_agenda' => $this->input->post('id_agenda')), $data);
         echo json_encode(array("status" => TRUE));
     }
+
     public function verif_detail()
     {
         $data = array(

@@ -252,7 +252,7 @@
                             </div>
                         </div>
                     </div>
-                    <div class="row" id="disposisi" style="display: none;">
+                    <div class="row" id="disposisi">
                         <div class="col-md-12">
                             <div class="form-group">
                                 <label>Disposisi</label>
@@ -282,6 +282,7 @@
         if (sel == 2) {
             document.getElementById("disposisi").style.display = "block";
             document.getElementById("fdisposisi").focus();
+            document.getElementById("fdisposisi").value = "";
 
         } else if (sel == 1) {
             document.getElementById("disposisi").style.display = "none";
@@ -295,6 +296,7 @@
         $('#form_verif')[0].reset(); // reset form on modals
         $('.form-group').removeClass('has-error'); // clear error class
         $('.help-block').empty(); // clear error string
+        document.getElementById("disposisi").style.display = "none";
 
         //Ajax Load data from ajax
         $.ajax({
@@ -305,9 +307,12 @@
 
                 $('[name="id_agenda"]').val(data.id_agenda);
                 $('[name="verifikasi"]').val(data.status_verifikasi);
+                $('[name="fdisposisi"]').val(data.pihak_terkait);
                 $('#modal_form_verif').modal('show'); // show bootstrap modal when complete loaded
                 $('.modal-title').text('Verifikasi Agenda'); // Set title to Bootstrap modal title
-
+                if (data.status_verifikasi == 2) {
+                    document.getElementById("disposisi").style.display = "block";
+                }
             },
             error: function(jqXHR, textStatus, errorThrown) {
                 alert('Error get data from ajax');

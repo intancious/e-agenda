@@ -284,6 +284,85 @@
 <!-- End of Main Content -->
 <?php include "Footer.php" ?>
 
+<div class="modal fade" id="modal_form_up" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title">Status Agenda</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <form action="#" id="form_up" class="form-horizontal">
+                <input type="hidden" value="" name="id_agenda" />
+                <div class="modal-body">
+                    <div class="row">
+                        <div class="col-md-12">
+                            <div class="form-group">
+                                <label>Keterangan</label>
+                                <select name="status_agenda" id="status_agenda" class="form-control">
+                                    <option value="1">Selesai</option>
+                                    <option value="2">Ditunda</option>
+                                    <option value="3">Belum Berjalan</option>
+                                    <option value="4">Sedang Berlangsung</option>
+                                </select>
+                                <span class="help-block" style="color: red;"></span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-primary" id="btnUp" onclick="up_status()">Simpan</button>
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Tutup</button>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+
+<div class="modal fade" id="modal_form_verif" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title">Verifikasi Agenda</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <form action="#" id="form_verif" class="form-horizontal">
+                <input type="hidden" value="" name="id_agenda" />
+                <div class="modal-body">
+                    <div class="row">
+                        <div class="col-md-12">
+                            <div class="form-group">
+                                <label>Keterangan</label>
+                                <select id="fverifikasi" name="fverifikasi" class="form-control">
+                                    <option value="3" disabled selected>Belum diverifikasi</option>
+                                    <option value="1">Disetujui</option>
+                                    <option value="2">Tidak disetujui</option>
+                                </select>
+                                <span class="help-block" style="color: red;"></span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row" id="disposisi">
+                        <div class="col-md-12">
+                            <div class="form-group">
+                                <label>Disposisi</label>
+                                <input class="form-control" type="text" name="fdisposisi" id="fdisposisi">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-primary" id="btnVerif" onclick="verifikasi_update()">Simpan</button>
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Tutup</button>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+
 <script type="text/javascript">
     var save_method; //for save method string
     var table;
@@ -292,6 +371,20 @@
         position: 'top-end',
         showConfirmButton: false,
         timer: 3000
+    });
+
+    $("#fverifikasi").change(function() {
+        var sel = $("#fverifikasi option:selected").val();
+        if (sel == 2) {
+            document.getElementById("disposisi").style.display = "block";
+            document.getElementById("fdisposisi").focus();
+            document.getElementById("fdisposisi").value = "";
+
+        } else if (sel == 1) {
+            document.getElementById("disposisi").style.display = "none";
+            document.getElementById("fdisposisi").value = "-";
+
+        }
     });
 
     $("#btnBatal").click(function() {
@@ -547,6 +640,7 @@
         $('#form_verif')[0].reset(); // reset form on modals
         $('.form-group').removeClass('has-error'); // clear error class
         $('.help-block').empty(); // clear error string
+        document.getElementById("disposisi").style.display = "none";
 
         //Ajax Load data from ajax
         $.ajax({
@@ -557,9 +651,13 @@
 
                 $('[name="id_agenda"]').val(data.id_agenda);
                 $('[name="fverifikasi"]').val(data.status_verifikasi);
+                $('[name="fdisposisi"]').val(data.pihak_terkait);
                 $('#modal_form_verif').modal('show'); // show bootstrap modal when complete loaded
                 $('.modal-title').text('Verifikasi Agenda'); // Set title to Bootstrap modal title
 
+                if (data.status_verifikasi == 2) {
+                    document.getElementById("disposisi").style.display = "block";
+                }
             },
             error: function(jqXHR, textStatus, errorThrown) {
                 alert('Error get data from ajax');
@@ -696,8 +794,6 @@
         });
     }
 
-
-
     function hapus_agenda(id) {
         if (confirm('Apakah Anda yakin menghapus data ini?')) {
             // ajax delete data to database
@@ -725,99 +821,6 @@
     function lihat_agenda(data) {
         window.location = "agenda/lihat/" + data;
     }
-</script>
-
-<div class="modal fade" id="modal_form_up" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
-    <div class="modal-dialog" role="document">
-        <div class="modal-content">
-            <div class="modal-header">
-                <h5 class="modal-title">Status Agenda</h5>
-                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                    <span aria-hidden="true">&times;</span>
-                </button>
-            </div>
-            <form action="#" id="form_up" class="form-horizontal">
-                <input type="hidden" value="" name="id_agenda" />
-                <div class="modal-body">
-                    <div class="row">
-                        <div class="col-md-12">
-                            <div class="form-group">
-                                <label>Keterangan</label>
-                                <select name="status_agenda" id="status_agenda" class="form-control">
-                                    <option value="1">Selesai</option>
-                                    <option value="2">Ditunda</option>
-                                    <option value="3">Belum Berjalan</option>
-                                    <option value="4">Sedang Berlangsung</option>
-                                </select>
-                                <span class="help-block" style="color: red;"></span>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="modal-footer">
-                    <button type="button" class="btn btn-primary" id="btnUp" onclick="up_status()">Simpan</button>
-                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Tutup</button>
-                </div>
-            </form>
-        </div>
-    </div>
-</div>
-
-<div class="modal fade" id="modal_form_verif" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
-    <div class="modal-dialog" role="document">
-        <div class="modal-content">
-            <div class="modal-header">
-                <h5 class="modal-title">Verifikasi Agenda</h5>
-                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                    <span aria-hidden="true">&times;</span>
-                </button>
-            </div>
-            <form action="#" id="form_verif" class="form-horizontal">
-                <input type="hidden" value="" name="id_agenda" />
-                <div class="modal-body">
-                    <div class="row">
-                        <div class="col-md-12">
-                            <div class="form-group">
-                                <label>Keterangan</label>
-                                <select id="fverifikasi" name="fverifikasi" class="form-control">
-                                    <option value="3" disabled>Belum diverifikasi</option>
-                                    <option value="1">Disetujui</option>
-                                    <option value="2">Tidak disetujui</option>
-                                </select>
-                                <span class="help-block" style="color: red;"></span>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="row" id="disposisi" style="display: none;">
-                        <div class="col-md-12">
-                            <div class="form-group">
-                                <label>Disposisi</label>
-                                <input class="form-control" type="text" name="fdisposisi" id="fdisposisi">
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="modal-footer">
-                    <button type="button" class="btn btn-primary" id="btnVerif" onclick="verifikasi_update()">Simpan</button>
-                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Tutup</button>
-                </div>
-            </form>
-        </div>
-    </div>
-</div>
-<script>
-    $("#fverifikasi").change(function() {
-        var sel = $("#fverifikasi option:selected").val();
-        if (sel == 2) {
-            document.getElementById("disposisi").style.display = "block";
-            document.getElementById("fdisposisi").focus();
-
-        } else if (sel == 1) {
-            document.getElementById("disposisi").style.display = "none";
-            document.getElementById("fdisposisi").value = "-";
-
-        }
-    });
 </script>
 
 </body>

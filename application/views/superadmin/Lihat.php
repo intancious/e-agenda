@@ -159,6 +159,40 @@
                         </div>
 
                         <div class="row">
+                            <div class="col-md-6">
+                                <div class="form-group">
+                                    <label>Status Verifikasi</label>
+                                    <?php if ($data['status_verifikasi'] == 1) {
+                                        $verif = "Disetujui";
+                                    } else if ($data['status_verifikasi'] == 2) {
+                                        $verif = "Tidak disetujui";
+                                    } else {
+                                        $verif = "Belum diverifikasi";
+                                    }
+                                    ?>
+                                    <input class="form-control" value="<?= $verif; ?>" type="text" name="status_verifikasi" id="status_verifikasi" tabindex="18" readonly>
+                                </div>
+
+                            </div>
+                            <div class="col-md-6">
+                                <div class="form-group">
+                                    <label>Keterangan</label>
+                                    <?php if ($data['status_agenda'] == 1) {
+                                        $ket = "Selesai";
+                                    } else if ($data['status_agenda'] == 2) {
+                                        $ket = "Ditunda";
+                                    } else if ($data['status_agenda'] == 3) {
+                                        $ket = "Belum Berjalan";
+                                    } else {
+                                        $ket = "Sedang Berlangsung";
+                                    }
+                                    ?>
+                                    <input class="form-control" value="<?= $ket; ?>" type="text" name="status_agenda" id="status_agenda" tabindex="19" readonly>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="row">
                             <div class="col-md-6" id="file-previewsa">
                                 <div class="form-group">
                                     <label>Lihat Sambutan</label>
@@ -180,7 +214,7 @@
                 <?php } ?>
                 <!-- </div> -->
                 <div class="modal-footer">
-                    <a href="<?php echo base_url(); ?>superadmin/agenda" class="btn btn-secondary" tabindex="17">Kembali</a>
+                    <a href="<?php echo base_url(); ?>superadmin/agenda" class="btn btn-secondary" tabindex="20">Kembali</a>
                 </div>
 
             </form>
