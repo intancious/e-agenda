@@ -8,25 +8,33 @@
             if (validation_errors() != false) {
             ?>
                 <div class="alert alert-danger" role="alert">
-                    <?php echo validation_errors(); ?>
+                    <?= validation_errors(); ?>
                 </div>
             <?php
             }
             ?>
-            <form method="post" action="<?php echo base_url(); ?>superadmin/user/update">
+            <form method="post" action="<?= base_url(); ?>superadmin/user/update">
                 <div class="form-group">
                     <label for="nama">Nama</label>
-                    <input type="text" class="form-control" id="fullname" name="fullname" value="<?php echo $users->fullname; ?>" tabindex="1" autofocus>
+                    <input type="text" class="form-control" id="fullname" name="fullname" value="<?= $users->fullname; ?>" tabindex="1" autofocus>
                 </div>
 
                 <div class="form-group">
                     <label for="email">Email</label>
-                    <input type="text" class="form-control" id="email" name="email" value="<?php echo $users->email; ?>" tabindex="2">
+                    <input type="text" class="form-control" id="email" name="email" value="<?= $users->email; ?>" tabindex="2">
+                </div>
+                <div class="form-group">
+                    <label for="jabatan">Jabatan</label>
+                    <input type="text" class="form-control" id="jabatan" name="jabatan" value="<?= $users->jabatan; ?>" tabindex="2">
+                </div>
+                <div class="form-group">
+                    <label for="opd">OPD</label>
+                    <input type="text" class="form-control" id="opd" name="opd" value="<?= $users->opd; ?>" tabindex="2">
                 </div>
 
                 <div class="form-group">
                     <label for="password">Password</label>
-                    <input type="password" class="form-control" id="password" name="password" value="<?php echo $users->password; ?>" tabindex="3">
+                    <input type="password" class="form-control" id="password" name="password" value="<?= $users->password; ?>" tabindex="3">
                 </div>
 
                 <div class="form-group">
@@ -37,7 +45,7 @@
                         <option <?= ($users->user_level_id === "3") ? "selected" : ""; ?> value="3">User</option>
                     </select>
                 </div>
-                <input type="hidden" name="id" value="<?php echo $users->id; ?>">
+                <input type="hidden" name="id" value="<?= $users->id; ?>">
                 <button type="submit" class="btn btn-primary" tabindex="5">Update</button>
                 <a href="<?= base_url("superadmin/user"); ?>" class="btn btn-secondary" tabindex="6">Kembali</a>
             </form>

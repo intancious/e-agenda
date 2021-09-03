@@ -23,6 +23,14 @@
                     <label for="email">Email</label>
                     <input type="text" class="form-control" id="email" name="email" tabindex="2">
                 </div>
+                <div class="form-group">
+                    <label for="jabatan">Jabatan</label>
+                    <input type="text" class="form-control" id="jabatan" name="jabatan" tabindex="2">
+                </div>
+                <div class="form-group">
+                    <label for="opd">OPD</label>
+                    <input type="text" class="form-control" id="opd" name="opd" tabindex="2">
+                </div>
 
                 <div class="form-group">
                     <label for="password">Password</label>

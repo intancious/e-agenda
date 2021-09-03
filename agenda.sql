@@ -1,13 +1,13 @@
--- MariaDB dump 10.19  Distrib 10.4.20-MariaDB, for Win64 (AMD64)
+-- MySQL dump 10.13  Distrib 5.7.33, for Win64 (x86_64)
 --
 -- Host: localhost    Database: agenda
 -- ------------------------------------------------------
--- Server version	10.4.20-MariaDB
+-- Server version	5.5.5-10.6.4-MariaDB-log
 
 /*!40101 SET @OLD_CHARACTER_SET_CLIENT=@@CHARACTER_SET_CLIENT */;
 /*!40101 SET @OLD_CHARACTER_SET_RESULTS=@@CHARACTER_SET_RESULTS */;
 /*!40101 SET @OLD_COLLATION_CONNECTION=@@COLLATION_CONNECTION */;
-/*!40101 SET NAMES utf8mb4 */;
+/*!40101 SET NAMES utf8 */;
 /*!40103 SET @OLD_TIME_ZONE=@@TIME_ZONE */;
 /*!40103 SET TIME_ZONE='+00:00' */;
 /*!40014 SET @OLD_UNIQUE_CHECKS=@@UNIQUE_CHECKS, UNIQUE_CHECKS=0 */;
@@ -51,25 +51,25 @@ DROP TABLE IF EXISTS `tb_agenda`;
 /*!40101 SET character_set_client = utf8 */;
 CREATE TABLE `tb_agenda` (
   `id_agenda` int(10) unsigned NOT NULL AUTO_INCREMENT,
-  `nama_kegiatan` text COLLATE utf8_unicode_ci NOT NULL,
-  `kategori` varchar(255) COLLATE utf8_unicode_ci DEFAULT NULL,
-  `penyelenggara` varchar(255) COLLATE utf8_unicode_ci NOT NULL,
-  `agenda` varchar(255) COLLATE utf8_unicode_ci DEFAULT NULL,
-  `sub_agenda` longtext COLLATE utf8_unicode_ci DEFAULT NULL,
+  `nama_kegiatan` text COLLATE utf8mb3_unicode_ci NOT NULL,
+  `kategori` varchar(255) COLLATE utf8mb3_unicode_ci DEFAULT NULL,
+  `penyelenggara` varchar(255) COLLATE utf8mb3_unicode_ci NOT NULL,
+  `agenda` varchar(255) COLLATE utf8mb3_unicode_ci DEFAULT NULL,
+  `sub_agenda` longtext COLLATE utf8mb3_unicode_ci DEFAULT NULL,
   `tanggal` date DEFAULT NULL,
   `pukul` time DEFAULT NULL,
   `pukul2` time DEFAULT NULL,
-  `tempat` varchar(255) COLLATE utf8_unicode_ci DEFAULT NULL,
-  `pakaian` varchar(255) COLLATE utf8_unicode_ci DEFAULT NULL,
-  `undangan` longtext COLLATE utf8_unicode_ci DEFAULT NULL,
-  `peran_pimpinan` text COLLATE utf8_unicode_ci DEFAULT NULL,
-  `urutan_acara` longtext COLLATE utf8_unicode_ci DEFAULT NULL,
-  `tata_ruangan` longtext COLLATE utf8_unicode_ci DEFAULT NULL,
-  `pihak_terkait` varchar(255) COLLATE utf8_unicode_ci DEFAULT '-',
-  `petugas_protokol` longtext COLLATE utf8_unicode_ci DEFAULT NULL,
-  `catatan` text COLLATE utf8_unicode_ci DEFAULT NULL,
-  `sambutan` varchar(255) COLLATE utf8_unicode_ci DEFAULT NULL,
-  `surat` varchar(255) COLLATE utf8_unicode_ci DEFAULT NULL,
+  `tempat` varchar(255) COLLATE utf8mb3_unicode_ci DEFAULT NULL,
+  `pakaian` varchar(255) COLLATE utf8mb3_unicode_ci DEFAULT NULL,
+  `undangan` longtext COLLATE utf8mb3_unicode_ci DEFAULT NULL,
+  `peran_pimpinan` text COLLATE utf8mb3_unicode_ci DEFAULT NULL,
+  `urutan_acara` longtext COLLATE utf8mb3_unicode_ci DEFAULT NULL,
+  `tata_ruangan` longtext COLLATE utf8mb3_unicode_ci DEFAULT NULL,
+  `pihak_terkait` varchar(255) COLLATE utf8mb3_unicode_ci DEFAULT '-',
+  `petugas_protokol` longtext COLLATE utf8mb3_unicode_ci DEFAULT NULL,
+  `catatan` text COLLATE utf8mb3_unicode_ci DEFAULT NULL,
+  `sambutan` varchar(255) COLLATE utf8mb3_unicode_ci DEFAULT NULL,
+  `surat` varchar(255) COLLATE utf8mb3_unicode_ci DEFAULT NULL,
   `status_agenda` int(11) NOT NULL COMMENT '1: selesai, 2: ditunda; 3: belum berjalan; 4: sedang berlangsung',
   `status_verifikasi` int(11) NOT NULL COMMENT '1: Disetujui; 2: Tidak disetujui; 3: Belum diverifikasi',
   `user_id` int(10) NOT NULL,
@@ -77,7 +77,7 @@ CREATE TABLE `tb_agenda` (
   `updated_at` datetime NOT NULL DEFAULT current_timestamp() ON UPDATE current_timestamp(),
   `deleted_at` datetime DEFAULT NULL,
   PRIMARY KEY (`id_agenda`) USING BTREE
-) ENGINE=InnoDB AUTO_INCREMENT=13 DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci ROW_FORMAT=DYNAMIC;
+) ENGINE=InnoDB AUTO_INCREMENT=13 DEFAULT CHARSET=utf8mb3 COLLATE=utf8mb3_unicode_ci ROW_FORMAT=DYNAMIC;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -99,11 +99,11 @@ DROP TABLE IF EXISTS `user_levels`;
 /*!40101 SET character_set_client = utf8 */;
 CREATE TABLE `user_levels` (
   `id` int(10) unsigned NOT NULL AUTO_INCREMENT,
-  `user_level` varchar(255) COLLATE utf8_unicode_ci NOT NULL,
+  `user_level` varchar(255) COLLATE utf8mb3_unicode_ci NOT NULL,
   `created_at` datetime NOT NULL DEFAULT current_timestamp(),
   `updated_at` datetime NOT NULL DEFAULT current_timestamp() ON UPDATE current_timestamp(),
   PRIMARY KEY (`id`) USING BTREE
-) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci ROW_FORMAT=DYNAMIC;
+) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=utf8mb3 COLLATE=utf8mb3_unicode_ci ROW_FORMAT=DYNAMIC;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -126,18 +126,18 @@ DROP TABLE IF EXISTS `users`;
 CREATE TABLE `users` (
   `id` int(10) unsigned NOT NULL AUTO_INCREMENT,
   `user_level_id` int(10) unsigned NOT NULL,
-  `email` varchar(255) COLLATE utf8_unicode_ci NOT NULL,
-  `fullname` varchar(255) COLLATE utf8_unicode_ci NOT NULL,
-  `password` varchar(255) COLLATE utf8_unicode_ci DEFAULT NULL,
-  `jabatan` varchar(255) COLLATE utf8_unicode_ci DEFAULT NULL,
-  `opd` varchar(255) COLLATE utf8_unicode_ci DEFAULT NULL,
+  `email` varchar(255) COLLATE utf8mb3_unicode_ci NOT NULL,
+  `fullname` varchar(255) COLLATE utf8mb3_unicode_ci NOT NULL,
+  `password` varchar(255) COLLATE utf8mb3_unicode_ci DEFAULT NULL,
+  `jabatan` varchar(255) COLLATE utf8mb3_unicode_ci DEFAULT NULL,
+  `opd` varchar(255) COLLATE utf8mb3_unicode_ci DEFAULT NULL,
   `created_at` datetime NOT NULL DEFAULT current_timestamp(),
   `updated_at` datetime NOT NULL DEFAULT current_timestamp() ON UPDATE current_timestamp(),
   `deleted_at` datetime DEFAULT NULL,
   PRIMARY KEY (`id`) USING BTREE,
   KEY `users_user_level_id_foreign` (`user_level_id`) USING BTREE,
   CONSTRAINT `users_user_level_id_foreign` FOREIGN KEY (`user_level_id`) REFERENCES `user_levels` (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=19 DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci ROW_FORMAT=DYNAMIC;
+) ENGINE=InnoDB AUTO_INCREMENT=20 DEFAULT CHARSET=utf8mb3 COLLATE=utf8mb3_unicode_ci ROW_FORMAT=DYNAMIC;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -146,7 +146,7 @@ CREATE TABLE `users` (
 
 LOCK TABLES `users` WRITE;
 /*!40000 ALTER TABLE `users` DISABLE KEYS */;
-INSERT INTO `users` VALUES (1,1,'admin@admin.com','Admin KOPIPRO','202cb962ac59075b964b07152d234b70','-','-','2021-08-23 13:19:21','2021-09-03 09:55:39',NULL),(2,2,'bupati@gmail.com','Ir. H. Hendy Siswanto','c78de339ede23183fc9655b17fd6ba95','-','-','2021-08-23 13:22:09','2021-09-03 09:55:39',NULL),(3,2,'wabup@gmail.com','KH. MB Firjaun Barlaman','2f8b68b996832a642955fc488d06f282','-','-','2021-08-23 13:22:09','2021-09-03 09:55:39',NULL),(4,1,'sespri1@gmail.com','Sekretaris Bupati','7c18961df6176cbaa3c75702b9f473b7','-','-','2021-08-23 13:24:28','2021-09-03 09:55:39',NULL),(5,1,'sespri2@gmail.com','Sekretaris Wakil Bupati','29b15eb2d4183a775d4c60d7eef97614','-','-','2021-08-23 13:24:28','2021-09-03 09:55:39',NULL),(6,1,'protokol@gmail.com','Protokol','4873fcef7920451651653d12d3197710','-','-','2021-08-23 13:25:38','2021-09-03 09:55:39',NULL),(7,3,'user@gmail.com','User Umum','ee11cbb19052e40b07aac0ca060c23ee','-','-','2021-08-23 13:26:09','2021-09-03 09:55:39',NULL),(8,3,'rosid321@gmail.com','Fathor Rosid','827ccb0eea8a706c4c34a16891f84e7b','-','-','2021-08-23 21:17:45','2021-09-03 09:55:39',NULL),(9,3,'damayanti@gmail.com','Desinta Damayanti ','202cb962ac59075b964b07152d234b70','-','-','2021-08-23 21:45:06','2021-09-03 09:55:39',NULL),(11,3,'intan@gmail.com','Intan Permatasari','827ccb0eea8a706c4c34a16891f84e7b','-','-','2021-08-23 23:44:19','2021-09-03 09:55:39',NULL),(12,2,'desinta@gmail.com','Desinta Damayanti Fathor Rosid','202cb962ac59075b964b07152d234b70','-','-','2021-08-30 00:30:37','2021-09-03 09:55:39',NULL),(17,3,'kamu@gmail.com','saya','cc8c0a97c2dfcd73caff160b65aa39e2','-','-','2021-08-31 09:36:41','2021-09-03 09:55:39',NULL),(18,3,'raung@gmail.com','testing','529ca8050a00180790cf88b63468826a','programmer','diskominfo','2021-09-03 10:02:55','2021-09-03 10:02:55',NULL);
+INSERT INTO `users` VALUES (1,1,'admin@admin.com','Admin KOPIPRO','202cb962ac59075b964b07152d234b70','-','-','2021-08-23 13:19:21','2021-09-03 09:55:39',NULL),(2,2,'bupati@gmail.com','Ir. H. Hendy Siswanto','9121077c9b6858f8bb661e74661cc1e7','-','-','2021-08-23 13:22:09','2021-09-03 11:09:24',NULL),(3,2,'wabup@gmail.com','KH. MB Firjaun Barlaman','2f8b68b996832a642955fc488d06f282','-','-','2021-08-23 13:22:09','2021-09-03 09:55:39',NULL),(4,1,'sespri1@gmail.com','Sekretaris Bupati','7c18961df6176cbaa3c75702b9f473b7','-','-','2021-08-23 13:24:28','2021-09-03 09:55:39',NULL),(5,1,'sespri2@gmail.com','Sekretaris Wakil Bupati','29b15eb2d4183a775d4c60d7eef97614','-','-','2021-08-23 13:24:28','2021-09-03 09:55:39',NULL),(6,1,'protokol@gmail.com','Protokol','4873fcef7920451651653d12d3197710','-','-','2021-08-23 13:25:38','2021-09-03 09:55:39',NULL),(7,3,'user@gmail.com','User Umum','ee11cbb19052e40b07aac0ca060c23ee','-','-','2021-08-23 13:26:09','2021-09-03 09:55:39',NULL),(8,3,'rosid321@gmail.com','Fathor Rosid','827ccb0eea8a706c4c34a16891f84e7b','-','-','2021-08-23 21:17:45','2021-09-03 09:55:39',NULL),(9,3,'damayanti@gmail.com','Desinta Damayanti ','202cb962ac59075b964b07152d234b70','-','-','2021-08-23 21:45:06','2021-09-03 09:55:39',NULL),(11,3,'intan@gmail.com','Intan Permatasari','827ccb0eea8a706c4c34a16891f84e7b','-','-','2021-08-23 23:44:19','2021-09-03 09:55:39',NULL),(12,2,'desinta@gmail.com','Desinta Damayanti Fathor Rosid','202cb962ac59075b964b07152d234b70','-','-','2021-08-30 00:30:37','2021-09-03 09:55:39',NULL),(17,3,'kamu@gmail.com','saya','cc8c0a97c2dfcd73caff160b65aa39e2','-','-','2021-08-31 09:36:41','2021-09-03 09:55:39',NULL),(18,3,'raung@gmail.com','testing','529ca8050a00180790cf88b63468826a','programmer','diskominfo','2021-09-03 10:02:55','2021-09-03 10:02:55',NULL),(19,3,'mbak@gmail.com','Mbak Desinta Damayanti','d9b1d7db4cd6e70935368a1efb10e377','Bupati','Dinas Kominfo','2021-09-03 11:24:59','2021-09-03 11:25:30',NULL);
 /*!40000 ALTER TABLE `users` ENABLE KEYS */;
 UNLOCK TABLES;
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
@@ -159,4 +159,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2021-09-03 10:06:51
+-- Dump completed on 2021-09-03 11:26:21

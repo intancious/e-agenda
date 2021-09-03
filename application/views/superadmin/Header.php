@@ -70,7 +70,7 @@
             <li class="nav-item <?php if (strtolower($this->uri->segment(2)) == 'user') echo 'active' ?>">
                 <a class="nav-link" href="<?= base_url() ?>superadmin/user">
                     <i class="fas fa-user-plus"></i>
-                    <span>Tambah User</span></a>
+                    <span>User</span></a>
             </li>
 
             <!-- Divider -->
