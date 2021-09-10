@@ -33,9 +33,9 @@
 				</div>
 
 				<div class="form-group">
-					<label for="password">Password</label>
+					<label for="password">Password Baru</label>
 					<input type="password" class="form-control" id="passwordbaru" name="passwordbaru" tabindex="5">
-					<input type="text" class="form-control" id="passwordlama" name="passwordlama" value="<?= $users->password; ?>">
+					<input type="hidden" class="form-control" id="passwordlama" name="passwordlama" value="<?= $users->password; ?>">
 				</div>
 
 				<div class="form-group">
