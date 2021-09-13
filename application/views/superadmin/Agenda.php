@@ -72,13 +72,14 @@
 						<div class="form-group">
 							<label>Tanggal</label>
 							<input class="form-control" type="date" name="tanggal" id="tanggal" tabindex="6">
-
+							<span class="help-block" style="color: red;"></span>
 						</div>
 					</div>
 					<div class="col-md-4">
 						<div class="form-group">
 							<label>Jam Mulai (WIB) </label>
 							<input class="form-control" type="time" name="pukul" id="pukul" tabindex="7">
+							<span class="help-block" style="color: red;"></span>
 						</div>
 					</div>
 					<div class="col-md-4">
@@ -101,7 +102,7 @@
                                     <option value="Aula Bawah Timur">Aula Bawah Timur</option>
                                     <option value="Lainnya">Lainnya</option>
                                 </select> -->
-
+							<span class="help-block" style="color: red;"></span>
 						</div>
 					</div>
 					<div class="col-md-6">

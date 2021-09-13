@@ -533,11 +533,17 @@ class Agenda extends CI_Controller
 			$data['status'] = FALSE;
 		}
 
-		// if ($this->input->post('kategori') == '') {
-		//     $data['inputerror'][] = 'kategori';
-		//     $data['error_string'][] = 'Kategori tidak boleh kosong';
-		//     $data['status'] = FALSE;
-		// }
+		if ($this->input->post('tanggal') == '') {
+			$data['inputerror'][] = 'tanggal';
+			$data['error_string'][] = 'Tanggal tidak boleh kosong';
+			$data['status'] = FALSE;
+		}
+
+		if ($this->input->post('pukul') == '') {
+			$data['inputerror'][] = 'pukul';
+			$data['error_string'][] = 'Pukul tidak boleh kosong';
+			$data['status'] = FALSE;
+		}
 
 		if ($this->input->post('penyelenggara') == '') {
 			$data['inputerror'][] = 'penyelenggara';
@@ -545,11 +551,11 @@ class Agenda extends CI_Controller
 			$data['status'] = FALSE;
 		}
 
-		// if ($this->input->post('agenda') == '') {
-		//     $data['inputerror'][] = 'agenda';
-		//     $data['error_string'][] = 'Agenda tidak boleh kosong';
-		//     $data['status'] = FALSE;
-		// }
+		if ($this->input->post('tempat') == '') {
+			$data['inputerror'][] = 'tempat';
+			$data['error_string'][] = 'Tempat tidak boleh kosong';
+			$data['status'] = FALSE;
+		}
 
 		if ($data['status'] === FALSE) {
 			echo json_encode($data);
