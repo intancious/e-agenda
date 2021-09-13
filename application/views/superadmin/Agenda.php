@@ -49,7 +49,7 @@
 								<option value="Bupati">Bupati</option>
 								<option value="Wakil Bupati">Wakil Bupati</option>
 							</select>
-							<!-- <span class="help-block" style="color: red;"></span> -->
+							<span class="help-block" style="color: red;"></span>
 						</div>
 					</div>
 
@@ -61,7 +61,6 @@
 							<label>Pembagian Tugas OPD</label>
 							<textarea name="sub_agenda" id="sub_agenda" class="form-control" rows="8" tabindex="5"></textarea>
 							<!-- <input class="form-control" type="text" name="sub_agenda" id="sub_agenda" tabindex="5"> -->
-
 						</div>
 					</div>
 

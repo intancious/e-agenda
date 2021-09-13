@@ -533,6 +533,12 @@ class Agenda extends CI_Controller
 			$data['status'] = FALSE;
 		}
 
+		if ($this->input->post('agenda') == '') {
+			$data['inputerror'][] = 'agenda';
+			$data['error_string'][] = 'Agenda tidak boleh kosong';
+			$data['status'] = FALSE;
+		}
+
 		if ($this->input->post('tanggal') == '') {
 			$data['inputerror'][] = 'tanggal';
 			$data['error_string'][] = 'Tanggal tidak boleh kosong';
